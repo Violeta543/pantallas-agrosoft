@@ -1,0 +1,534 @@
+/* ========================================
+   TIPOGRAFÍAS
+   ======================================== */
+
+@font-face {
+    font-family: "DM Serif";
+    src: url(/LE/DMSerifDisplay-Regular.ttf);
+}
+
+@font-face {
+    font-family: "DM Sans";
+    src: url(/LE/DMSans-Regular.ttf);
+}
+
+/* ========================================
+   ESTILOS GLOBALES
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/f.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px 20px;
+    font-family: "DM Sans", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ========================================
+   LOGOS
+   ======================================== */
+
+.logo1 {
+    position: absolute;
+    left: 290px;
+    top:40px;
+    width: 85px;
+    height: 135px;
+    transform: translateX(-180px);
+    z-index: 10;
+}
+
+.logo2 {
+    position: absolute;
+    right: 33%;
+    top: 20px;
+    width: 115px;
+    height: 115px;
+    transform: translateX(135px);
+    z-index: 10;
+}
+
+/* ========================================
+   CONTENEDORES
+   ======================================== */
+
+.cuadro,
+.cuadro1,
+.cuadro2 {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 90px 50px 50px;
+    margin: 0 auto;
+    width: 636px;
+    max-width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    min-height: 780px;
+}
+
+.cuadro {
+    min-height: 780px;
+}
+
+.cuadro1 {
+    min-height: 600px;
+}
+
+.cuadro2 {
+    min-height: 780px;
+}
+
+/* ========================================
+   TÍTULOS
+   ======================================== */
+
+h2 {
+    color: rgba(50, 98, 33, 1);
+    font-size: 60px;
+    font-family: "DM Serif", serif;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ========================================
+   ETIQUETAS
+   ======================================== */
+
+label {
+    font-family: "DM Sans", sans-serif;
+    color: rgba(0, 0, 0, 1);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    align-self: flex-start;
+    margin-left: 36px;
+    width: auto;
+}
+
+.titulo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    align-self: center;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 15px;
+    font-family: "DM Sans", sans-serif;
+}
+
+/* ========================================
+   INPUTS
+   ======================================== */
+
+.icono {
+    position: relative;
+    width: 563px;
+    max-width: 100%;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.icono img {
+    position: absolute;
+    left: 33px;
+    width: 62px;
+    height: 58px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+input {
+    width: 100%;
+    height: 55px;
+    border: 1px solid rgba(158, 155, 155, 1);
+    border-radius: 20px;
+    padding-left: 130px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: "DM Sans", sans-serif;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: rgba(50, 98, 33, 1);
+    box-shadow: 0 0 5px rgba(50, 98, 33, 0.3);
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   BOTONES
+   ======================================== */
+
+.containboton {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+
+.boton {
+    width: 220px;
+    height: 58px;
+    color: black;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: rgba(240, 240, 240, 1);
+    border-color: rgba(50, 98, 33, 1);
+    transform: translateY(-2px);
+}
+
+.botonA {
+    width: 220px;
+    height: 58px;
+    background-color: rgba(50, 98, 33, 1);
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.botonA:hover {
+    background-color: rgba(50, 98, 33, 0.85);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(50, 98, 33, 0.4);
+}
+
+.crearcuenta {
+    width: 220px;
+    height: 58px;
+    background-color: rgba(50, 98, 33, 1);
+    color: rgba(255, 255, 255, 1);
+    border-radius: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+
+.crearcuenta:hover {
+    background-color: rgba(50, 98, 33, 0.85);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(50, 98, 33, 0.4);
+}
+
+/* ========================================
+   ENLACES ESPECIALES
+   ======================================== */
+
+.recuperar {
+    color: black;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.recuperar:hover {
+    color: rgba(50, 98, 33, 1);
+}
+
+/* ========================================
+   RESPONSIVE - TABLETS (768px)
+   ======================================== */
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 15px;
+    }
+
+    .logo1 {
+        width: 65px;
+        height: 105px;
+        top: 15px;
+        transform: translateX(-130px);
+    }
+
+    .logo2 {
+        width: 90px;
+        height: 90px;
+        top: 15px;
+        transform: translateX(105px);
+    }
+
+    .cuadro,
+    .cuadro1,
+    .cuadro2 {
+        width: 95%;
+        padding: 80px 35px 35px;
+        border-radius: 25px;
+    }
+
+    h2 {
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
+
+    .containboton {
+        padding: 0 10px;
+    }
+
+    .boton,
+    .botonA {
+        width: 180px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    label {
+        font-size: 15px;
+        margin-left: 25px;
+    }
+
+    .icono {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .icono img {
+        width: 50px;
+        height: 45px;
+        left: 25px;
+    }
+
+    input {
+        height: 50px;
+        padding-left: 100px;
+        font-size: 16px;
+    }
+
+    .crearcuenta {
+        width: 180px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    .recuperar {
+        font-size: 14px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MÓVILES (480px)
+   ======================================== */
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .logo1 {
+        width: 50px;
+        height: 80px;
+        top: 12px;
+        transform: translateX(-100px);
+    }
+
+    .logo2 {
+        width: 70px;
+        height: 70px;
+        top: 12px;
+        transform: translateX(85px);
+    }
+
+    .cuadro,
+    .cuadro1,
+    .cuadro2 {
+        width: 100%;
+        padding: 70px 20px 25px;
+        border-radius: 20px;
+    }
+
+    .cuadro {
+        min-height: auto;
+    }
+
+    .cuadro1 {
+        min-height: auto;
+    }
+
+    .cuadro2 {
+        min-height: auto;
+    }
+
+    h2 {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    .containboton {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    .boton,
+    .botonA {
+        width: 100%;
+        height: 48px;
+        font-size: 15px;
+    }
+
+    label {
+        font-size: 14px;
+        margin-left: 20px;
+        margin-bottom: 6px;
+    }
+
+    .titulo {
+        font-size: 15px;
+    }
+
+    .icono {
+        width: 100%;
+        margin-bottom: 18px;
+        padding: 0;
+    }
+
+    .icono img {
+        width: 40px;
+        height: 36px;
+        left: 18px;
+    }
+
+    input {
+        height: 48px;
+        padding-left: 80px;
+        font-size: 15px;
+    }
+
+    .crearcuenta {
+        width: 100%;
+        height: 48px;
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .recuperar {
+        font-size: 13px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MÓVILES PEQUEÑOS (360px)
+   ======================================== */
+
+@media (max-width: 360px) {
+    .logo1 {
+        width: 40px;
+        height: 65px;
+        transform: translateX(-85px);
+    }
+
+    .logo2 {
+        width: 55px;
+        height: 55px;
+        transform: translateX(70px);
+    }
+
+    .cuadro,
+    .cuadro1,
+    .cuadro2 {
+        padding: 65px 15px 20px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .containboton {
+        gap: 10px;
+    }
+
+    .boton,
+    .botonA,
+    .crearcuenta {
+        width: 100%;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    label {
+        font-size: 13px;
+        margin-left: 15px;
+    }
+
+    .icono {
+        margin-bottom: 15px;
+    }
+
+    .icono img {
+        width: 35px;
+        height: 32px;
+        left: 15px;
+    }
+
+    input {
+        height: 45px;
+        padding-left: 70px;
+        font-size: 13px;
+    }
+}
