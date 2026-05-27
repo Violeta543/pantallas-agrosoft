@@ -1,19 +1,20 @@
+/* ── Variables globales de color y tipografía ── */
 :root {
-    --fondo-oscuro: #2d5132;
-    --fondo-claro: #f7f9f3;
-    --texto-principal: #1f2e1f;
-    --gris-suave: #7d8a7f;
-    --verde: #3f7a4d;
-    --azul: #243f6a;
-    --morado: #7f4fa2;
-    --rosa: #f5d2dc;
-    --celeste: #d7e5fb;
+    --fondo-oscuro: #2d5132;      /* Verde muy oscuro */
+    --fondo-claro: #f7f9f3;       /* Blanco verdoso suave */
+    --texto-principal: #1f2e1f;   /* Color de texto base */
+    --gris-suave: #7d8a7f;        /* Gris verdoso para textos secundarios */
+    --verde: #3f7a4d;             /* Verde principal de la marca */
+    --azul: #243f6a;              /* Azul para acentos */
+    --morado: #7f4fa2;            /* Morado para acentos */
 }
 
+/* Incluye padding y borde dentro del ancho/alto de todos los elementos */
 * {
     box-sizing: border-box;
 }
 
+/* Estilos base del documento: fondo degradado y fuente principal */
 body {
     margin: 0;
     color: var(--texto-principal);
@@ -22,6 +23,7 @@ body {
     font-family: "DM Sans", sans-serif;
 }
 
+/* Menú lateral fijo a la izquierda con fondo verde */
 .barra-lateral {
     position: fixed;
     left: 0;
@@ -29,15 +31,15 @@ body {
     width: 280px;
     height: 100vh;
     padding: 30px 18px;
-    background: linear-gradient(180deg, var(--verde), #3f7a4d 80%);
+    background: linear-gradient(180deg, #356823 0%, #4a7c36 40%);
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
-    
 }
 
+/* Nombre/marca de la app en la parte superior del sidebar */
 .logo {
     font-size: 1.3rem;
     font-weight: 700;
@@ -48,6 +50,7 @@ body {
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Contenedor de los enlaces del menú lateral */
 .menu-lateral {
     display: grid;
     gap: 5px;
@@ -57,6 +60,7 @@ body {
     margin-top: 20px;
 }
 
+/* Cada enlace individual del menú lateral */
 .enlace-menu {
     display: flex;
     flex-direction: row;
@@ -72,6 +76,7 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Ícono dentro de cada enlace del menú lateral */
 .icono-menu {
     width: 28px;
     height: 28px;
@@ -81,6 +86,7 @@ body {
     flex-shrink: 0;
 }
 
+/* Ícono del botón de cerrar sesión (ligeramente más grande) */
 .icono-cerrar {
     width: 35px;
     height: 35px;
@@ -90,6 +96,7 @@ body {
     flex-shrink: 0;
 }
 
+/* Texto de cada ítem del menú lateral */
 .texto-menu {
     font-size: 20px;
     text-align: left;
@@ -98,23 +105,20 @@ body {
     text-overflow: ellipsis;
 }
 
+/* Resalta el enlace al pasar el cursor o cuando está activo */
 .enlace-menu:hover,
 .enlace-menu.activo {
-    background: rgba(255,255,255,0.15);
+    background: rgb(49, 95, 32);
     transform: translateX(4px);
 }
 
+/* Aclara el ícono al hacer hover o cuando el enlace está activo */
 .enlace-menu:hover .icono-menu,
 .enlace-menu.activo .icono-menu {
     filter: brightness(1.3);
 }
 
-.enlace-menu.activo {
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-}
-
+/* Botón de cerrar sesión al fondo del sidebar */
 .boton-cerrar {
     margin-top: 5px;
     border: none;
@@ -134,11 +138,13 @@ body {
     text-decoration: none;
 }
 
+/* Efecto hover del botón de cerrar sesión */
 .boton-cerrar:hover {
     background: rgba(50, 98, 33, 1);
     transform: translateY(-2px);
 }
 
+/* Área de contenido principal desplazada a la derecha del sidebar */
 .contenedor-principal {
     margin-left: 280px;
     margin-right: 0;
@@ -151,11 +157,13 @@ body {
     min-height: 100vh;
 }
 
+/* Capa de contenido con z-index para superponerse al fondo */
 .contenido-fondo {
     position: relative;
     z-index: 3;
 }
 
+/* Barra superior con título de página y datos del usuario */
 .encabezado {
     display: flex;
     align-items: center;
@@ -168,6 +176,7 @@ body {
     z-index: 10;
 }
 
+/* Columna izquierda del encabezado: título y subtítulo */
 .encabezado-texto {
     flex: 1;
     display: flex;
@@ -175,6 +184,7 @@ body {
     gap: 8px;
 }
 
+/* Título principal de la página actual */
 .titulo-pagina {
     margin: 0;
     font-size: 2.2rem;
@@ -183,6 +193,7 @@ body {
     color: rgba(50, 98, 33, 1);
 }
 
+/* Descripción breve debajo del título de página */
 .subtitulo-pagina {
     margin: 0;
     color: var(--gris-suave);
@@ -190,6 +201,7 @@ body {
     line-height: 1.6;
 }
 
+/* Tarjeta del usuario en la esquina superior derecha */
 .usuario-contenedor {
     display: flex;
     align-items: center;
@@ -201,6 +213,7 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+/* Columna de texto dentro de la tarjeta de usuario */
 .usuario {
     display: flex;
     flex-direction: column;
@@ -209,6 +222,7 @@ body {
     flex: 1;
 }
 
+/* Ícono/avatar del usuario */
 .usuario-icono {
     width: 45px;
     height: 45px;
@@ -216,16 +230,17 @@ body {
     flex-shrink: 0;
 }
 
+/* Logo circular en el encabezado */
 .Logo-header-icono {
     width: 75px;
     height: 75px;
     object-fit: contain;
     flex-shrink: 0;
     border-radius: 50%;
-
     padding: 4px;
 }
 
+/* Nombre del usuario en negrilla */
 .usuario-nombre {
     display: block;
     font-weight: 700;
@@ -233,12 +248,14 @@ body {
     color: var(--texto-principal);
 }
 
+/* Rol o cargo del usuario en color secundario */
 .usuario-rol {
     display: block;
     color: var(--gris-suave);
     font-size: 0.85rem;
 }
 
+/* Grid de 3 columnas para las tarjetas de resumen */
 .tarjetas-resumen {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -250,6 +267,7 @@ body {
     max-width: none;
 }
 
+/* Tarjeta individual de resumen con sombra y borde de color */
 .tarjeta {
     background: white;
     border-radius: 20px;
@@ -264,11 +282,13 @@ body {
     z-index: 8;
 }
 
+/* Eleva la tarjeta al hacer hover */
 .tarjeta:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 32px rgba(67, 101, 71, 0.18);
 }
 
+/* Ícono posicionado en la esquina superior izquierda de la tarjeta */
 .tarjeta-icono-img {
     position: absolute;
     top: 20px;
@@ -278,6 +298,7 @@ body {
     object-fit: contain;
 }
 
+/* Número grande en la esquina superior derecha de la tarjeta */
 .tarjeta-numero {
     position: absolute;
     top: 20px;
@@ -288,6 +309,7 @@ body {
     color: var(--texto-principal);
 }
 
+/* Bloque de texto debajo del ícono en la tarjeta */
 .tarjeta-contenido {
     display: flex;
     flex-direction: column;
@@ -295,6 +317,7 @@ body {
     margin-top: 55px;
 }
 
+/* Etiqueta pequeña en mayúsculas dentro de la tarjeta */
 .tarjeta-titulo {
     margin: 0;
     font-size: 0.9rem;
@@ -303,39 +326,47 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* Texto descriptivo secundario dentro de la tarjeta */
 .tarjeta-descripcion {
     margin: 0;
     font-size: 0.95rem;
     color: var(--gris-suave);
 }
 
+/* Variante verde del texto descriptivo */
 .tarjeta-descripcion1 {
     color: var(--verde);
     font-weight: 700;
 }
 
+/* Variante azul del texto descriptivo */
 .tarjeta-descripcion2 {
     color: var(--azul);
     font-weight: 700;
 }
 
+/* Variante morada del texto descriptivo */
 .tarjeta-descripcion3 {
     color: var(--morado);
     font-weight: 700;
 }
 
+/* Borde superior verde para tarjetas de categoría agrícola */
 .tarjeta-verde {
     border-top: 40px solid rgba(50, 98, 33, 1);
 }
 
+/* Borde superior azul para tarjetas de categoría administrativa */
 .tarjeta-azul {
     border-top: 40px solid rgba(15, 28, 96, 1);
 }
 
+/* Borde superior morado para tarjetas de categoría especial */
 .tarjeta-morada {
     border-top: 40px solid rgba(153, 28, 176, 1);
 }
 
+/* Grid de 2 columnas para las tarjetas de alerta */
 .alertas-resumen {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -347,6 +378,7 @@ body {
     z-index: 5;
 }
 
+/* Tarjeta de alerta con ícono y texto en fila */
 .alerta {
     padding: 24px 28px;
     border-radius: 16px;
@@ -359,11 +391,13 @@ body {
     z-index: 8;
 }
 
+/* Eleva la alerta al pasar el cursor */
 .alerta:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
 }
 
+/* Ícono decorativo a la izquierda de la alerta */
 .alerta-icono {
     width: 50px;
     height: 50px;
@@ -371,11 +405,13 @@ body {
     flex-shrink: 0;
 }
 
+/* Bloque de título y subtítulo de la alerta */
 .alerta-texto {
     display: grid;
     gap: 6px;
 }
 
+/* Título en negrilla dentro de la alerta */
 .alerta-titulo {
     margin: 0;
     font-size: 0.95rem;
@@ -383,129 +419,275 @@ body {
     color: var(--texto-principal);
 }
 
+/* Descripción secundaria dentro de la alerta */
 .alerta-subtitulo {
     margin: 0;
     font-size: 0.85rem;
     color: rgba(0, 0, 0, 0.7);
 }
 
+/* Fondo rosado degradado para alertas tipo 1 */
 .alerta-rosa {
     background: linear-gradient(135deg, #f5d2dc 0%, #fde5ee 100%);
 }
 
+/* Fondo celeste degradado para alertas tipo 2 */
 .alerta-azul-claro {
     background: linear-gradient(135deg, #d7e5fb 0%, #e8f1fd 100%);
 }
-.logo-texto{
+
+/* Texto del logo con fuente serif decorativa */
+.logo-texto {
     font-family: "DM Serif", sans-serif;
     font-size: 34px;
 }
+
+/* Fuente serif para títulos elegantes */
 @font-face {
     font-family: "DM Serif";
     src: url(/LE/DMSerifDisplay-Regular.ttf);
 }
+
+/* Fuente sans-serif para texto general */
 @font-face {
     font-family: "DM Sans";
     src: url(/LE/DMSans-Regular.ttf);
 }
 
-/* Clase para agregar imagen de fondo transparente */
-.contenedor-principal.con-fondo {
-    background-image: linear-gradient(rgba(197, 63, 63, 0.5), rgba(255, 255, 255, 0.5)), url(/k/imagenes/fondo.jpg);
-
+/* Ocultar grid de módulos móvil en escritorio */
+.menu-modulos-movil {
+    display: none;
 }
 
+/* Ocultar barra de navegación móvil en escritorio */
+.barra-nav-movil {
+    display: none;
+}
+
+/* ── Tabletas grandes: cambia a 2 columnas en tarjetas ── */
 @media (max-width: 1200px) {
     .tarjetas-resumen {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* ── Tabletas: sidebar más angosto y layout de columna única ── */
 @media (max-width: 980px) {
+
+    /* Reduce el ancho del sidebar */
     .barra-lateral {
         width: 260px;
         padding: 25px 15px;
     }
-    
+
+    /* Ajusta el margen del contenido al nuevo ancho del sidebar */
     .contenedor-principal {
         margin-left: 260px;
     }
-    
+
+    /* Tarjetas y alertas en una sola columna */
     .tarjetas-resumen,
     .alertas-resumen {
         grid-template-columns: 1fr;
         margin-left: 25px;
         margin-right: 25px;
     }
-    
+
+    /* Encabezado en columna vertical */
     .encabezado {
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
     }
-    
+
+    /* Tarjeta de usuario ocupa todo el ancho */
     .usuario-contenedor {
         width: 100%;
         min-width: auto;
     }
 }
 
-@media (max-width: 620px) {
+/* ══════════════════════════════════════════════════════════
+   MÓVIL
+   ══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+    /* Oculta el sidebar de escritorio en móvil */
     .barra-lateral {
-        position: relative;
-        width: 100%;
-        height: auto;
-        padding: 20px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .logo {
-        border: none;
-        padding: 0;
-        font-size: 1.1rem;
-    }
-    
-    .menu-lateral {
         display: none;
     }
-    
-    .boton-cerrar {
-        margin: 0;
-        width: auto;
-        padding: 8px 16px;
-    }
-    
+
+    /* El contenido ocupa toda la pantalla sin margen lateral */
     .contenedor-principal {
         margin-left: 0;
+        padding-bottom: 80px;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url(/k/imagenes/fondo.jpg);
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
     }
-    
+
+    /* Encabezado centrado y sin fondo en móvil */
     .encabezado {
-        padding: 18px 20px;
-        gap: 15px;
-    }
-    
-    .titulo-pagina {
-        font-size: 1.8rem;
-    }
-    
-    .usuario-contenedor {
         flex-direction: column;
-        gap: 10px;
-        padding: 12px;
-        min-width: auto;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 20px 16px;
+        background-color: transparent;
+        box-shadow: none;
+        gap: 0;
     }
-    
-    .tarjetas-resumen,
+
+    /* Oculta el logo, la tarjeta de usuario, el subtítulo y el título en móvil */
+    .Logo-header-icono,
+    .usuario-contenedor,
+    .encabezado-texto .subtitulo-pagina,
+    .titulo-pagina {
+        display: none;
+    }
+
+    /* Oculta las tarjetas de resumen del dashboard en móvil */
+    .tarjetas-resumen {
+        display: none;
+    }
+
+    /* Oculta la sección de alertas en móvil */
     .alertas-resumen {
-        margin-left: 15px;
-        margin-right: 15px;
-        gap: 16px;
+        display: none;
     }
-    
-    .tarjeta {
-        padding: 20px;
-        min-height: 250px;
+
+    /* Grid de 2 columnas para los módulos de la app */
+    .menu-modulos-movil {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin: 16px 18px 22px;
+        padding: 12px 12px 14px;
+        border-radius: 4%;
+        background: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Contenedor del título AGROSOFT que ocupa ambas columnas */
+    .menu-modulos-movil .titulo-modulos-contenedor {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 6px;
+    }
+
+    /* Título AGROSOFT con degradado verde */
+    .titulo-modulos {
+        margin: 0;
+        font-size: 4rem;
+        text-align: center;
+        font-family: "DM Serif", sans-serif;
+        background: linear-gradient(135deg, rgb(0, 75, 43), rgb(0, 177, 101));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    /* Cada módulo: tarjeta con ícono y nombre */
+    .modulo-movil {
+        background: rgba(255, 255, 255, 1);
+        border-radius: 18px;
+        padding: 14px 10px 12px;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        box-shadow: 0 4px 18px rgba(50, 98, 33, 0.10);
+        cursor: pointer;
+        text-decoration: none;
+        color: var(--texto-principal);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    /* Efecto de pulsación al tocar un módulo */
+    .modulo-movil:active {
+        transform: scale(0.95);
+        box-shadow: 0 2px 8px rgba(50, 98, 33, 0.08);
+    }
+
+    /* Ícono del módulo */
+    .modulo-movil img {
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+    }
+
+    /* Nombre del módulo */
+    .modulo-movil span {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+        color: var(--texto-principal);
+    }
+
+    /* Barra de navegación inferior fija con 3 ítems */
+    .barra-nav-movil {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 76px;
+        background: white;
+        border-top: 1px solid rgba(50, 98, 33, 0.15);
+        box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+        z-index: 100;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 8px;
+    }
+
+    /* Cada ítem de la barra inferior: ícono + etiqueta */
+    .nav-movil-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        text-decoration: none;
+        color: var(--gris-suave);
+        font-size: 15px;
+        font-weight: 500;
+        padding: 8px 14px;
+        border-radius: 12px;
+        transition: all 0.2s ease;
+        flex: 1;
+    }
+
+    /* Ícono activo resaltado en verde */
+    .nav-movil-item.activo {
+        color: rgba(50, 98, 33, 1);
+    }
+
+    /* Fondo suave al tocar un ítem de la barra */
+    .nav-movil-item:active {
+        background: rgba(50, 98, 33, 0.08);
+    }
+
+    /* Ícono dentro de cada ítem de la barra inferior */
+    .nav-movil-icono {
+        width: 34px;
+        height: 34px;
+        object-fit: contain;
+    }
+
+    /* Ícono de inicio (ligeramente más grande) */
+    .nav-movil-icono1 {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
+
+    /* Resplandor verde en el ícono activo */
+    .nav-movil-item.activo .nav-movil-icono {
+        filter: drop-shadow(0 0 4px rgba(50, 98, 33, 0.4));
     }
 }

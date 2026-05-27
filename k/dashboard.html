@@ -65,7 +65,7 @@
         <header class="encabezado">
             <img src="/k/imagenes/logo.png" alt="Logo" class="Logo-header-icono">
             <div class="encabezado-texto">
-                <h1 class="titulo-pagina">Dashboard</h1>
+                <h1 class="titulo-pagina">DASHBOARD</h1>
                 <p class="subtitulo-pagina">Resumen general de tu gestión agrícola</p>
             </div>
             <div class="usuario-contenedor">
@@ -75,59 +75,115 @@
                     <span class="usuario-rol">Administrador</span>
                 </div>
             </div>
-            
         </header>
 
         <section class="contenido-fondo">
-        <section class="tarjetas-resumen">
-            <article class="tarjeta tarjeta-verde">
-                <img src="/k/imagenes/tarjeta1.png" alt="Cultivos" class="tarjeta-icono-img">
-                <h2 id="total-cultivos" class="tarjeta-numero">0</h2>
-                <div class="tarjeta-contenido">
-                    <p class="tarjeta-titulo">Total Cultivos</p>
-                    <p class="tarjeta-descripcion tarjeta-descripcion1">0 saludables</p>
-                </div>
-            </article>
 
-            <article class="tarjeta tarjeta-azul">
-                <img src="/k/imagenes/tarjeta2.png" alt="Tratamientos" class="tarjeta-icono-img">
-                <h2 id="total-tratamientos" class="tarjeta-numero">0</h2>
-                <div class="tarjeta-contenido">
-                    <p class="tarjeta-titulo">Total Tratamientos</p>
-                    <p class="tarjeta-descripcion tarjeta-descripcion2">0 completados</p>
-                </div>
-            </article>
+            <!-- Tarjetas de resumen: visibles solo en escritorio -->
+            <section class="tarjetas-resumen">
+                <article class="tarjeta tarjeta-verde">
+                    <img src="/k/imagenes/tarjeta1.png" alt="Cultivos" class="tarjeta-icono-img">
+                    <h2 id="total-cultivos" class="tarjeta-numero">0</h2>
+                    <div class="tarjeta-contenido">
+                        <p class="tarjeta-titulo">Total Cultivos</p>
+                        <p class="tarjeta-descripcion tarjeta-descripcion1">0 saludables</p>
+                    </div>
+                </article>
 
-            <article class="tarjeta tarjeta-morada">
-                <img src="/k/imagenes/tarjeta3.png" alt="Ventas" class="tarjeta-icono-img">
-                <h2 id="total-ventas" class="tarjeta-numero">0</h2>
-                <div class="tarjeta-contenido">
-                    <p class="tarjeta-titulo">Total Ventas</p>
-                    <p class="tarjeta-descripcion tarjeta-descripcion3">0 ventas</p>
-                </div>
-            </article>
-        </section>
+                <article class="tarjeta tarjeta-azul">
+                    <img src="/k/imagenes/tarjeta2.png" alt="Tratamientos" class="tarjeta-icono-img">
+                    <h2 id="total-tratamientos" class="tarjeta-numero">0</h2>
+                    <div class="tarjeta-contenido">
+                        <p class="tarjeta-titulo">Total Tratamientos</p>
+                        <p class="tarjeta-descripcion tarjeta-descripcion2">0 completados</p>
+                    </div>
+                </article>
 
-        <section class="alertas-resumen">
-            <article class="alerta alerta-rosa">
-                <img src="/k/imagenes/inventario.png" alt="Inventario" class="alerta-icono">
-                <div class="alerta-texto">
-                    <p class="alerta-titulo">Inventario</p>
-                    <p class="alerta-subtitulo">0 items en stock insuficiente</p>
-                </div>
-            </article>
+                <article class="tarjeta tarjeta-morada">
+                    <img src="/k/imagenes/tarjeta3.png" alt="Ventas" class="tarjeta-icono-img">
+                    <h2 id="total-ventas" class="tarjeta-numero">0</h2>
+                    <div class="tarjeta-contenido">
+                        <p class="tarjeta-titulo">Total Ventas</p>
+                        <p class="tarjeta-descripcion tarjeta-descripcion3">0 ventas</p>
+                    </div>
+                </article>
+            </section>
 
-            <article class="alerta alerta-azul-claro">
-                <img src="/k/imagenes/tareas2.png" alt="Tareas" class="alerta-icono">
-                <div class="alerta-texto">
-                    <p class="alerta-titulo">Tareas pendientes</p>
-                    <p class="alerta-subtitulo">0 tareas sin completar</p>
+            <section class="alertas-resumen">
+                <article class="alerta alerta-rosa">
+                    <img src="/k/imagenes/inventario.png" alt="Inventario" class="alerta-icono">
+                    <div class="alerta-texto">
+                        <p class="alerta-titulo">Inventario</p>
+                        <p class="alerta-subtitulo">0 items en stock insuficiente</p>
+                    </div>
+                </article>
+
+                <article class="alerta alerta-azul-claro">
+                    <img src="/k/imagenes/tareas2.png" alt="Tareas" class="alerta-icono">
+                    <div class="alerta-texto">
+                        <p class="alerta-titulo">Tareas pendientes</p>
+                        <p class="alerta-subtitulo">0 tareas sin completar</p>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Módulos visibles solo en móvil -->
+            <section class="menu-modulos-movil" >
+                <div class="titulo-modulos-contenedor">
+                    <h2 class="titulo-modulos">AGROSOFT</h2>
                 </div>
-            </article>
-        </section>
+                
+                <a href="#" class="modulo-movil" data-seccion="cultivos">
+                    <img src="/k/movil/cultivos.png" alt="Cultivos">
+                    <span>Cultivos</span>
+                </a>
+                <a href="#" class="modulo-movil" data-seccion="tareas">
+                    <img src="/k/movil/tareas.png" alt="Tareas">
+                    <span>Tareas</span>
+                </a>
+                <a href="#" class="modulo-movil" data-seccion="tratamiento">
+                    <img src="/k/movil/tratamiento.png" alt="Tratamiento">
+                    <span>Tratamiento</span>
+                </a>
+                <a href="#" class="modulo-movil" data-seccion="inventario">
+                    <img src="/k/movil/inventario.png" alt="Inventario">
+                    <span>Inventario</span>
+                </a>
+                <a href="#" class="modulo-movil" data-seccion="ventas">
+                    <img src="/k/movil/dinero.png" alt="Ventas">
+                    <span>Ventas</span>
+                </a>
+                <a href="#" class="modulo-movil" data-seccion="reportes">
+                    <img src="/k/movil/reporte.png" alt="Reporte">
+                    <span>Reporte</span>
+                </a>
+                <a href="#" class="modulo-movil" data-seccion="historial">
+                    <img src="/k/movil/historial.png" alt="Historial">
+                    <span>Historial</span>
+                </a>
+                <a href="#" class="modulo-movil" data-seccion="notificaciones">
+                    <img src="/k/movil/notificaciones.png" alt="Notificaciones">
+                    <span>Notificaciones</span>
+                </a>
+            </section>
+
         </section>
     </main>
 
-    <script src="dashboar.js"></script>
+    <nav class="barra-nav-movil">
+        <a href="/ajustes" class="nav-movil-item">
+            <img src="/k/movil/configuraciones.png" class="nav-movil-icono" alt="Ajustes">
+            <span>Ajustes</span>
+        </a>
+        <a href="/inicio" class="nav-movil-item activo">
+            <img src="/k/movil/logo.png" class="nav-movil-icono nav-movil-icono1" alt="Inicio">
+            <span>Inicio</span>
+        </a>
+        <a href="/perfil" class="nav-movil-item">
+            <img src="/k/movil/user.png" class="nav-movil-icono" alt="Perfil">
+            <span>Perfil</span>
+        </a>
+    </nav>
+
 </body>
 </html>
