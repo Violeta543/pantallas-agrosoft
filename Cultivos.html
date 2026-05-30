@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrosoft - Gestión de Cultivos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <aside class="barra-lateral">
+        <div class="logo">
+            <span class="logo-texto">AGROSOFT</span>
+        </div>
+        <nav class="menu-lateral">
+            <a href="#" class="enlace-menu" data-seccion="dashboard">
+                <img src="/k/imagenes/dash.png" alt="Dashboard" class="icono-menu">
+                <span class="texto-menu">Dashboard</span>
+            </a>
+            <a href="#" class="enlace-menu activo" data-seccion="cultivos">
+                <img src="/k/imagenes/cultivos.png" alt="Cultivos" class="icono-menu">
+                <span class="texto-menu">Cultivos</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="tareas">
+                <img src="/k/imagenes/tareas.png" alt="Tareas" class="icono-menu">
+                <span class="texto-menu">Tareas</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="tratamiento">
+                <img src="/k/imagenes/tratamiento.png" alt="Tratamiento" class="icono-menu">
+                <span class="texto-menu">Tratamiento</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="inventario">
+                <img src="/k/imagenes/inventarios.png" alt="Inventarios" class="icono-menu">
+                <span class="texto-menu">Inventarios</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="ventas">
+                <img src="/k/imagenes/ventas.png" alt="Ventas" class="icono-menu">
+                <span class="texto-menu">Ventas</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="reportes">
+                <img src="/k/imagenes/reportes.png" alt="Reportes" class="icono-menu">
+                <span class="texto-menu">Reportes</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="historial">
+                <img src="/k/imagenes/historial.png" alt="Historial" class="icono-menu">
+                <span class="texto-menu">Historial</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="notificaciones">
+                <img src="/k/imagenes/notificaciones.png" alt="Notificaciones" class="icono-menu">
+                <span class="texto-menu">Notificaciones</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="ajustes">
+                <img src="/k/imagenes/ajustes.png" alt="Ajustes" class="icono-menu">
+                <span class="texto-menu">Ajustes</span>
+            </a>
+        </nav>
+        <a href="/index.html" class="boton-cerrar">
+            <img src="/k/imagenes/cerrar.png" alt="Cerrar" class="icono-cerrar">
+            <span>Cerrar sesión</span>
+        </a>
+    </aside>
+ 
+    <main class="contenedor-principal">
+        <header class="encabezado">
+            <img src="/k/imagenes/logo.png" alt="Logo" class="Logo-header-icono">
+            <div class="encabezado-texto">
+                <h1 class="titulo-pagina">GESTIÓN DE CULTIVOS</h1>
+                <p class="subtitulo-pagina">Registra y clasifica tus cultivos</p>
+            </div>
+            <div class="usuario-contenedor">
+                <img src="/k/imagenes/perfil.png" alt="Perfil" class="usuario-icono">
+                <div class="usuario">
+                    <span class="usuario-nombre">Yonatan Gómez</span>
+                    <span class="usuario-rol">Administrador</span>
+                </div>
+            </div>
+        </header>
+ 
+        <div class="area-contenido">
+            <div class="barra-herramientas">
+                <div class="filtro-wrapper">
+                    <button class="btn-filtro" id="btn-filtro" onclick="toggleFiltro()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                        </svg>
+                        Filtrar
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:12px;height:12px" id="filtro-chevron">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-filtro" id="dropdown-filtro">
+                        <div class="dropdown-filtro-titulo">Tipo de cultivo</div>
+                        <button class="dropdown-filtro-item seleccionado" onclick="filtrarPor('todos')">
+                            
+                            Todos
+                        </button>
+                        <div class="dropdown-separador"></div>
+                        <button class="dropdown-filtro-item" onclick="filtrarPor('Cereal')">
+                            
+                            Cereales
+                        </button>
+                        <button class="dropdown-filtro-item" onclick="filtrarPor('Frutal')">
+                            
+                            Frutas
+                        </button>
+                        <button class="dropdown-filtro-item" onclick="filtrarPor('Hortaliza')">
+                            
+                            Hortalizas
+                        </button>
+                        <button class="dropdown-filtro-item" onclick="filtrarPor('Leguminosa')">
+                            
+                            Legumbres
+                        </button>
+                        <button class="dropdown-filtro-item" onclick="filtrarPor('Tubérculo')">
+                            
+                            Tubérculos
+                        </button>
+                    </div>
+                </div>
+ 
+                <div class="buscador-contenedor">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    <input type="text" class="buscador-input" id="buscador" placeholder="Buscar...">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px;color:#7d8a7f;flex-shrink:0">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                </div>
+ 
+                <button class="btn-nuevo-cultivo" onclick="abrirModalNuevo()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                    <span>Nuevo Cultivo</span>
+                </button>
+            </div>
+ 
+            <div class="grid-cultivos" id="grid-cultivos"></div>
+ 
+            <div class="paginacion">
+                <button class="btn-pagina" title="Anterior" onclick="cambiarPagina(-1)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </button>
+                <span id="pagina-info" class="btn-pagina activo">1</span>
+                <button class="btn-pagina" title="Siguiente" onclick="cambiarPagina(1)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </main>
+ 
+    <!-- MODAL: NUEVO CULTIVO -->
+    <div class="overlay" id="overlay-nuevo">
+        <div class="modal">
+            <div class="modal-titulo">Nuevo Cultivo</div>
+            <div class="campo-form">
+                <label>Nombre del cultivo</label>
+                <input type="text" id="nuevo-nombre" placeholder="Ej: Maíz amarillo">
+            </div>
+            <div class="campo-form">
+                <label>Tipo de cultivo</label>
+                <select id="nuevo-tipo">
+                    <option value="">Seleccionar...</option>
+                    <option>Cereal</option>
+                    <option>Hortaliza</option>
+                    <option>Frutal</option>
+                    <option>Leguminosa</option>
+                    <option>Tubérculo</option>
+                </select>
+            </div>
+            <div class="campo-form">
+                <label>Ubicación</label>
+                <input type="text" id="nuevo-ubicacion" placeholder="Ej: Lote 8">
+            </div>
+            <div class="campo-form">
+                <label>Fecha de siembra</label>
+                <input type="date" id="nuevo-fecha">
+            </div>
+            <div class="campo-form">
+                <label>Estado</label>
+                <select id="nuevo-estado">
+                    <option value="">Seleccionar...</option>
+                    <option>Saludable</option>
+                    <option>En crecimiento</option>
+                    <option>En riesgo</option>
+                    <option>Cosechado</option>
+                </select>
+            </div>
+            <div class="campo-form">
+                <label>Imagen del cultivo</label>
+                <div class="campo-imagen-upload" id="upload-nuevo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+                        <polyline points="21 15 16 10 5 21"/>
+                    </svg>
+                    <div>Haz clic para subir imagen desde el PC</div>
+                    <div style="font-size:0.75rem;margin-top:4px;color:#aab8aa">JPG, PNG, WEBP (máx. 5 MB)</div>
+                    <input type="file" accept="image/*" onchange="previsualizarImagen(this, 'preview-nuevo', 'upload-nuevo')">
+                    <img id="preview-nuevo" class="imagen-preview" src="" alt="Vista previa">
+                </div>
+            </div>
+            <div class="modal-botones">
+                <button class="btn-modal-guardar" onclick="guardarNuevo()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px"><polyline points="20 6 9 17 4 12"/></svg>
+                    Guardar
+                </button>
+                <button class="btn-modal-cancelar" onclick="cerrarModales()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- MODAL: EDITAR CULTIVO -->
+    <div class="overlay" id="overlay-editar">
+        <div class="modal">
+            <div class="modal-titulo">Editar Cultivo</div>
+            <div class="campo-form">
+                <label>Nombre del cultivo</label>
+                <input type="text" id="editar-nombre">
+            </div>
+            <div class="campo-form">
+                <label>Tipo de cultivo</label>
+                <select id="editar-tipo">
+                    <option>Cereal</option>
+                    <option>Hortaliza</option>
+                    <option>Frutal</option>
+                    <option>Legumbres</option>
+                    <option>Tubérculo</option>
+                </select>
+            </div>
+            <div class="campo-form">
+                <label>Ubicación</label>
+                <input type="text" id="editar-ubicacion">
+            </div>
+            <div class="campo-form">
+                <label>Fecha de siembra</label>
+                <input type="date" id="editar-fecha">
+            </div>
+            <div class="campo-form">
+                <label>Estado</label>
+                <select id="editar-estado">
+                    <option>Saludable</option>
+                    <option>En crecimiento</option>
+                    <option>En riesgo</option>
+                    <option>Cosechado</option>
+                </select>
+            </div>
+            <div class="campo-form">
+                <label>Imagen del cultivo</label>
+                <div class="campo-imagen-upload" id="upload-editar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+                        <polyline points="21 15 16 10 5 21"/>
+                    </svg>
+                    <div>Haz clic para cambiar la imagen</div>
+                    <div style="font-size:0.75rem;margin-top:4px;color:#aab8aa">JPG, PNG, WEBP (máx. 5 MB)</div>
+                    <input type="file" accept="image/*" onchange="previsualizarImagen(this, 'preview-editar', 'upload-editar')">
+                    <img id="preview-editar" class="imagen-preview" src="" alt="Vista previa">
+                </div>
+            </div>
+            <div class="modal-botones">
+                <button class="btn-modal-guardar" onclick="guardarEdicion()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px"><polyline points="20 6 9 17 4 12"/></svg>
+                    Actualizar
+                </button>
+                <button class="btn-modal-cancelar" onclick="cerrarModales()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- MODAL: ELIMINAR CULTIVO -->
+    <div class="overlay" id="overlay-eliminar">
+        <div class="modal modal-eliminar">
+            <div class="modal-eliminar-icono">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="3 6 5 6 21 6"/>
+                    <path d="M19 6l-1 14H6L5 6"/>
+                    <path d="M10 11v6M14 11v6"/>
+                    <path d="M9 6V4h6v2"/>
+                </svg>
+            </div>
+            <div class="modal-titulo">¿Eliminar cultivo?</div>
+            <div class="modal-eliminar-nombre" id="eliminar-nombre-label"></div>
+            <div class="modal-eliminar-aviso">
+                Esta acción no se puede deshacer. Se eliminarán todos los datos asociados a este cultivo.
+            </div>
+            <div class="modal-botones">
+                <button class="btn-modal-cancelar" onclick="cerrarModales()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px"><polyline points="15 18 9 12 15 6"/></svg>
+                    Cancelar
+                </button>
+                <button class="btn-modal-eliminar" onclick="confirmarEliminar()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:15px;height:15px">
+                        <polyline points="3 6 5 6 21 6"/>
+                        <path d="M19 6l-1 14H6L5 6"/>
+                        <path d="M10 11v6M14 11v6"/>
+                        <path d="M9 6V4h6v2"/>
+                    </svg>
+                    Eliminar
+                </button>
+            </div>
+        </div>
+    </div>
+ 
+    <script>
+        // =====================================================
+        // DATOS EN MEMORIA
+        // =====================================================
+        var cultivos = [
+            {
+                id: 1,
+                nombre: 'Maíz',
+                tipo: 'Cereal',
+                ubicacion: 'Lote 8',
+                fecha: '2026-02-20',
+                estado: 'Saludable',
+                imagen: ''
+            }
+        ];
+        var siguienteId = 2;
+        var cultivoEditandoId = null;
+        var cultivoEliminandoId = null;
+        var filtroActivo = 'todos';
+        var paginaActual = 1;
+        var porPagina = 6;
+
+        // =====================================================
+        // RENDERIZADO DEL GRID
+        // =====================================================
+        function formatearFecha(fecha) {
+            if (!fecha) return '—';
+            var partes = fecha.split('-');
+            if (partes.length !== 3) return fecha;
+            return partes[2] + '/' + partes[1] + '/' + partes[0];
+        }
+
+        function cultivosFiltrados() {
+            var query = document.getElementById('buscador').value.toLowerCase().trim();
+            return cultivos.filter(function(c) {
+                var coincideBusqueda = c.nombre.toLowerCase().includes(query);
+                var coincideTipo = (filtroActivo === 'todos') || (c.tipo === filtroActivo);
+                return coincideBusqueda && coincideTipo;
+            });
+        }
+
+        function renderGrid() {
+            var grid = document.getElementById('grid-cultivos');
+            var lista = cultivosFiltrados();
+            var totalPaginas = Math.max(1, Math.ceil(lista.length / porPagina));
+            if (paginaActual > totalPaginas) paginaActual = totalPaginas;
+
+            var inicio = (paginaActual - 1) * porPagina;
+            var pagina = lista.slice(inicio, inicio + porPagina);
+
+            // Completar con celdas vacías hasta 6
+            var celdas = pagina.slice();
+            while (celdas.length < porPagina) celdas.push(null);
+
+            grid.innerHTML = celdas.map(function(c) {
+                if (!c) {
+                    return '<div class="celda-cultivo">' +
+                        '<div class="celda-encabezado vacia">CULTIVO</div>' +
+                        '<div class="celda-cuerpo vacia"></div>' +
+                        '</div>';
+                }
+                var imagenHTML = c.imagen
+                    ? '<img src="' + c.imagen + '" style="width:100%;max-height:80px;object-fit:cover;border-radius:6px;margin-bottom:8px;border:1px solid #c8d8c8">'
+                    : '';
+                return '<div class="celda-cultivo" data-id="' + c.id + '">' +
+                    '<div class="celda-encabezado">CULTIVO</div>' +
+                    '<div class="celda-cuerpo">' +
+                        imagenHTML +
+                        '<div class="cultivo-nombre">' + c.nombre + '</div>' +
+                        '<span class="cultivo-badge">' + c.tipo + '</span>' +
+                        '<div class="cultivo-info">Ubicación: ' + (c.ubicacion || '—') + '</div>' +
+                        '<div class="cultivo-info">Fecha de siembra: ' + formatearFecha(c.fecha) + '</div>' +
+                        '<div class="cultivo-info">Estado: ' + (c.estado || '—') + '</div>' +
+                        '<div class="cultivo-acciones">' +
+                            '<button class="btn-accion btn-editar" onclick="abrirModalEditar(' + c.id + ')" title="Editar cultivo">' +
+                                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">' +
+                                '<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>' +
+                                '<path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>' +
+                                '</svg>' +
+                            '</button>' +
+                            '<button class="btn-accion btn-eliminar" onclick="abrirModalEliminar(' + c.id + ')" title="Eliminar cultivo">' +
+                                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">' +
+                                '<polyline points="3 6 5 6 21 6"/>' +
+                                '<path d="M19 6l-1 14H6L5 6"/>' +
+                                '<path d="M10 11v6M14 11v6"/>' +
+                                '<path d="M9 6V4h6v2"/>' +
+                                '</svg>' +
+                            '</button>' +
+                        '</div>' +
+                    '</div>' +
+                    '</div>';
+            }).join('');
+
+            // Paginación
+            document.getElementById('pagina-info').textContent = paginaActual;
+        }
+
+        // =====================================================
+        // PAGINACIÓN
+        // =====================================================
+        function cambiarPagina(dir) {
+            var lista = cultivosFiltrados();
+            var totalPaginas = Math.max(1, Math.ceil(lista.length / porPagina));
+            paginaActual = Math.min(Math.max(1, paginaActual + dir), totalPaginas);
+            renderGrid();
+        }
+
+        // =====================================================
+        // MODALES — ABRIR
+        // =====================================================
+        function abrirModalNuevo() {
+            document.getElementById('nuevo-nombre').value    = '';
+            document.getElementById('nuevo-tipo').value      = '';
+            document.getElementById('nuevo-ubicacion').value = '';
+            document.getElementById('nuevo-fecha').value     = '';
+            document.getElementById('nuevo-estado').value    = '';
+            var prev = document.getElementById('preview-nuevo');
+            prev.classList.remove('visible');
+            prev.src = '';
+            document.getElementById('overlay-nuevo').classList.add('activo');
+        }
+
+        function abrirModalEditar(id) {
+            var c = cultivos.find(function(x) { return x.id === id; });
+            if (!c) return;
+            cultivoEditandoId = id;
+            document.getElementById('editar-nombre').value    = c.nombre;
+            document.getElementById('editar-tipo').value      = c.tipo;
+            document.getElementById('editar-ubicacion').value = c.ubicacion;
+            document.getElementById('editar-fecha').value     = c.fecha;
+            document.getElementById('editar-estado').value    = c.estado;
+            var prev = document.getElementById('preview-editar');
+            if (c.imagen) {
+                prev.src = c.imagen;
+                prev.classList.add('visible');
+            } else {
+                prev.src = '';
+                prev.classList.remove('visible');
+            }
+            document.getElementById('overlay-editar').classList.add('activo');
+        }
+
+        function abrirModalEliminar(id) {
+            var c = cultivos.find(function(x) { return x.id === id; });
+            if (!c) return;
+            cultivoEliminandoId = id;
+            document.getElementById('eliminar-nombre-label').textContent = '"' + c.nombre.toUpperCase() + '"';
+            document.getElementById('overlay-eliminar').classList.add('activo');
+        }
+
+        // =====================================================
+        // MODALES — CERRAR
+        // =====================================================
+        function cerrarModales() {
+            document.querySelectorAll('.overlay').forEach(function(o) {
+                o.classList.remove('activo');
+            });
+        }
+
+        document.querySelectorAll('.overlay').forEach(function(overlay) {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) cerrarModales();
+            });
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') { cerrarModales(); cerrarFiltro(); }
+        });
+
+        // =====================================================
+        // GUARDAR NUEVO
+        // =====================================================
+        function guardarNuevo() {
+            var nombre = document.getElementById('nuevo-nombre').value.trim();
+            var tipo   = document.getElementById('nuevo-tipo').value;
+            if (!nombre) { document.getElementById('nuevo-nombre').focus(); return; }
+            if (!tipo)   { document.getElementById('nuevo-tipo').focus(); return; }
+
+            var prev = document.getElementById('preview-nuevo');
+            var imagen = prev.classList.contains('visible') ? prev.src : '';
+
+            cultivos.push({
+                id: siguienteId++,
+                nombre:    nombre,
+                tipo:      tipo,
+                ubicacion: document.getElementById('nuevo-ubicacion').value.trim(),
+                fecha:     document.getElementById('nuevo-fecha').value,
+                estado:    document.getElementById('nuevo-estado').value,
+                imagen:    imagen
+            });
+
+            cerrarModales();
+            paginaActual = Math.ceil(cultivos.length / porPagina);
+            renderGrid();
+        }
+
+        // =====================================================
+        // GUARDAR EDICIÓN
+        // =====================================================
+        function guardarEdicion() {
+            var nombre = document.getElementById('editar-nombre').value.trim();
+            if (!nombre) { document.getElementById('editar-nombre').focus(); return; }
+
+            var prev = document.getElementById('preview-editar');
+            var imagen = prev.classList.contains('visible') ? prev.src : '';
+
+            var c = cultivos.find(function(x) { return x.id === cultivoEditandoId; });
+            if (!c) return;
+
+            c.nombre    = nombre;
+            c.tipo      = document.getElementById('editar-tipo').value;
+            c.ubicacion = document.getElementById('editar-ubicacion').value.trim();
+            c.fecha     = document.getElementById('editar-fecha').value;
+            c.estado    = document.getElementById('editar-estado').value;
+            if (imagen) c.imagen = imagen;
+
+            cerrarModales();
+            renderGrid();
+        }
+
+        // =====================================================
+        // CONFIRMAR ELIMINAR
+        // =====================================================
+        function confirmarEliminar() {
+            cultivos = cultivos.filter(function(x) { return x.id !== cultivoEliminandoId; });
+            cultivoEliminandoId = null;
+            cerrarModales();
+            renderGrid();
+        }
+
+        // =====================================================
+        // BUSCADOR
+        // =====================================================
+        document.getElementById('buscador').addEventListener('input', function() {
+            paginaActual = 1;
+            renderGrid();
+        });
+
+        // =====================================================
+        // FILTRO DROPDOWN
+        // =====================================================
+        function toggleFiltro() {
+            document.getElementById('dropdown-filtro').classList.toggle('abierto');
+        }
+
+        function cerrarFiltro() {
+            document.getElementById('dropdown-filtro').classList.remove('abierto');
+        }
+
+        function filtrarPor(tipo) {
+            filtroActivo = tipo;
+            document.querySelectorAll('.dropdown-filtro-item').forEach(function(item) {
+                item.classList.remove('seleccionado');
+            });
+            event.currentTarget.classList.add('seleccionado');
+            var textos = {
+                'todos': 'Filtrar', 'Cereal': 'Cereales', 'Frutal': 'Frutas',
+                'Hortaliza': 'Hortalizas', 'Leguminosa': 'Legumbres', 'Tubérculo': 'Tubérculos'
+            };
+            document.getElementById('btn-filtro').childNodes[2].textContent = ' ' + (textos[tipo] || 'Filtrar') + ' ';
+            paginaActual = 1;
+            renderGrid();
+            cerrarFiltro();
+        }
+
+        document.addEventListener('click', function(e) {
+            var wrapper = document.querySelector('.filtro-wrapper');
+            if (wrapper && !wrapper.contains(e.target)) cerrarFiltro();
+        });
+
+        // =====================================================
+        // PREVIEW IMAGEN
+        // =====================================================
+        function previsualizarImagen(input, previewId, uploadId) {
+            var file = input.files[0];
+            if (!file) return;
+            if (file.size > 5 * 1024 * 1024) {
+                alert('La imagen supera el tamaño máximo de 5 MB.');
+                input.value = '';
+                return;
+            }
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var preview = document.getElementById(previewId);
+                preview.src = e.target.result;
+                preview.classList.add('visible');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // =====================================================
+        // INICIO
+        // =====================================================
+        renderGrid();
+    </script>
+<!-- BARRA NAVEGACIÓN MÓVIL -->
+<nav class="barra-nav-movil">
+    <a href="#" class="nav-movil-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+        <span>Perfil</span>
+    </a>
+    <a href="#" class="nav-movil-item activo">
+    <img src="/img/incono-inicio.jpeg" class="icono-inicio-personalizado">
+    <span>Inicio</span>
+</a>
+    <a href="#" class="nav-movil-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+        <span>Ajustes</span>
+    </a>
+</nav>
+</body>
+</html>
