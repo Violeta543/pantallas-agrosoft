@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style1.css">
 </head>
 <body>
+    <!-- BARRA LATERAL -->
     <aside class="barra-lateral">
         <div class="logo">
             <span class="logo-texto">AGROSOFT</span>
@@ -41,7 +42,7 @@
                 <img src="/k/imagenes/reportes.png" alt="Reportes" class="icono-menu">
                 <span class="texto-menu">Reportes</span>
             </a>
-            <a href="#" class="enlace-menu" data-seccion="historial">
+            <a href="historial.html" class="enlace-menu" data-seccion="historial">
                 <img src="/k/imagenes/historial.png" alt="Historial" class="icono-menu">
                 <span class="texto-menu">Historial</span>
             </a>
@@ -55,13 +56,15 @@
             </a>
         </nav>
 
-        <a href="/index.html" class="boton-cerrar">
+        <a href="#" class="boton-cerrar" onclick="mostrarModalCerrarSesion(event)">
             <img src="/k/imagenes/cerrar.png" alt="Cerrar" class="icono-cerrar">
             <span>Cerrar sesión</span>
         </a>
     </aside>
 
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="contenedor-principal">
+        <!-- ENCABEZADO -->
         <header class="encabezado">
             <img src="/k/imagenes/logo.png" alt="Logo" class="Logo-header-icono">
             <div class="encabezado-texto">
@@ -78,8 +81,7 @@
         </header>
 
         <section class="contenido-fondo">
-
-            <!-- Tarjetas de resumen: visibles solo en escritorio -->
+            <!-- TARJETAS DE RESUMEN -->
             <section class="tarjetas-resumen">
                 <article class="tarjeta tarjeta-verde">
                     <img src="/k/imagenes/tarjeta1.png" alt="Cultivos" class="tarjeta-icono-img">
@@ -109,6 +111,7 @@
                 </article>
             </section>
 
+            <!-- ALERTAS -->
             <section class="alertas-resumen">
                 <article class="alerta alerta-rosa">
                     <img src="/k/imagenes/inventario.png" alt="Inventario" class="alerta-icono">
@@ -127,7 +130,7 @@
                 </article>
             </section>
 
-            <!-- Módulos visibles solo en móvil -->
+            <!-- MÓDULOS MÓVILES -->
             <section class="menu-modulos-movil" >
                 <div class="titulo-modulos-contenedor">
                     <h2 class="titulo-modulos">AGROSOFT</h2>
@@ -157,7 +160,7 @@
                     <img src="/k/movil/reporte.png" alt="Reporte">
                     <span>Reporte</span>
                 </a>
-                <a href="#" class="modulo-movil" data-seccion="historial">
+                <a href="historial.html" class="modulo-movil" data-seccion="historial">
                     <img src="/k/movil/historial.png" alt="Historial">
                     <span>Historial</span>
                 </a>
@@ -166,16 +169,16 @@
                     <span>Notificaciones</span>
                 </a>
             </section>
-
         </section>
     </main>
 
+    <!-- BARRA DE NAVEGACIÓN MÓVIL -->
     <nav class="barra-nav-movil">
         <a href="/ajustes" class="nav-movil-item">
             <img src="/k/movil/configuraciones.png" class="nav-movil-icono" alt="Ajustes">
             <span>Ajustes</span>
         </a>
-        <a href="/inicio" class="nav-movil-item activo">
+        <a href="dashboard.html" class="nav-movil-item activo">
             <img src="/k/movil/logo.png" class="nav-movil-icono nav-movil-icono1" alt="Inicio">
             <span>Inicio</span>
         </a>
@@ -184,6 +187,35 @@
             <span>Perfil</span>
         </a>
     </nav>
+
+    <!-- MODAL DE CIERRE DE SESIÓN -->
+    <div id="modal-cerrar-sesion" class="modal-cerrar-sesion">
+        <div class="modal-contenido">
+            <p class="modal-texto-1">¿Deseas cerrar sesion?</p>
+            <p class="modal-texto-2">"Yonatan Gomez"</p>
+            <p class="modal-texto-3">Esta accion no se puede deshacer, se cerrara tu cuenta y no tendras acceso a los datos.</p>
+            <div class="modal-botones">
+                <button class="modal-btn modal-btn-cerrar" onclick="confirmarCerrarSesion()">Cerrar Sesión</button>
+                <button class="modal-btn modal-btn-cancelar" onclick="ocultarModalCerrarSesion()">X Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        function mostrarModalCerrarSesion(event) {
+            event.preventDefault();
+            document.getElementById('modal-cerrar-sesion').style.display = 'flex';
+        }
+
+        function ocultarModalCerrarSesion() {
+            document.getElementById('modal-cerrar-sesion').style.display = 'none';
+        }
+
+        function confirmarCerrarSesion() {
+            window.location.href = '/index.html';
+        }
+    </script>
 
 </body>
 </html>

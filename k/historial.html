@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrosoft Historial</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style-historial.css">
+</head>
+<body>
+    <!-- BARRA LATERAL -->
+    <aside class="barra-lateral">
+        <div class="logo">
+            <span class="logo-texto">AGROSOFT</span>
+        </div>
+
+        <nav class="menu-lateral">
+            <a href="dashboard.html" class="enlace-menu">
+                <img src="/k/imagenes/dash.png" alt="Dashboard" class="icono-menu">
+                <span class="texto-menu">Dashboard</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="cultivos">
+                <img src="/k/imagenes/cultivos.png" alt="Cultivos" class="icono-menu">
+                <span class="texto-menu">Cultivos</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="tareas">
+                <img src="/k/imagenes/tareas.png" alt="Tareas" class="icono-menu">
+                <span class="texto-menu">Tareas</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="tratamiento">
+                <img src="/k/imagenes/tratamiento.png" alt="Tratamiento" class="icono-menu">
+                <span class="texto-menu">Tratamiento</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="inventario">
+                <img src="/k/imagenes/inventarios.png" alt="Inventario" class="icono-menu">
+                <span class="texto-menu">Inventario</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="ventas">
+                <img src="/k/imagenes/ventas.png" alt="Ventas" class="icono-menu">
+                <span class="texto-menu">Ventas</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="reportes">
+                <img src="/k/imagenes/reportes.png" alt="Reportes" class="icono-menu">
+                <span class="texto-menu">Reportes</span>
+            </a>
+            <a href="#" class="enlace-menu activo" data-seccion="historial">
+                <img src="/k/imagenes/historial.png" alt="Historial" class="icono-menu">
+                <span class="texto-menu">Historial</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="notificaciones">
+                <img src="/k/imagenes/notificaciones.png" alt="Notificaciones" class="icono-menu">
+                <span class="texto-menu">Notificaciones</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="ajustes">
+                <img src="/k/imagenes/ajustes.png" alt="Ajustes" class="icono-menu">
+                <span class="texto-menu">Ajustes</span>
+            </a>
+        </nav>
+
+        <a href="#" class="boton-cerrar" onclick="mostrarModalCerrarSesion(event)">
+            <img src="/k/imagenes/cerrar.png" alt="Cerrar" class="icono-cerrar">
+            <span>Cerrar sesión</span>
+        </a>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor-principal">
+        <!-- ENCABEZADO -->
+        <header class="encabezado">
+            <img src="/k/imagenes/logo.png" alt="Logo" class="Logo-header-icono">
+            <div class="encabezado-texto">
+                <h1 class="titulo-pagina">HISTORIAL</h1>
+                <p class="subtitulo-pagina">Registro de actividades y eventos</p>
+            </div>
+            <div class="usuario-contenedor">
+                <img src="/k/imagenes/perfil.png" alt="Perfil" class="usuario-icono">
+                <div class="usuario">
+                    <span class="usuario-nombre">Yonatan Gómez</span>
+                    <span class="usuario-rol">Administrador</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="contenido-fondo">
+            <!-- BARRA DE BÚSQUEDA -->
+            <div class="barra-busqueda">
+                <img src="/k/historial/filtro.png" alt="Buscar" class="barra-busqueda-icono" onclick="toggleFiltro()">
+                <button class="barra-busqueda-filtro" onclick="toggleFiltro()">Filtrar...</button>
+                <span class="barra-busqueda-texto">Buscar</span>
+                <img src="/k/historial/search.png" alt="Imagen" class="barra-busqueda-imagen">
+                
+                
+                <div class="filtro-menu" id="filtroMenu">
+                    <div class="filtro-opcion">Cultivo</div>
+                    <div class="filtro-opcion">Tareas</div>
+                    <div class="filtro-opcion">Ventas</div>
+                    <div class="filtro-opcion">Tratamiento</div>
+                    <div class="filtro-opcion">Reportes</div>
+                    <div class="filtro-opcion">Inventario</div>
+                </div>
+            </div>
+
+            <!-- TARJETAS DE HISTORIAL -->
+            <section class="tarjetas-historial">
+                <article class="tarjeta-historial tarjeta-1">
+                    <span class="tarjeta-historial-nombre">Cultivo</span>
+                    <img src="/k/historial/basura.png" alt="Icono" class="tarjeta-historial-icono-derecha" onclick="mostrarModalEliminar()">
+                    <p class="tarjeta-historial-texto">Descripción de la actividad realizada</p>
+                    <div class="tarjeta-historial-base">
+                        <img src="/k/historial/Clock.png" alt="Icono 1" class="tarjeta-historial-icono-base">
+                        <span class="tarjeta-historial-hora">10:30 AM</span>
+                        <img src="/k/historial/Calendar.png" alt="Icono 2" class="tarjeta-historial-icono-base">
+                        <span class="tarjeta-historial-fecha">15/05/2026</span>
+                    </div>
+                </article>
+
+                <article class="tarjeta-historial tarjeta-2">
+                    <span class="tarjeta-historial-nombre">Tareas</span>
+                    <img src="/k/historial/basura.png" alt="Icono" class="tarjeta-historial-icono-derecha" onclick="mostrarModalEliminar()">
+                    <p class="tarjeta-historial-texto">Descripción de la actividad realizada</p>
+                    <div class="tarjeta-historial-base">
+                        <img src="/k/historial/Clock.png" alt="Icono 1" class="tarjeta-historial-icono-base">
+                        <span class="tarjeta-historial-hora">11:45 AM</span>
+                        <img src="/k/historial/Calendar.png" alt="Icono 2" class="tarjeta-historial-icono-base">
+                        <span class="tarjeta-historial-fecha">15/05/2026</span>
+                    </div>
+                </article>
+
+                <article class="tarjeta-historial tarjeta-3">
+                    <span class="tarjeta-historial-nombre">Ventas</span>
+                    <img src="/k/historial/basura.png" alt="Icono" class="tarjeta-historial-icono-derecha" onclick="mostrarModalEliminar()">
+                    <p class="tarjeta-historial-texto">Descripción de la actividad realizada</p>
+                    <div class="tarjeta-historial-base">
+                        <img src="/k/historial/Clock.png" alt="Icono 1" class="tarjeta-historial-icono-base">
+                        <span class="tarjeta-historial-hora">02:15 PM</span>
+                        <img src="/k/historial/Calendar.png" alt="Icono 2" class="tarjeta-historial-icono-base">
+                        <span class="tarjeta-historial-fecha">16/05/2026</span>
+                    </div>
+                </article>
+
+                <article class="tarjeta-historial tarjeta-4">
+                    <span class="tarjeta-historial-nombre">Tratamiento</span>
+                    <img src="/k/historial/basura.png" alt="Icono" class="tarjeta-historial-icono-derecha" onclick="mostrarModalEliminar()">
+                    <p class="tarjeta-historial-texto">Descripción de la actividad realizada</p>
+                    <div class="tarjeta-historial-base">
+                        <img src="/k/historial/Clock.png" alt="Icono 1" class="tarjeta-historial-icono-base">
+                        <span class="tarjeta-historial-hora">03:30 PM</span>
+                        <img src="/k/historial/Calendar.png" alt="Icono 2" class="tarjeta-historial-icono-base">
+                        <span class="tarjeta-historial-fecha">16/05/2026</span>
+                    </div>
+                </article>
+
+                <article class="tarjeta-historial tarjeta-5">
+                    <span class="tarjeta-historial-nombre">Reportes</span>
+                    <img src="/k/historial/basura.png" alt="Icono" class="tarjeta-historial-icono-derecha" onclick="mostrarModalEliminar()">
+                    <p class="tarjeta-historial-texto">Descripción de la actividad realizada</p>
+                    <div class="tarjeta-historial-base">
+                        <img src="/k/historial/Clock.png" alt="Icono 1" class="tarjeta-historial-icono-base">
+                        <span class="tarjeta-historial-hora">04:45 PM</span>
+                        <img src="/k/historial/Calendar.png" alt="Icono 2" class="tarjeta-historial-icono-base">
+                        <span class="tarjeta-historial-fecha">17/05/2026</span>
+                    </div>
+                </article>
+
+                <article class="tarjeta-historial tarjeta-6">
+                    <span class="tarjeta-historial-nombre">Inventario</span>
+                    <img src="/k/historial/basura.png" alt="Icono" class="tarjeta-historial-icono-derecha" onclick="mostrarModalEliminar()">
+                    <p class="tarjeta-historial-texto">Descripción de la actividad realizada</p>
+                    <div class="tarjeta-historial-base">
+                        <img src="/k/historial/Clock.png" alt="Icono 1" class="tarjeta-historial-icono-base">
+                        <span class="tarjeta-historial-hora">05:00 PM</span>
+                        <img src="/k/historial/Calendar.png" alt="Icono 2" class="tarjeta-historial-icono-base">
+                        <span class="tarjeta-historial-fecha">17/05/2026</span>
+                    </div>
+                </article>
+            </section>
+
+            <!-- PUNTOS DE NAVEGACIÓN -->
+            <div class="puntos-contenedor">
+                <img src="/k/historial/flecha izquierda.png" alt="Imagen izquierda" class="puntos-imagen-izquierda">
+                <span class="punto">.</span>
+                <span class="punto">.</span>
+                <span class="punto">.</span>
+                <img src="/k/historial/Arrow right-circle.png" alt="Imagen derecha" class="puntos-imagen-derecha">
+            </div>
+        </section>
+    </main>
+
+    <!-- BARRA DE NAVEGACIÓN MÓVIL -->
+    <nav class="barra-nav-movil">
+        <a href="/ajustes" class="nav-movil-item">
+            <img src="/k/movil/configuraciones.png" class="nav-movil-icono" alt="Ajustes">
+            <span>Ajustes</span>
+        </a>
+        <a href="dashboard.html" class="nav-movil-item activo">
+            <img src="/k/movil/logo.png" class="nav-movil-icono nav-movil-icono1" alt="Inicio">
+            <span>Inicio</span>
+        </a>
+        <a href="/perfil" class="nav-movil-item">
+            <img src="/k/movil/user.png" class="nav-movil-icono" alt="Perfil">
+            <span>Perfil</span>
+        </a>
+    </nav>
+
+    <!-- MODAL DE CIERRE DE SESIÓN -->
+    <div id="modal-cerrar-sesion" class="modal-cerrar-sesion">
+        <div class="modal-contenido">
+            <p class="modal-texto-1">¿Deseas cerrar sesion?</p>
+            <p class="modal-texto-2">"Yonatan Gomez"</p>
+            <p class="modal-texto-3">Esta accion no se puede deshacer, se cerrara tu cuenta y no tendras acceso a los datos.</p>
+            <div class="modal-botones">
+                <button class="modal-btn modal-btn-cerrar" onclick="confirmarCerrarSesion()">Cerrar Sesión</button>
+                <button class="modal-btn modal-btn-cancelar" onclick="ocultarModalCerrarSesion()">X Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE ELIMINACIÓN -->
+    <div id="modal-eliminar" class="modal-eliminar">
+        <div class="modal-eliminar-contenido">
+            <img src="/k/historial/basura roja.png" alt="Eliminar" class="modal-eliminar-imagen">
+            <p class="modal-eliminar-texto-1">¿Deseas eliminar esta actividad?</p>
+            <p class="modal-eliminar-texto-2">Esta acción no se puede deshacer.</p>
+            <p class="modal-eliminar-texto-3">Se eliminará permanentemente del historial.</p>
+            <div class="modal-eliminar-botones">
+                <button class="modal-eliminar-btn modal-eliminar-btn-confirmar" onclick="confirmarEliminar()">Eliminar</button>
+                <button class="modal-eliminar-btn modal-eliminar-btn-cancelar" onclick="ocultarModalEliminar()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        function toggleFiltro() {
+            const menu = document.getElementById('filtroMenu');
+            menu.classList.toggle('active');
+        }
+
+        function mostrarModalEliminar() {
+            document.getElementById('modal-eliminar').style.display = 'flex';
+        }
+
+        function ocultarModalEliminar() {
+            document.getElementById('modal-eliminar').style.display = 'none';
+        }
+
+        function confirmarEliminar() {
+            document.getElementById('modal-eliminar').style.display = 'none';
+        }
+
+        function mostrarModalCerrarSesion(event) {
+            event.preventDefault();
+            document.getElementById('modal-cerrar-sesion').style.display = 'flex';
+        }
+
+        function ocultarModalCerrarSesion() {
+            document.getElementById('modal-cerrar-sesion').style.display = 'none';
+        }
+
+        function confirmarCerrarSesion() {
+            window.location.href = '/index.html';
+        }
+    </script>
+
+</body>
+</html>
+
