@@ -64,6 +64,10 @@ a {
     z-index: 10;
 }
 
+.logo-centrado {
+    display: none;
+}
+
 /* ========================================
    CONTENEDORES
    ======================================== */
@@ -283,7 +287,7 @@ input::placeholder {
     transition: color 0.3s ease;
     cursor: pointer;
     margin-top: auto;
-    padding-top: 20px;
+    padding-bottom: 40px;
 }
 
 .recuperar:hover {
@@ -296,34 +300,49 @@ input::placeholder {
 
 @media (max-width: 768px) {
     body {
-        padding: 20px 15px;
+        padding: 30px 15px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/movil.png);
+        overflow: hidden;
     }
 
-    .logo1 {
-        width: 65px;
-        height: 105px;
-        top: 15px;
-        transform: translateX(-130px);
+    .logo1, .logo2 {
+        display: none;
     }
 
-    .logo2 {
-        width: 90px;
-        height: 90px;
-        top: 15px;
-        transform: translateX(105px);
+    .logo-centrado {
+        display: block;
+        margin: 0 auto 1px;
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        margin-top: 30px;
+        margin-bottom: -23px;
     }
 
     .cuadro,
     .cuadro1,
     .cuadro2 {
         width: 95%;
-        padding: 80px 35px 35px;
+        max-width: 470px;
+        padding: 15px 15px;
         border-radius: 25px;
+        min-height: auto;
     }
 
     h2 {
-        font-size: 45px;
+        font-size: 49px;
+        margin-top: -25px;
         margin-bottom: 20px;
+        color: rgba(0, 75, 43, 0.76);
+    }
+
+    .titulo {
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+
+    p {
+        font-size: 18px;
     }
 
     .containboton {
@@ -334,12 +353,15 @@ input::placeholder {
     .botonA {
         width: 180px;
         height: 50px;
-        font-size: 16px;
+        font-size: 19px;
     }
+     .botonA{
+        background-color: rgba(61, 118, 94, 1);
+     }
 
     label {
-        font-size: 15px;
-        margin-left: 25px;
+        font-size: 20px;
+        margin-left: 50px;
     }
 
     .icono {
@@ -354,19 +376,21 @@ input::placeholder {
     }
 
     input {
-        height: 50px;
+        height: 60px;
         padding-left: 100px;
-        font-size: 16px;
+        font-size: 18px;
+        background-color: #eeeeee;
     }
 
     .crearcuenta {
-        width: 180px;
-        height: 50px;
-        font-size: 16px;
+        width: 50%;
+        height: 55px;
+        font-size: 19px;
+        background-color: rgba(61, 118, 94, 1);
     }
 
     .recuperar {
-        font-size: 14px;
+        font-size: 18px;
     }
 }
 
@@ -374,161 +398,92 @@ input::placeholder {
    RESPONSIVE - MÓVILES (480px)
    ======================================== */
 
+/* --- Estilos base para móviles (Pantallas de 480px o menos) --- */
 @media (max-width: 480px) {
+
+
+    .logo1, .logo2 {
+        display: none; /* Oculta los íconos en pantallas muy pequeñas para ganar espacio */
+    }
+
+    .logo-centrado {
+        display: block;
+        margin: 0 auto 1px;
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+    }
+    
     body {
-        padding: 15px 10px;
-    }
-
-    .logo1 {
-        width: 50px;
-        height: 80px;
-        top: 12px;
-        transform: translateX(-100px);
-    }
-
-    .logo2 {
-        width: 70px;
-        height: 70px;
-        top: 12px;
-        transform: translateX(85px);
+        /* Asegura que el fondo cubra bien toda la pantalla del celular */
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/movil.png);
+        background-size: cover;
+        background-position: center;
+        padding: 30px 15px; /* Espacio para que el cuadro no pegue contra los bordes del cel */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
     }
 
     .cuadro,
     .cuadro1,
     .cuadro2 {
+        /* Ajusta el ancho para que ocupe casi toda la pantalla móvil */
         width: 100%;
-        padding: 70px 20px 25px;
-        border-radius: 20px;
-    }
-
-    .cuadro {
-        min-height: auto;
-    }
-
-    .cuadro1 {
-        min-height: auto;
-    }
-
-    .cuadro2 {
+        max-width: 290px;
+        padding: 15px 15px; /* Reducimos un poco los espacios internos */
+        border-radius: 15px; /* Bordes un poco más sutiles en pantallas chicas */
         min-height: auto;
     }
 
     h2 {
-        font-size: 36px;
-        margin-bottom: 15px;
-    }
-
-    .containboton {
-        flex-direction: column;
-        gap: 12px;
+        font-size: 32px; /* Ajusta el tamaño de "AGROSOFT" si queda muy grande */
+        margin-top: 0;
         margin-bottom: 20px;
-        padding: 0;
-    }
-
-    .boton,
-    .botonA {
-        width: 100%;
-        height: 48px;
-        font-size: 15px;
-    }
-
-    label {
-        font-size: 14px;
-        margin-left: 20px;
-        margin-bottom: 6px;
+        color: rgba(0, 75, 43, 0.76);
     }
 
     .titulo {
-        font-size: 15px;
+        margin-bottom: 10px;
     }
 
-    .icono {
-        width: 100%;
-        margin-bottom: 18px;
-        padding: 0;
-    }
-
-    .icono img {
-        width: 40px;
-        height: 36px;
-        left: 18px;
-    }
-
-    input {
-        height: 48px;
-        padding-left: 80px;
-        font-size: 15px;
-    }
-
-    .crearcuenta {
-        width: 100%;
-        height: 48px;
-        font-size: 15px;
-        margin-bottom: 12px;
-    }
-
-    .recuperar {
-        font-size: 13px;
-    }
-}
-
-/* ========================================
-   RESPONSIVE - MÓVILES PEQUEÑOS (360px)
-   ======================================== */
-
-@media (max-width: 360px) {
-    .logo1 {
-        width: 40px;
-        height: 65px;
-        transform: translateX(-85px);
-    }
-
-    .logo2 {
-        width: 55px;
-        height: 55px;
-        transform: translateX(70px);
-    }
-
-    .cuadro,
-    .cuadro1,
-    .cuadro2 {
-        padding: 65px 15px 20px;
-    }
-
-    h2 {
-        font-size: 32px;
-    }
-
-    .containboton {
-        gap: 10px;
-    }
-
-    .boton,
-    .botonA,
-    .crearcuenta {
-        width: 100%;
-        height: 45px;
-        font-size: 14px;
+    p {
+        font-size: 18px;
     }
 
     label {
-        font-size: 13px;
-        margin-left: 15px;
+        font-size: 18px;
+        margin-left: 40px;
     }
 
-    .icono {
-        margin-bottom: 15px;
+    .containboton {
+        width: 100%;
+        display: flex;
+        gap: 10px; /* Espacio entre el botón Iniciar Sesión y Registrarse */
     }
 
-    .icono img {
-        width: 35px;
-        height: 32px;
-        left: 15px;
+    .botonA, .boton {
+        flex: 1; /* Hace que ambos botones midan exactamente lo mismo en horizontal */
+        text-align: center;
+        padding: 12px 5px;
+        font-size: 16px;
+        height: 55px;
     }
 
-    input {
-        height: 45px;
-        padding-left: 70px;
-        font-size: 13px;
+    .icono input {
+        font-size: 16px; /* Evita que iOS/Android hagan un zoom automático molesto al escribir */
+        height: 60px;
+    }
+
+    .crearcuenta {
+        width: 50%;
+        height: 55px;
+        font-size: 16px;
+    }
+
+    .recuperar {
+        font-size: 16px;
     }
 }
