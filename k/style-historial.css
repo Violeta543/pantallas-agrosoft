@@ -2,7 +2,7 @@
 .barra-busqueda {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     padding: 16px 35px;
     background-color: white;
     border-radius: 15px;
@@ -13,8 +13,8 @@
 }
 
 .barra-busqueda-icono {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
 }
 
@@ -70,6 +70,10 @@
     font-weight: 500;
     width: 80%;
     margin-left: auto;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: "DM Sans", sans-serif;
 }
 
 .barra-busqueda-imagen {
@@ -213,7 +217,7 @@
 
 .tarjeta-historial-base .tarjeta-historial-icono-base:last-of-type {
     margin-right: 2px;
-    transform: translateX(195px);
+    transform: translateX(165px);
 }
 
 .tarjeta-historial-icono-base {
@@ -229,8 +233,8 @@
 }
 
 .tarjeta-historial-fecha {
-    margin-left: auto;
-    margin-right: 10px;
+    margin-left: 160px;
+    margin-right: 30px;
 }
 
 /* PUNTOS DE NAVEGACIÓN */
@@ -363,9 +367,19 @@
         padding: 40px 20px 20px 20px;
     }
 
-    /* Mover calendario 325px a la derecha en móvil */
+    /* Mover calendario menos en móvil para que no se salga de pantalla */
+    .tarjeta-historial-base {
+        justify-content: space-between;
+        gap: 8px;
+    }
+    
     .tarjeta-historial-base .tarjeta-historial-icono-base:last-of-type {
-        transform: translateX(325px);
+        margin-right: 5px;
+        transform: translateX(30px);
+    }
+    
+    .tarjeta-historial-fecha {
+        margin-left: 0;
     }
 
     /* Barra de búsqueda en móvil */

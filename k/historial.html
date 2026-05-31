@@ -23,7 +23,7 @@
                 <img src="/k/imagenes/cultivos.png" alt="Cultivos" class="icono-menu">
                 <span class="texto-menu">Cultivos</span>
             </a>
-            <a href="#" class="enlace-menu" data-seccion="tareas">
+            <a href="/M/Tareas.html" class="enlace-menu" data-seccion="tareas">
                 <img src="/k/imagenes/tareas.png" alt="Tareas" class="icono-menu">
                 <span class="texto-menu">Tareas</span>
             </a>
@@ -57,7 +57,7 @@
             </a>
         </nav>
 
-        <a href="#" class="boton-cerrar" onclick="mostrarModalCerrarSesion(event)">
+        <a href="/index.html" class="boton-cerrar">
             <img src="/k/imagenes/cerrar.png" alt="Cerrar" class="icono-cerrar">
             <span>Cerrar sesión</span>
         </a>
@@ -86,7 +86,7 @@
             <div class="barra-busqueda">
                 <img src="/k/historial/filtro.png" alt="Buscar" class="barra-busqueda-icono" onclick="toggleFiltro()">
                 <button class="barra-busqueda-filtro" onclick="toggleFiltro()">Filtrar...</button>
-                <span class="barra-busqueda-texto">Buscar</span>
+                <input type="text" class="barra-busqueda-texto" placeholder="Buscar">
                 <img src="/k/historial/search.png" alt="Imagen" class="barra-busqueda-imagen">
                 
                 
@@ -196,24 +196,11 @@
             <img src="/k/movil/logo.png" class="nav-movil-icono nav-movil-icono1" alt="Inicio">
             <span>Inicio</span>
         </a>
-        <a href="/perfil" class="nav-movil-item">
-            <img src="/k/movil/user.png" class="nav-movil-icono" alt="Perfil">
-            <span>Perfil</span>
+        <a href="/M/Tareas.html" class="nav-movil-item">
+            <img src="/k/movil/user.png" class="nav-movil-icono" alt="Tareas">
+            <span>Tareas</span>
         </a>
     </nav>
-
-    <!-- MODAL DE CIERRE DE SESIÓN -->
-    <div id="modal-cerrar-sesion" class="modal-cerrar-sesion">
-        <div class="modal-contenido">
-            <p class="modal-texto-1">¿Deseas cerrar sesion?</p>
-            <p class="modal-texto-2">"Yonatan Gomez"</p>
-            <p class="modal-texto-3">Esta accion no se puede deshacer, se cerrara tu cuenta y no tendras acceso a los datos.</p>
-            <div class="modal-botones">
-                <button class="modal-btn modal-btn-cerrar" onclick="confirmarCerrarSesion()">Cerrar Sesión</button>
-                <button class="modal-btn modal-btn-cancelar" onclick="ocultarModalCerrarSesion()">X Cancelar</button>
-            </div>
-        </div>
-    </div>
 
     <!-- MODAL DE ELIMINACIÓN -->
     <div id="modal-eliminar" class="modal-eliminar">
@@ -236,6 +223,20 @@
             menu.classList.toggle('active');
         }
 
+        // Cerrar menú de filtro al hacer clic fuera de él
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('filtroMenu');
+            const filtroIcono = document.querySelector('.barra-busqueda-icono');
+            const filtroBoton = document.querySelector('.barra-busqueda-filtro');
+            
+            if (menu.classList.contains('active') && 
+                !menu.contains(event.target) && 
+                !filtroIcono.contains(event.target) && 
+                !filtroBoton.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
         function mostrarModalEliminar() {
             document.getElementById('modal-eliminar').style.display = 'flex';
         }
@@ -246,19 +247,6 @@
 
         function confirmarEliminar() {
             document.getElementById('modal-eliminar').style.display = 'none';
-        }
-
-        function mostrarModalCerrarSesion(event) {
-            event.preventDefault();
-            document.getElementById('modal-cerrar-sesion').style.display = 'flex';
-        }
-
-        function ocultarModalCerrarSesion() {
-            document.getElementById('modal-cerrar-sesion').style.display = 'none';
-        }
-
-        function confirmarCerrarSesion() {
-            window.location.href = '/index.html';
         }
     </script>
 

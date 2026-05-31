@@ -101,10 +101,6 @@ a {
     min-height: 780px;
 }
 
-/* ========================================
-   TÍTULOS
-   ======================================== */
-
 h2 {
     color: rgba(50, 98, 33, 1);
     font-size: 60px;
@@ -275,6 +271,54 @@ input::placeholder {
     box-shadow: 0 5px 15px rgba(50, 98, 33, 0.4);
 }
 
+.iniciarsesion-btn {
+    width: 220px;
+    height: 58px;
+    background-color: rgba(50, 98, 33, 1);
+    color: rgba(255, 255, 255, 1);
+    border-radius: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.iniciarsesion-btn:hover {
+    background-color: rgba(50, 98, 33, 0.85);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(50, 98, 33, 0.4);
+}
+
+.crearcuenta-btn {
+    width: 220px;
+    height: 58px;
+    background-color: rgba(50, 98, 33, 1);
+    color: rgba(255, 255, 255, 1);
+    border-radius: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.crearcuenta-btn:hover {
+    background-color: rgba(50, 98, 33, 0.85);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(50, 98, 33, 0.4);
+}
+
 /* ========================================
    ENLACES ESPECIALES
    ======================================== */
@@ -300,7 +344,7 @@ input::placeholder {
 
 @media (max-width: 768px) {
     body {
-        padding: 30px 15px;
+        padding: 30px 25px;
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/movil.png);
         overflow: hidden;
     }
@@ -351,7 +395,7 @@ input::placeholder {
 
     .boton,
     .botonA {
-        width: 180px;
+        width: 175px;
         height: 50px;
         font-size: 19px;
     }
@@ -360,7 +404,7 @@ input::placeholder {
      }
 
     label {
-        font-size: 20px;
+        font-size: 17px;
         margin-left: 50px;
     }
 
@@ -369,28 +413,46 @@ input::placeholder {
         padding: 0 10px;
     }
 
+    .cuadro1 .icono {
+        margin-bottom: 23px;
+    }
+
     .icono img {
-        width: 50px;
-        height: 45px;
+        width: 40px;
+        height: 35px;
         left: 25px;
     }
 
     input {
-        height: 60px;
-        padding-left: 100px;
+        height: 45px;
+        padding-left: 70px;
         font-size: 18px;
         background-color: #eeeeee;
     }
 
     .crearcuenta {
         width: 50%;
-        height: 55px;
+        height: 65px;
+        font-size: 19px;
+        background-color: rgba(61, 118, 94, 1);
+    }
+
+    .crearcuenta-btn {
+        width: 50%;
+        height: 65px;
+        font-size: 19px;
+        background-color: rgba(61, 118, 94, 1);
+    }
+
+    .iniciarsesion-btn {
+        width: 50%;
+        height: 65px;
         font-size: 19px;
         background-color: rgba(61, 118, 94, 1);
     }
 
     .recuperar {
-        font-size: 18px;
+        font-size: 15px;
     }
 }
 
@@ -399,7 +461,7 @@ input::placeholder {
    ======================================== */
 
 /* --- Estilos base para móviles (Pantallas de 480px o menos) --- */
-@media (max-width: 480px) {
+@media (max-width: 420px) {
 
 
     .logo1, .logo2 {
@@ -412,6 +474,8 @@ input::placeholder {
         width: 120px;
         height: 120px;
         object-fit: contain;
+        margin-bottom: -28px;
+        margin-top: 20px;
     }
     
     body {
@@ -419,11 +483,11 @@ input::placeholder {
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/movil.png);
         background-size: cover;
         background-position: center;
-        padding: 30px 15px; /* Espacio para que el cuadro no pegue contra los bordes del cel */
+        padding:15px 10px; /* Espacio para que el cuadro no pegue contra los bordes del cel */
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
+        min-height: 60vh;
         overflow: hidden;
     }
 
@@ -432,16 +496,17 @@ input::placeholder {
     .cuadro2 {
         /* Ajusta el ancho para que ocupe casi toda la pantalla móvil */
         width: 100%;
-        max-width: 290px;
-        padding: 15px 15px; /* Reducimos un poco los espacios internos */
+        max-width: 280px;
+        padding: 10px 15px 20px 10px; /* Reducimos espacios internos */
         border-radius: 15px; /* Bordes un poco más sutiles en pantallas chicas */
         min-height: auto;
+        max-height: 86vh;
     }
 
     h2 {
         font-size: 32px; /* Ajusta el tamaño de "AGROSOFT" si queda muy grande */
-        margin-top: 0;
-        margin-bottom: 20px;
+        margin-top: -15px;
+        margin-bottom: 10px;
         color: rgba(0, 75, 43, 0.76);
     }
 
@@ -449,12 +514,20 @@ input::placeholder {
         margin-bottom: 10px;
     }
 
+    .cuadro1 .icono {
+        margin-bottom: 3px;
+    }
+
+    .cuadro2 label {
+        margin-top: -9px;
+    }
+
     p {
         font-size: 18px;
     }
 
     label {
-        font-size: 18px;
+        font-size: 15px;
         margin-left: 40px;
     }
 
@@ -469,21 +542,29 @@ input::placeholder {
         text-align: center;
         padding: 12px 5px;
         font-size: 16px;
-        height: 55px;
+        height: 50px;
+        max-width: 140px;
     }
 
     .icono input {
         font-size: 16px; /* Evita que iOS/Android hagan un zoom automático molesto al escribir */
-        height: 60px;
+        height: 45px;
+        padding-left: 70px;
     }
 
     .crearcuenta {
         width: 50%;
-        height: 55px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .crearcuenta-btn {
+        width: 50%;
+        height: 50px;
         font-size: 16px;
     }
 
     .recuperar {
-        font-size: 16px;
+        font-size: 13px;
     }
 }
