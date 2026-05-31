@@ -1,4 +1,15 @@
-/* VARIABLES GLOBALES */
+/* Tipografías */
+@font-face {
+    font-family: "DM Serif";
+    src: url(/LE/DMSerifDisplay-Regular.ttf);
+}
+
+@font-face {
+    font-family: "DM Sans";
+    src: url(/LE/DMSans-Regular.ttf);
+}
+
+/* Variables globales */
 :root {
     --texto-principal: #1f2e1f;
     --gris-suave: #7d8a7f;
@@ -7,7 +18,7 @@
     --morado: #7f4fa2;
 }
 
-/* ESTILOS BASE */
+/* Estilos base */
 * {
     box-sizing: border-box;
 }
@@ -20,7 +31,7 @@ body {
     font-family: "DM Sans", sans-serif;
 }
 
-/* BARRA LATERAL */
+/* Barra lateral */
 .barra-lateral {
     position: fixed;
     left: 0;
@@ -136,7 +147,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* CONTENIDO PRINCIPAL */
+/* Contenido principal */
 .contenedor-principal {
     margin-left: 280px;
     margin-right: 0;
@@ -154,7 +165,7 @@ body {
     z-index: 3;
 }
 
-/* ENCABEZADO */
+/* Encabezado */
 .encabezado {
     display: flex;
     align-items: center;
@@ -262,7 +273,7 @@ body {
     border: 1.5px solid #c8d8c8;
     border-radius: 8px;
     background: white;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: var(--texto-principal);
     cursor: pointer;
@@ -308,7 +319,7 @@ body {
     outline: none;
     width: 100%;
     padding: 9px 0;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     background: transparent;
     color: var(--texto-principal);
     font-family: "DM Sans", sans-serif;
@@ -328,7 +339,7 @@ body {
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
     font-family: "DM Sans", sans-serif;
@@ -368,7 +379,7 @@ body {
     .celda-encabezado {
     background-color: rgba(221, 82, 82, 0.578);
     color: #0f0f0f;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -379,6 +390,7 @@ body {
     .celda-encabezado.vacia {
     background-color: rgba(221, 82, 82, 0.578);
     color: #040404;
+    font-size: 0.85rem;
     }
 
     .celda-cuerpo {
@@ -403,7 +415,7 @@ body {
 
     .cultivo-badge {
     display: inline-block;
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     font-weight: 600;
     padding: 2px 10px;
     border-radius: 20px;
@@ -413,7 +425,7 @@ body {
     }
 
     .cultivo-info {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--gris-suave);
     margin-bottom: 4px;
     line-height: 1.5;
@@ -486,7 +498,7 @@ body {
     justify-content: center;
     cursor: pointer;
     color: var(--gris-suave);
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 500;
     font-family: "DM Sans", sans-serif;
     transition: all 0.15s ease;
@@ -542,7 +554,7 @@ body {
     }
 
     .dropdown-filtro-titulo {
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     font-weight: 700;
     color: var(--gris-suave);
     text-transform: uppercase;
@@ -555,7 +567,7 @@ body {
     align-items: center;
     gap: 9px;
     padding: 9px 14px;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     color: var(--texto-principal);
     cursor: pointer;
     transition: background 0.15s;
@@ -636,7 +648,7 @@ body {
 
     .campo-form label {
     display: block;
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--gris-suave);
     margin-bottom: 5px;
@@ -650,7 +662,7 @@ body {
     padding: 10px 12px;
     border: 1.5px solid #c8d8c8;
     border-radius: 8px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--texto-principal);
     outline: none;
     font-family: "DM Sans", sans-serif;
@@ -670,7 +682,7 @@ body {
     text-align: center;
     cursor: pointer;
     color: var(--gris-suave);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     transition: all 0.2s ease;
     position: relative;
     overflow: hidden;
@@ -728,7 +740,7 @@ body {
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
     font-family: "DM Sans", sans-serif;
@@ -750,7 +762,7 @@ body {
     color: #d93025;
     border: 1.5px solid #d93025;
     border-radius: 8px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
     font-family: "DM Sans", sans-serif;
@@ -788,7 +800,7 @@ body {
     }
 
     .modal-eliminar-nombre {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #d93025;
     text-align: center;
@@ -796,7 +808,7 @@ body {
     }
 
     .modal-eliminar-aviso {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--gris-suave);
     text-align: center;
     line-height: 1.6;
@@ -810,7 +822,7 @@ body {
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
     font-family: "DM Sans", sans-serif;
@@ -825,24 +837,12 @@ body {
     background: #b71c1c;
     }
 
-
-
-@font-face {
-    font-family: "DM Serif";
-    src: url(/LE/DMSerifDisplay-Regular.ttf);
-}
-
-@font-face {
-    font-family: "DM Sans";
-    src: url(/LE/DMSans-Regular.ttf);
-}
-
-/*para que solo se vea en lo movil*/
+/* Navegación móvil */
 .barra-nav-movil {
     display: none;
 }
 
-/* Movil */
+/* Móvil */
 
 @media (max-width: 420px) {
     .barra-lateral {
@@ -883,7 +883,7 @@ body {
     }
 
     .subtitulo-pagina {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         text-align: center;
     }
 
@@ -954,7 +954,7 @@ body {
         gap: 4px;
         color: var(--gris-suave);
         text-decoration: none;
-        font-size: 0.72rem;
+        font-size: 0.95rem;
         font-weight: 500;
         transition: color 0.2s ease;
     }
@@ -1059,7 +1059,7 @@ body {
     }
 
     .cal-dia-nombre {
-        font-size: 0.68rem;
+        font-size: 0.75rem;
         font-weight: 700;
         color: var(--gris-suave);
         padding: 4px 0 6px;
@@ -1067,7 +1067,7 @@ body {
     }
 
     .cal-dia {
-        font-size: 0.78rem;
+        font-size: 0.85rem;
         padding: 5px 0;
         border-radius: 6px;
         cursor: pointer;
@@ -1144,7 +1144,7 @@ body {
         }
 
     .resumen-subtitulo {
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         color: var(--gris-suave);
 }
 
@@ -1194,7 +1194,7 @@ body {
         color: white;
         border: none;
         border-radius: 8px;
-        font-size: 0.88rem;
+        font-size: 0.9rem;
         font-weight: 600;
         cursor: pointer;
         font-family: "DM Sans", sans-serif;
@@ -1239,7 +1239,7 @@ body {
     }
 
     .tarea-nombre-header {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         font-weight: 800;
         color: #2c5f7a;
     }
@@ -1268,7 +1268,7 @@ body {
     }
 
     .tarea-descripcion {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         color: var(--texto-principal);
         line-height: 1.5;
         flex: 1;
@@ -1285,7 +1285,7 @@ body {
         display: flex;
         align-items: center;
         gap: 5px;
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         color: var(--gris-suave);
         white-space: nowrap;
     }
@@ -1301,7 +1301,7 @@ body {
         color: #d93025;
         border: 1px solid #f5c6c3;
         border-radius: 7px;
-        font-size: 0.78rem;
+        font-size: 0.85rem;
         font-weight: 600;
         cursor: pointer;
         font-family: "DM Sans", sans-serif;

@@ -1,6 +1,4 @@
-/* ========================================
-   TIPOGRAFÍAS
-   ======================================== */
+/* Tipografías */
 
 @font-face {
     font-family: "DM Serif";
@@ -12,9 +10,7 @@
     src: url(/LE/DMSans-Regular.ttf);
 }
 
-/* ========================================
-   ESTILOS GLOBALES
-   ======================================== */
+/* Estilos globales */
 
 * {
     margin: 0;
@@ -40,9 +36,7 @@ a {
     text-decoration: none;
 }
 
-/* ========================================
-   LOGOS
-   ======================================== */
+/* Logos */
 
 .logo1 {
     position: absolute;
@@ -68,9 +62,7 @@ a {
     display: none;
 }
 
-/* ========================================
-   CONTENEDORES
-   ======================================== */
+/* Contenedores */
 
 .cuadro,
 .cuadro1,
@@ -109,9 +101,7 @@ h2 {
     text-align: center;
 }
 
-/* ========================================
-   ETIQUETAS
-   ======================================== */
+/* Etiquetas */
 
 label {
     font-family: "DM Sans", sans-serif;
@@ -139,9 +129,7 @@ p {
     font-family: "DM Sans", sans-serif;
 }
 
-/* ========================================
-   INPUTS
-   ======================================== */
+/* Inputs */
 
 .icono {
     position: relative;
@@ -185,9 +173,7 @@ input::placeholder {
     color: rgba(0, 0, 0, 0.5);
 }
 
-/* ========================================
-   BOTONES
-   ======================================== */
+/* Botones */
 
 .containboton {
     display: flex;
@@ -319,9 +305,7 @@ input::placeholder {
     box-shadow: 0 5px 15px rgba(50, 98, 33, 0.4);
 }
 
-/* ========================================
-   ENLACES ESPECIALES
-   ======================================== */
+/* Enlaces especiales */
 
 .recuperar {
     color: black;
@@ -338,9 +322,7 @@ input::placeholder {
     color: rgba(50, 98, 33, 1);
 }
 
-/* ========================================
-   RESPONSIVE - TABLETS (768px)
-   ======================================== */
+/* Responsive - Tablets (768px) */
 
 @media (max-width: 768px) {
     body {
@@ -444,28 +426,17 @@ input::placeholder {
         background-color: rgba(61, 118, 94, 1);
     }
 
-    .iniciarsesion-btn {
-        width: 50%;
-        height: 65px;
-        font-size: 19px;
-        background-color: rgba(61, 118, 94, 1);
-    }
-
     .recuperar {
         font-size: 15px;
     }
 }
 
-/* ========================================
-   RESPONSIVE - MÓVILES (480px)
-   ======================================== */
-
-/* --- Estilos base para móviles (Pantallas de 480px o menos) --- */
+/* Responsive - Móviles (420px) */
 @media (max-width: 420px) {
 
 
     .logo1, .logo2 {
-        display: none; /* Oculta los íconos en pantallas muy pequeñas para ganar espacio */
+        display: none;
     }
 
     .logo-centrado {
@@ -479,11 +450,10 @@ input::placeholder {
     }
     
     body {
-        /* Asegura que el fondo cubra bien toda la pantalla del celular */
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/movil.png);
         background-size: cover;
         background-position: center;
-        padding:15px 10px; /* Espacio para que el cuadro no pegue contra los bordes del cel */
+        padding: 15px 10px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -494,17 +464,16 @@ input::placeholder {
     .cuadro,
     .cuadro1,
     .cuadro2 {
-        /* Ajusta el ancho para que ocupe casi toda la pantalla móvil */
         width: 100%;
         max-width: 280px;
-        padding: 10px 15px 20px 10px; /* Reducimos espacios internos */
-        border-radius: 15px; /* Bordes un poco más sutiles en pantallas chicas */
+        padding: 10px 15px 20px 10px;
+        border-radius: 15px;
         min-height: auto;
         max-height: 86vh;
     }
 
     h2 {
-        font-size: 32px; /* Ajusta el tamaño de "AGROSOFT" si queda muy grande */
+        font-size: 32px;
         margin-top: -15px;
         margin-bottom: 10px;
         color: rgba(0, 75, 43, 0.76);
@@ -534,11 +503,11 @@ input::placeholder {
     .containboton {
         width: 100%;
         display: flex;
-        gap: 10px; /* Espacio entre el botón Iniciar Sesión y Registrarse */
+        gap: 10px;
     }
 
     .botonA, .boton {
-        flex: 1; /* Hace que ambos botones midan exactamente lo mismo en horizontal */
+        flex: 1;
         text-align: center;
         padding: 12px 5px;
         font-size: 16px;
@@ -547,7 +516,7 @@ input::placeholder {
     }
 
     .icono input {
-        font-size: 16px; /* Evita que iOS/Android hagan un zoom automático molesto al escribir */
+        font-size: 16px;
         height: 45px;
         padding-left: 70px;
     }

@@ -1,4 +1,4 @@
-/* BARRA DE BÚSQUEDA */
+/* Barra de búsqueda */
 .barra-busqueda {
     display: flex;
     align-items: center;
@@ -23,14 +23,14 @@
     padding: 10px 15px;
     border: 1px solid #e0e0e0;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 0.9rem;
     font-family: "DM Sans", sans-serif;
     background: white;
     cursor: pointer;
     text-align: left;
 }
 
-/* MENÚ EXPANSIVO DE FILTRO */
+/* Menú de filtro */
 .filtro-menu {
     position: absolute;
     top: 100%;
@@ -54,7 +54,7 @@
     padding: 10px 15px;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 0.9rem;
     font-family: "DM Sans", sans-serif;
     color: var(--texto-principal);
     transition: background 0.2s ease;
@@ -65,7 +65,7 @@
 }
 
 .barra-busqueda-texto {
-    font-size: 14px;
+    font-size: 0.9rem;
     color: var(--texto-principal);
     font-weight: 500;
     width: 80%;
@@ -82,7 +82,7 @@
     object-fit: contain;
 }
 
-/* TARJETAS DE HISTORIAL */
+/* Tarjetas de historial */
 .tarjetas-historial {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -112,7 +112,7 @@
     position: absolute;
     top: 8px;
     left: 20px;
-    font-size: 21px;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--texto-principal);
 }
@@ -126,7 +126,7 @@
     object-fit: contain;
 }
 
-/* COLORES ESPECÍFICOS PARA CADA TARJETA */
+/* Colores de tarjetas */
 .tarjeta-1 {
     border-top-color: #D85E5A;
 }
@@ -201,7 +201,7 @@
 
 .tarjeta-historial-texto {
     margin: 0;
-    font-size: 14px;
+    font-size: 0.9rem;
     color: var(--gris-suave);
     line-height: 1.5;
     flex: 1;
@@ -228,7 +228,7 @@
 
 .tarjeta-historial-hora,
 .tarjeta-historial-fecha {
-    font-size: 14px;
+    font-size: 0.9rem;
     color: var(--gris-suave);
 }
 
@@ -237,7 +237,7 @@
     margin-right: 30px;
 }
 
-/* PUNTOS DE NAVEGACIÓN */
+/* Puntos de navegación */
 .puntos-contenedor {
     display: flex;
     align-items: center;
@@ -251,7 +251,7 @@
 }
 
 .punto {
-    font-size: 40px;
+    font-size: 2.5rem;
     color: var(--texto-principal);
     font-weight: bold;
 }
@@ -263,7 +263,7 @@
     object-fit: contain;
 }
 
-/* MODAL DE ELIMINACIÓN */
+/* Modal de eliminación */
 .modal-eliminar {
     display: none;
     position: fixed;
@@ -300,7 +300,7 @@
 
 .modal-eliminar-texto-1 {
     margin: 0;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--texto-principal);
     text-align: center;
@@ -308,14 +308,14 @@
 
 .modal-eliminar-texto-2 {
     margin: 0;
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--gris-suave);
     text-align: center;
 }
 
 .modal-eliminar-texto-3 {
     margin: 0;
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--gris-suave);
     text-align: center;
 }
@@ -330,7 +330,7 @@
     padding: 12px 30px;
     border: none;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -354,20 +354,17 @@
     background-color: #d0d0d0;
 }
 
-/* MEDIA QUERIES - MÓVIL */
+/* Móvil */
 @media (max-width: 768px) {
-    /* Tarjetas de historial en una columna en móvil */
     .tarjetas-historial {
         grid-template-columns: 1fr;
         margin: 20px;
     }
 
-    /* Reducir altura de tarjetas en móvil */
     .tarjeta-historial {
         padding: 40px 20px 20px 20px;
     }
 
-    /* Mover calendario menos en móvil para que no se salga de pantalla */
     .tarjeta-historial-base {
         justify-content: space-between;
         gap: 8px;
@@ -382,18 +379,15 @@
         margin-left: 0;
     }
 
-    /* Barra de búsqueda en móvil */
     .barra-busqueda {
         width: 90%;
         margin: 10px auto;
     }
 
-    /* Ocultar botón de filtro en móvil */
     .barra-busqueda-filtro {
         display: none;
     }
 
-    /* Puntos contenedor en móvil */
     .puntos-contenedor {
         display: none;
     }
