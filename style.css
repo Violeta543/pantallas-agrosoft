@@ -1,0 +1,489 @@
+/* ========================================
+   TIPOGRAFÍAS
+   ======================================== */
+
+@font-face {
+    font-family: "DM Serif";
+    src: url(/LE/DMSerifDisplay-Regular.ttf);
+}
+
+@font-face {
+    font-family: "DM Sans";
+    src: url(/LE/DMSans-Regular.ttf);
+}
+
+/* ========================================
+   ESTILOS GLOBALES
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/f.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px 20px;
+    font-family: "DM Sans", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ========================================
+   LOGOS
+   ======================================== */
+
+.logo1 {
+    position: absolute;
+    left: 290px;
+    top:40px;
+    width: 85px;
+    height: 135px;
+    transform: translateX(-180px);
+    z-index: 10;
+}
+
+.logo2 {
+    position: absolute;
+    right: 33%;
+    top: 20px;
+    width: 115px;
+    height: 115px;
+    transform: translateX(135px);
+    z-index: 10;
+}
+
+.logo-centrado {
+    display: none;
+}
+
+/* ========================================
+   CONTENEDORES
+   ======================================== */
+
+.cuadro,
+.cuadro1,
+.cuadro2 {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 90px 50px 50px;
+    margin: 0 auto;
+    width: 636px;
+    max-width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    min-height: 780px;
+}
+
+.cuadro {
+    min-height: 780px;
+}
+
+.cuadro1 {
+    min-height: 600px;
+}
+
+.cuadro2 {
+    min-height: 780px;
+}
+
+/* ========================================
+   TÍTULOS
+   ======================================== */
+
+h2 {
+    color: rgba(50, 98, 33, 1);
+    font-size: 60px;
+    font-family: "DM Serif", serif;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ========================================
+   ETIQUETAS
+   ======================================== */
+
+label {
+    font-family: "DM Sans", sans-serif;
+    color: rgba(0, 0, 0, 1);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    align-self: flex-start;
+    margin-left: 36px;
+    width: auto;
+}
+
+.titulo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    align-self: center;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 15px;
+    font-family: "DM Sans", sans-serif;
+}
+
+/* ========================================
+   INPUTS
+   ======================================== */
+
+.icono {
+    position: relative;
+    width: 563px;
+    max-width: 100%;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.icono img {
+    position: absolute;
+    left: 33px;
+    width: 62px;
+    height: 58px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+input {
+    width: 100%;
+    height: 55px;
+    border: 1px solid rgba(158, 155, 155, 1);
+    border-radius: 20px;
+    padding-left: 130px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: "DM Sans", sans-serif;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: rgba(50, 98, 33, 1);
+    box-shadow: 0 0 5px rgba(50, 98, 33, 0.3);
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   BOTONES
+   ======================================== */
+
+.containboton {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+
+.boton {
+    width: 220px;
+    height: 58px;
+    color: black;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: rgba(240, 240, 240, 1);
+    border-color: rgba(50, 98, 33, 1);
+    transform: translateY(-2px);
+}
+
+.botonA {
+    width: 220px;
+    height: 58px;
+    background-color: rgba(50, 98, 33, 1);
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.botonA:hover {
+    background-color: rgba(50, 98, 33, 0.85);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(50, 98, 33, 0.4);
+}
+
+.crearcuenta {
+    width: 220px;
+    height: 58px;
+    background-color: rgba(50, 98, 33, 1);
+    color: rgba(255, 255, 255, 1);
+    border-radius: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+
+.crearcuenta:hover {
+    background-color: rgba(50, 98, 33, 0.85);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(50, 98, 33, 0.4);
+}
+
+/* ========================================
+   ENLACES ESPECIALES
+   ======================================== */
+
+.recuperar {
+    color: black;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    margin-top: auto;
+    padding-bottom: 40px;
+}
+
+.recuperar:hover {
+    color: rgba(50, 98, 33, 1);
+}
+
+/* ========================================
+   RESPONSIVE - TABLETS (768px)
+   ======================================== */
+
+@media (max-width: 768px) {
+    body {
+        padding: 30px 15px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/movil.png);
+        overflow: hidden;
+    }
+
+    .logo1, .logo2 {
+        display: none;
+    }
+
+    .logo-centrado {
+        display: block;
+        margin: 0 auto 1px;
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        margin-top: 30px;
+        margin-bottom: -23px;
+    }
+
+    .cuadro,
+    .cuadro1,
+    .cuadro2 {
+        width: 95%;
+        max-width: 470px;
+        padding: 15px 15px;
+        border-radius: 25px;
+        min-height: auto;
+    }
+
+    h2 {
+        font-size: 49px;
+        margin-top: -25px;
+        margin-bottom: 20px;
+        color: rgba(0, 75, 43, 0.76);
+    }
+
+    .titulo {
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .containboton {
+        padding: 0 10px;
+    }
+
+    .boton,
+    .botonA {
+        width: 180px;
+        height: 50px;
+        font-size: 19px;
+    }
+     .botonA{
+        background-color: rgba(61, 118, 94, 1);
+     }
+
+    label {
+        font-size: 20px;
+        margin-left: 50px;
+    }
+
+    .icono {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .icono img {
+        width: 50px;
+        height: 45px;
+        left: 25px;
+    }
+
+    input {
+        height: 60px;
+        padding-left: 100px;
+        font-size: 18px;
+        background-color: #eeeeee;
+    }
+
+    .crearcuenta {
+        width: 50%;
+        height: 55px;
+        font-size: 19px;
+        background-color: rgba(61, 118, 94, 1);
+    }
+
+    .recuperar {
+        font-size: 18px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MÓVILES (480px)
+   ======================================== */
+
+/* --- Estilos base para móviles (Pantallas de 480px o menos) --- */
+@media (max-width: 480px) {
+
+
+    .logo1, .logo2 {
+        display: none; /* Oculta los íconos en pantallas muy pequeñas para ganar espacio */
+    }
+
+    .logo-centrado {
+        display: block;
+        margin: 0 auto 1px;
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+    }
+    
+    body {
+        /* Asegura que el fondo cubra bien toda la pantalla del celular */
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/movil.png);
+        background-size: cover;
+        background-position: center;
+        padding: 30px 15px; /* Espacio para que el cuadro no pegue contra los bordes del cel */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    .cuadro,
+    .cuadro1,
+    .cuadro2 {
+        /* Ajusta el ancho para que ocupe casi toda la pantalla móvil */
+        width: 100%;
+        max-width: 290px;
+        padding: 15px 15px; /* Reducimos un poco los espacios internos */
+        border-radius: 15px; /* Bordes un poco más sutiles en pantallas chicas */
+        min-height: auto;
+    }
+
+    h2 {
+        font-size: 32px; /* Ajusta el tamaño de "AGROSOFT" si queda muy grande */
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: rgba(0, 75, 43, 0.76);
+    }
+
+    .titulo {
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    label {
+        font-size: 18px;
+        margin-left: 40px;
+    }
+
+    .containboton {
+        width: 100%;
+        display: flex;
+        gap: 10px; /* Espacio entre el botón Iniciar Sesión y Registrarse */
+    }
+
+    .botonA, .boton {
+        flex: 1; /* Hace que ambos botones midan exactamente lo mismo en horizontal */
+        text-align: center;
+        padding: 12px 5px;
+        font-size: 16px;
+        height: 55px;
+    }
+
+    .icono input {
+        font-size: 16px; /* Evita que iOS/Android hagan un zoom automático molesto al escribir */
+        height: 60px;
+    }
+
+    .crearcuenta {
+        width: 50%;
+        height: 55px;
+        font-size: 16px;
+    }
+
+    .recuperar {
+        font-size: 16px;
+    }
+}
