@@ -73,11 +73,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 8px;
+        gap: 4px;
+        
     }
     .marca-superior img {
         width: 70px;
         height: 70px;
+        margin-top: .5px;
+        margin-bottom: -13px;
     }
     .marca-superior h3 {
         margin: 0;
@@ -87,6 +90,8 @@
         color: #2d5d40;
         font-weight: 400;
         line-height: 1.1;
+        margin-top: -11px;
+     
     }
     .marca p {
         margin: 0;
@@ -241,26 +246,28 @@
 
     .modal-contenido-editar .foto {
         position: relative;
+        overflow: visible;
     }
 
     .foto-camara {
         position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 28px;
-        height: 28px;
+        bottom: -11px;
+        right: -5px;
+        width: 36px;
+        height: 36px;
         background-color: #2b633f;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid #ffffff;
+        border: 3px solid #ffffff;
         cursor: pointer;
+        z-index: 10;
     }
 
     .foto-camara img {
-        width: 16px;
-        height: 16px;
+        width: 20px;
+        height: 20px;
         object-fit: contain;
     }
 
