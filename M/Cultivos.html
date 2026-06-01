@@ -27,7 +27,7 @@
                 <img src="/M/imagenes/tareas.png" alt="Tareas" class="icono-menu">
                 <span class="texto-menu">Tareas</span>
             </a>
-            <a href="#" class="enlace-menu" data-seccion="tratamiento">
+            <a href="/k/dashboard.html" class="enlace-menu" data-seccion="tratamiento">
                 <img src="/M/imagenes/tratamiento.png" alt="Tratamiento" class="icono-menu">
                 <span class="texto-menu">Tratamiento</span>
             </a>
@@ -35,7 +35,7 @@
                 <img src="/M/imagenes/inventarios.png" alt="Inventario" class="icono-menu">
                 <span class="texto-menu">Inventario</span>
             </a>
-            <a href="#" class="enlace-menu" data-seccion="ventas">
+            <a href="/MP/venta.html" class="enlace-menu" data-seccion="ventas">
                 <img src="/M/imagenes/ventas.png" alt="Ventas" class="icono-menu">
                 <span class="texto-menu">Ventas</span>
             </a>
@@ -316,7 +316,20 @@
             </div>
         </div>
     </div>
- 
+
+    <!-- MODAL DE CIERRE DE SESIÓN -->
+    <div id="modal-cerrar-sesion" class="modal-cerrar-sesion">
+        <div class="modal-contenido">
+            <p class="modal-texto-1">¿Deseas cerrar sesion?</p>
+            <p class="modal-texto-2">"Yonatan Gomez"</p>
+            <p class="modal-texto-3">Esta accion cerrara tu sesion y podras volver a ingresar mas tarde.</p>
+            <div class="modal-botones">
+                <button class="modal-btn modal-btn-cerrar" onclick="confirmarCerrarSesion()">Cerrar Sesión</button>
+                <button class="modal-btn modal-btn-cancelar" onclick="ocultarModalCerrarSesion()">X Cancelar</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // =====================================================
         // DATOS EN MEMORIA
@@ -611,6 +624,20 @@
         // INICIO
         // =====================================================
         renderGrid();
+
+        // CIERRE DE SESIÓN
+        function mostrarModalCerrarSesion(event) {
+            event.preventDefault();
+            document.getElementById('modal-cerrar-sesion').style.display = 'flex';
+        }
+
+        function ocultarModalCerrarSesion() {
+            document.getElementById('modal-cerrar-sesion').style.display = 'none';
+        }
+
+        function confirmarCerrarSesion() {
+            window.location.href = '/index.html';
+        }
     </script>
 <!-- BARRA NAVEGACIÓN MÓVIL -->
 <nav class="barra-nav-movil">

@@ -1,0 +1,949 @@
+/* ── Variables globales de color y tipografía ── */
+:root {
+    --fondo-oscuro: #2d5132;      /* Verde muy oscuro */
+    --fondo-claro: #f7f9f3;       /* Blanco verdoso suave */
+    --texto-principal: #1f2e1f;   /* Color de texto base */
+    --gris-suave: #7d8a7f;        /* Gris verdoso para textos secundarios */
+    --verde: #3f7a4d;             /* Verde principal de la marca */
+    --azul: #243f6a;              /* Azul para acentos */
+    --morado: #7f4fa2;            /* Morado para acentos */
+}
+/* Fuente serif para títulos elegantes */
+@font-face {
+    font-family: "DM Serif";
+    src: url(/LE/DMSerifDisplay-Regular.ttf);
+}
+
+/* Fuente sans-serif para texto general */
+@font-face {
+    font-family: "DM Sans";
+    src: url(/LE/DMSans-Regular.ttf);
+}
+/* ========================================
+TÍTULOS
+   ======================================== */
+
+h2 {
+    color: rgba(50, 98, 33, 1);
+    font-size: 60px;
+    font-family: "DM Serif", serif;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Incluye padding y borde dentro del ancho/alto de todos los elementos */
+* {
+    box-sizing: border-box;
+}
+
+/* Estilos base del documento: fondo degradado y fuente principal */
+body {
+    margin: 0;
+    color: var(--texto-principal);
+    background: radial-gradient(circle at top left, rgba(105, 176, 91, 0.18), transparent 35%),
+                linear-gradient(180deg, #eef4ea 0%, #f8faf7 100%);
+    font-family: "DM Sans", sans-serif;
+}
+
+/* Menú lateral fijo a la izquierda con fondo verde */
+.barra-lateral {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    padding: 30px 18px;
+    background: linear-gradient(180deg, #356823 0%, #4a7c36 40%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Nombre/marca de la app en la parte superior del sidebar */
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Contenedor de los enlaces del menú lateral */
+.menu-lateral {
+    display: grid;
+    gap: 5px;
+    flex: 1;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    margin-top: 20px;
+}
+
+/* Cada enlace individual del menú lateral */
+.enlace-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+/* Ícono dentro de cada enlace del menú lateral */
+.icono-menu {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: brightness(1.1);
+    transition: filter 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* Ícono del botón de cerrar sesión (ligeramente más grande) */
+.icono-cerrar {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    filter: brightness(1.1);
+    transition: filter 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* Texto de cada ítem del menú lateral */
+.texto-menu {
+    font-size: 20px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Resalta el enlace al pasar el cursor o cuando está activo */
+.enlace-menu:hover,
+.enlace-menu.activo {
+    background: rgb(49, 95, 32);
+    transform: translateX(4px);
+}
+
+/* Aclara el ícono al hacer hover o cuando el enlace está activo */
+.enlace-menu:hover .icono-menu,
+.enlace-menu.activo .icono-menu {
+    filter: brightness(1.3);
+}
+
+/* Botón de cerrar sesión al fondo del sidebar */
+.boton-cerrar {
+    margin-top: 5px;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 15px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Efecto hover del botón de cerrar sesión */
+.boton-cerrar:hover {
+    background: rgba(50, 98, 33, 1);
+    transform: translateY(-2px);
+}
+
+/* Área de contenido principal desplazada a la derecha del sidebar */
+.contenedor-principal {
+    margin-left: 280px;
+    margin-right: 0;
+    padding: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(/k/imagenes/fondo.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Capa de contenido con z-index para superponerse al fondo */
+.contenido-fondo {
+    position: relative;
+    z-index: 3;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Barra superior con título de página y datos del usuario */
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 25px 35px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 10;
+}
+
+/* Columna izquierda del encabezado: título y subtítulo */
+.encabezado-texto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Título principal de la página actual */
+.titulo-pagina {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: -0.04em;
+    font-family: "DM Serif";
+    color: rgba(50, 98, 33, 1);
+}
+/* Texto del logo con fuente serif decorativa */
+.logo-texto {
+    font-family: "DM Serif", sans-serif;
+    font-size: 34px;
+}
+
+/* Descripción breve debajo del título de página */
+.subtitulo-pagina {
+    margin: 0;
+    color: var(--gris-suave);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Tarjeta del usuario en la esquina superior derecha */
+.usuario-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, rgba(240, 240, 240, 1), rgba(250, 250, 250, 1));
+    border-radius: 12px;
+    min-width: 280px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Columna de texto dentro de la tarjeta de usuario */
+.usuario {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: right;
+    flex: 1;
+}
+
+/* Ícono/avatar del usuario */
+.usuario-icono {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Logo circular en el encabezado */
+.Logo-header-icono {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+/* Nombre del usuario en negrilla */
+.usuario-nombre {
+    display: block;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--texto-principal);
+}
+
+/* Rol o cargo del usuario en color secundario */
+.usuario-rol {
+    display: block;
+    color: var(--gris-suave);
+    font-size: 0.85rem;
+}
+
+.modulo-tratamiento{
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: calc(100vh - 120px);
+    overflow: hidden;
+}
+.barra-acciones{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.btn-nuevo-item{
+    background-color:#326221;
+    color:white;
+    border:none;
+    padding: 8px 20px;
+    border-radius: 12px;
+    font-family: "DM Sans";
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.contenedor-tarjetas{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.tarjeta-tratamiento{
+    height: 100%;
+    background-color: white;
+    border: 1px solid #3B7A57;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction:column;
+}
+.tarjeta-cuerpo{
+    padding: 10px 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+}
+.tratamiento-n{
+    margin: 0;
+    font-weight: 700;
+    color: black;
+    font-family: "DM Sans";
+    font-size: 1.4rem;
+}
+.caracteristicas{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    margin-top: 10px;
+    gap: 20px;
+    font-family: "DM Sans";
+    color: black;
+    padding: 8px;
+}
+.datos-p{
+    overflow: hidden;
+    font-size:15px;
+}
+.seccion-fases{
+    margin-top: 12px;
+    flex: 1;
+}
+.fases-titulo{
+    font-family: "DM Sans";
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: black;
+    margin: 12px 0 10px 0;
+}
+.lista-fases{
+    display: flex;
+    flex-direction:column;
+    align-items: stretch;
+    gap: 10px;
+}
+.fase-indicador{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+.fase-texto{
+    margin: 0;
+    font-family: "DM Sans";
+    font-size: 0.95rem;
+    color:black;
+}
+.fase-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+.fase-item.cumplido .fase-indicador {
+    background-color: #558747; 
+    color: white}
+.tratamiento-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.btn-tratamiento-accion {
+    height: 49px;
+    background-color: #ededed; 
+    border: none;
+    border-radius: 30px;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: "DM Sans";
+    font-size: 1rem;
+    font-weight:500;
+    color:black;
+    cursor: pointer;
+    position: relative;
+}
+.icono-accion{
+    position: absolute;
+    right: 20px;
+    width: 16px;
+    height: 16px;
+    object-fit:contain;
+}
+.paginacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    padding-bottom: 0;
+}
+.btn-flecha{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.puntos-suspensivos {
+    font-size: 1.5rem;
+    color: #2b5126;
+    font-weight: bold;
+    line-height: 1;
+}
+
+
+/* El fondo oscuro */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 16px;
+    box-sizing: border-box;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar modal */
+.modal-overlay.mostrar {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* La tarjeta blanca interior (Responsiva por defecto) */
+.modal-contenedor {
+    background-color: white;
+    width: 100%;
+    max-width: 400px; /* Se encoge en celulares y frena en PC */
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.modal-titulo{
+    font-family: "DM Sans";
+    color: black;
+    font-size: 25px;
+}
+
+/* Alineación de textos en la alerta de eliminar */
+.text-center {
+    text-align: center;
+    align-items: center;
+}
+
+/* Contenedores de inputs */
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    margin-bottom: 14px;
+}
+
+.grupo-campo label {
+    font-family: "DM Sans";
+    font-size: 14px;
+    color: #6C6868;
+    text-align: left;
+}
+
+.grupo-campo input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    background-color: #F8F9FA;
+    font-family: "DM Sans";
+    font-size: 14px;
+    box-sizing: border-box;
+}
+.descripcion{
+        height:70px ;
+        font-family: "DM Sans";
+    }
+.cntdor-eliminar{   
+    margin: auto;
+}
+.pregunta{
+    margin: auto;
+    text-align: center;
+    font-family: "DM Sans";
+    padding: 10px;
+}
+.n-e-tratamiento{
+    color: #FF0707;
+    font-size: 30px;
+    font-family: "DM Sans";
+    font-weight: 0;
+}
+
+/* Fila de botones internos del modal */
+.modal-botones {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.modal-botones button, .btn-volver {
+    flex: 1;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    font-family: "DM Sans";
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Variaciones de colores de botones */
+.btn-guardar, .btn-volver { 
+    background-color: #3D765E; 
+    color: white; 
+}
+.btn-cancelar { 
+    background-color: #F1F3F4; 
+    color: #F82733; 
+}
+.btn-eliminar { 
+    background-color: #F82733; 
+    color:white; 
+    font-weight: 600; 
+}
+@media (max-width: 1200px) {
+    .contenedor-tarjetas{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width: 980px) {
+
+    /* Reduce el ancho del sidebar */
+    .barra-lateral {
+        width: 260px;
+        padding: 25px 15px;
+    }
+    /* Ajusta el margen del contenido al nuevo ancho del sidebar */
+    .contenedor-principal {
+        margin-left: 260px;
+    }
+    /* Encabezado en columna vertical */
+    .encabezado {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    /* Tarjeta de usuario ocupa todo el ancho */
+    .usuario-contenedor {
+        width: 100%;
+        min-width: auto;
+    }
+    .contenedor-tarjetas{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media(max-width:768px){
+    .barra-lateral {display: none;}
+    .contenedor-principal {
+        margin-left: 0;
+        padding-bottom: 80px;
+        background-image:url(/MP/img/fondo-mv.png);
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+}
+.encabezado {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 20px 16px;
+        background-color: transparent;
+        box-shadow: none;
+        gap: 0;
+    }
+    .Logo-header-icono,
+    .usuario-contenedor,
+    .subtitulo-pagina,
+    .encabezado {
+        display: none;
+    }
+    .barra-acciones{
+        display: none;
+    }
+    .contenedor-tarjetas{
+        display: none;
+    }
+    .paginacion{
+        display: none;
+    }
+    .contenedor-movil{
+        min-height: 100px;
+        margin: 16px 18px 22px;
+        padding: 12px 12px 14px;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.6);
+        
+    }
+    .contenedor-movil h1{
+        text-align: center;
+        display: inline-block; 
+        font-size: 45px;
+
+    /* 2. Tu degradado exacto de Figma con 76% de opacidad (RGBA) */
+    background: linear-gradient(
+        to right, 
+        rgba(0, 75, 43, 0.76) 0%,
+        rgba(0, 177, 101, 0.76) 100% 
+    );
+
+    /* 3. El truco definitivo: Recortar el degradado solo a las siluetas */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* 4. Volver invisible el relleno de la tipografía para que pase el degradado */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    -webkit-text-stroke: 0.01px rgb(0,75,43,0.7);
+    }
+    .barra-acciones-mv{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .add-mv{
+        flex: 1;
+        height: 56px;
+        background-color: white;
+        border: none;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 20px;
+        font-size: 16px;
+    }
+    .contenedor-tratamiento{
+        position: relative;
+        margin-top: 20px;
+        min-height: 150px;
+        background-color: white;
+        border: 1px solid #3B7A57;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        display: flex;
+        flex-direction:column;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+    .n-tratamiento{
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: black;
+    font-family: "DM Sans";}
+    .vr-fases{
+        position: absolute;
+        top:20px;
+    right: 50px;    
+    display: flex; 
+    align-items: center; 
+    gap: 6px;
+    cursor: pointer;
+    border: none;
+    }
+    .vr-fases span {
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    color: #6C6868;
+    }
+    .caracteristicas p{
+        margin: 0;
+        line-height: 1.4;
+    }
+    .fecha-hora{
+        display: flex;
+        justify-content:start;
+        gap: 60px;
+        align-items: center;
+        margin-top: 5px;
+        text-align: center;
+        margin-left: 12px;
+    }
+    .modulo-btn{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 10px;
+    }
+    .btn-editar-mv{
+        flex: 1;
+        max-width: 180px;
+        width: 121px;
+        height: 33px;
+        background-color: #3D765E;
+        color:#FFFDFD;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-family: "DM Sans";
+        font-size: 15px;
+        cursor: pointer;}
+    .btn-eliminar-mv{
+        flex: 1;
+        max-width: 180px;
+        width: 121px;
+        height: 33px;
+        background-color: #f4f4f4;
+        color: #ff0000;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    /* Estilos de las fases (Ojito) */
+    .lista-fases { width: 100%;
+        display: flex; 
+        flex-direction: column; 
+        gap: 10px;
+        margin: 16px 0; }
+    .fase-item { display: flex; 
+        align-items: center; 
+        gap: 12px; 
+        padding: 10px 14px; 
+        border-radius: 14px; 
+        text-align: left;
+    }
+    .fase-item.completada { 
+        background-color: #E3F2ED; 
+    }
+    .fase-item.pendiente { 
+        background-color: #E6E6E6; 
+    }
+    .fase-icono { 
+        width: 20px;
+        height: 20px;
+    }
+    .fase-texto strong { 
+        font-size: 14px; 
+        color: #333; 
+        display: block; 
+    }
+    .fase-texto p { 
+        margin: 2px 0 0 0; 
+        font-size: 12px; 
+        color: #666; 
+    }
+    .barra-nav-movil {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 76px;
+        background: white;
+        border-top: 1px solid rgba(50, 98, 33, 0.15);
+        box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+        z-index: 100;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 8px;
+    }
+    .nav-movil-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        text-decoration: none;
+        color: var(--gris-suave);
+        font-size: 15px;
+        font-weight: 500;
+        padding: 8px 14px;
+        border-radius: 12px;
+        transition: all 0.2s ease;
+        flex: 1;
+    }
+    .nav-movil-item.activo {
+        color: rgba(50, 98, 33, 1);
+    }
+
+    .nav-movil-item:active {
+        background: rgba(50, 98, 33, 0.08);
+    }
+
+    .nav-movil-icono {
+        width: 34px;
+        height: 34px;
+        object-fit: contain;
+    }
+
+    .nav-movil-icono1 {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
+
+    .nav-movil-item.activo .nav-movil-icono {
+        filter: drop-shadow(0 0 4px rgba(50, 98, 33, 0.4));
+    }
+}
+
+/* MODAL DE CIERRE DE SESIÓN */
+.modal-cerrar-sesion {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-contenido {
+    background-color: white;
+    width: 400px;
+    height: 500px;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-texto-1,
+.modal-texto-2,
+.modal-texto-3 {
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+    color: var(--texto-principal);
+}
+
+.modal-texto-2 {
+    color: red;
+    font-size: 22px;
+}
+
+.modal-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.modal-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 45%;
+}
+
+.modal-btn-cerrar {
+    background-color: red;
+    color: white;
+}
+
+.modal-btn-cerrar:hover {
+    background-color: darkred;
+}
+
+.modal-btn-cancelar {
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+}
+
+.modal-btn-cancelar:hover {
+    background-color: #ffe6e6;
+}
