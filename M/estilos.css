@@ -163,6 +163,7 @@ body {
 .contenido-fondo {
     position: relative;
     z-index: 3;
+    padding: 25px 15px;
 }
 
 /* Encabezado */
