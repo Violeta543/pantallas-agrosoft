@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrosoft Dashboard</title>
     <link rel="stylesheet" href="stilosT.css">
-    <title>TRATAMIENTOS</title>
 </head>
-
 <body>
+
+    <!-- BARRA LATERAL -->
     <aside class="barra-lateral">
         <div class="logo">
             <span class="logo-texto">AGROSOFT</span>
         </div>
 
         <nav class="menu-lateral">
-            <a href="/k/dashboard.html" class="enlace-menu" data-seccion="dashboard">
+            <a href="/k/dashboard.html" class="enlace-menu activo" data-seccion="dashboard">
                 <img src="/k/imagenes/dash.png" alt="Dashboard" class="icono-menu">
                 <span class="texto-menu">Dashboard</span>
             </a>
@@ -27,7 +27,7 @@
                 <img src="/k/imagenes/tareas.png" alt="Tareas" class="icono-menu">
                 <span class="texto-menu">Tareas</span>
             </a>
-            <a href="/MP/tratamiento.html" class="enlace-menu activo" data-seccion="tratamiento">
+            <a href="/MP/tratamiento.html" class="enlace-menu" data-seccion="tratamiento">
                 <img src="/k/imagenes/tratamiento.png" alt="Tratamiento" class="icono-menu">
                 <span class="texto-menu">Tratamiento</span>
             </a>
@@ -63,7 +63,9 @@
         </a>
     </aside>
 
+    <!-- CONTENEDOR PRINCIPAL (PC) -->
     <main class="contenedor-principal">
+
         <header class="encabezado">
             <img src="/k/imagenes/logo.png" alt="Logo" class="Logo-header-icono">
             <div class="encabezado-texto">
@@ -79,14 +81,19 @@
             </div>
         </header>
 
+        <!-- CONTENIDO PC -->
         <section class="contenido-fondo">
             <div class="modulo-tratamiento">
+
                 <div class="barra-acciones">
                     <button class="btn-nuevo-item">
                         <span><img src="/MP/img/agregar.svg" alt=""></span> Nuevo Item
                     </button>
                 </div>
+
                 <div class="contenedor-tarjetas">
+
+                    <!-- Tarjeta 1 -->
                     <div class="tarjeta-tratamiento">
                         <div class="tarjeta-cuerpo">
                             <div>
@@ -100,181 +107,227 @@
                             <div class="secciones-fases">
                                 <h4 class="fases-titulo">Fases del Tratamiento</h4>
                                 <div class="lista-fases">
-
                                     <div class="fase-item cumplido">
                                         <span class="fase-indicador">1</span>
-                                        <p class="fase-texto">Aplicar funjicida sistemico ( 200ml/ha)</p>
+                                        <p class="fase-texto">Aplicar fungicida sistémico (200ml/ha)</p>
                                     </div>
                                     <div class="fase-item cumplido">
                                         <span class="fase-indicador">2</span>
-                                        <p class="fase-texto">Mejorar ventilacion entre plantas </p>
+                                        <p class="fase-texto">Mejorar ventilación entre plantas</p>
                                     </div>
                                     <div class="fase-item cumplido">
                                         <span class="fase-indicador">3</span>
-                                        <p class="fase-texto">Reducir freccuencia de rirgo foliar</p>
+                                        <p class="fase-texto">Reducir frecuencia de riego foliar</p>
                                     </div>
                                     <div class="fase-item pendiente">
                                         <span class="fase-indicador"><img src="/MP/img/pendiente.svg" alt=""></span>
-                                        <p class="fase-texto">Eliminar partes afectadas visibles </p>
+                                        <p class="fase-texto">Eliminar partes afectadas visibles</p>
                                     </div>
                                     <div class="fase-item pendiente">
                                         <span class="fase-indicador"><img src="/MP/img/pendiente.svg" alt=""></span>
-                                        <p class="fase-texto">Monitorear evolucion (dia 7 )</p>
+                                        <p class="fase-texto">Monitorear evolución (día 7)</p>
                                     </div>
                                     <div class="fase-item pendiente">
                                         <span class="fase-indicador"><img src="/MP/img/pendiente.svg" alt=""></span>
-                                        <p class="fase-texto">Segunda aolicacion si es necesaria dia (10)</p>
+                                        <p class="fase-texto">Segunda aplicación si es necesaria (día 10)</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="tratamiento-acciones">
                                 <button class="btn-tratamiento-accion btn-editar-tratamiento">
-                                    <span>Editar Tratamiento</span><img src="/MP/img/editar.svg" alt="">
+                                    <span>Editar Tratamiento</span>
+                                    <img src="/MP/img/editar.svg" alt="" class="icono-accion">
                                 </button>
                                 <button class="btn-tratamiento-accion btn-eliminar-tratamiento">
-                                    <span>Eliminar Tratamiento</span><img src="/MP/img/eliminar.svg" alt="">
+                                    <span>Eliminar Tratamiento</span>
+                                    <img src="/MP/img/eliminar.svg" alt="" class="icono-accion">
                                 </button>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Tarjeta 2 (vacía) -->
                     <div class="tarjeta-tratamiento">
                         <div class="tarjeta-cuerpo"></div>
                     </div>
+
+                    <!-- Tarjeta 3 (vacía) -->
                     <div class="tarjeta-tratamiento">
                         <div class="tarjeta-cuerpo"></div>
-                        
-                </div>
-                </div>
+                    </div>
+
+                </div><!-- fin contenedor-tarjetas -->
+
                 <div class="paginacion">
-                <button class="btn-flecha" title="Anterior"><img src="/MP/img/fl-atras.svg" alt=""></button>
-                <span class="puntos-suspensivos">...</span>
-                <button class="btn-flecha" title="Siguiente"><img src="/MP/img/fl-siguiente.svg" alt=""></button>
-            </div>
-            </div>
+                    <button class="btn-flecha" title="Anterior">
+                        <img src="/MP/img/fl-atras.svg" alt="Anterior">
+                    </button>
+                    <span class="puntos-suspensivos">...</span>
+                    <button class="btn-flecha" title="Siguiente">
+                        <img src="/MP/img/fl-siguiente.svg" alt="Siguiente">
+                    </button>
+                </div>
+
+            </div><!-- fin modulo-tratamiento -->
         </section>
-    </main>
+
+        <!-- CONTENIDO MÓVIL (dentro del main para heredar el fondo) -->
         <section class="contenedor-movil">
             <div class="encabezado-texto">
                 <h1 class="titulo-pagina">TRATAMIENTO</h1>
+            </div>
+            <div class="barra-acciones-mv">
+                <button class="add-mv" id="add-mv">
+                    <span>AGREGAR TRATAMIENTO</span>
+                    <img src="/MP/img/add-mv.svg" alt="">
+                </button>
+            </div>
+            <div class="contenedor-tratamiento">
+                <button class="vr-fases">
+                    <img class="icon-accion" src="/MP/img/fases.svg" alt="">
+                    <span>Fases</span>
+                </button>
+                <h3 class="n-tratamiento">TIZÓN TARDIO</h3>
+                <div class="caracteristicas">
+                    <p>Maíz- zona A<br>
+                    Se aplicó 0.5L/ha de Priori Xtra ya que el cultivo presentó manchas en sus hojas</p>
                 </div>
-                <div class="barra-acciones-mv">
-                    <button class="add-mv" id="add-mv">
-                        <span>AGREGAR TRATAMIENTO</span> <img src="/MP/img/add-mv.svg" alt="">
+                <div class="fecha-hora">
+                    <span class="datos-p">9 Sep 2026</span>
+                    <span class="datos-p">10:00 a.m</span>
+                </div>
+                <div class="modulo-btn">
+                    <button id="btnAbrirEditar" class="btn-editar-mv">Editar</button>
+                    <button id="btnAbrirEliminar" class="btn-eliminar-mv">Eliminar</button>
+                </div>
+            </div>
+        </section>
+
+    </main><!-- fin contenedor-principal -->
+
+    <!-- ══════════════════════════════
+         MODALES
+    ══════════════════════════════ -->
+
+    <!-- Modal: Nuevo Tratamiento -->
+    <div class="modal-overlay" id="modalTratamiento">
+        <div class="modal-contenedor">
+            <h2 class="modal-titulo">Nuevo Tratamiento</h2>
+            <form id="formNuevoTratamiento">
+                <div class="grupo-campo"><label>Nombre incidencia</label><input type="text"></div>
+                <div class="grupo-campo"><label>Nombre cultivo</label><input type="text"></div>
+                <div class="grupo-campo"><label>Descripción</label><input type="text" class="descripcion"></div>
+                <div class="grupo-campo"><label>Tratamiento</label><input type="text"></div>
+                <div class="grupo-campo"><label>Fases</label><input type="text"></div>
+                <div class="modal-botones">
+                    <button type="submit" class="btn-guardar">
+                        <img src="/MP/img/guardar.svg" alt=""> Guardar
+                    </button>
+                    <button type="button" id="btnCancelar" class="btn-cancelar">
+                        <img src="/MP/img/cancelar.svg" alt=""> Cancelar
                     </button>
                 </div>
-                <div class="contenedor-tratamiento">
-                    <div class="vr-fases">
-                    <img class="icon-acion" src="/MP/img/fases.svg" alt=""> <span>Fases</span></div>
-                    <h3 class="n-tratamiento">TIZÓN TARDIO</h3>
-                    
-                    <div class="caracteristicas">
-                    <P>Maíz- zona A <br>
-                    Se aplicó 0.5L/ha de Priori Xtra ya que el cultivo presento manchas en sus hojas</P> 
-                    </div>
-                    <div class="fecha-hora">
-                    <span class="datos-p">9 Sep 2026</span>
-                                    <span class="datos-p">10:00 a.m</span></div>
-                                    <div class="modulo-btn">
-                                    <button id="btnAbrirEditar" class="btn-editar-mv">Editar</button>
-                                    <button id="btnAbrirEliminar" class="btn-eliminar-mv">Eliminar</button>
-                                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Editar Tratamiento -->
+    <div class="modal-overlay" id="modalEditar">
+        <div class="modal-contenedor">
+            <h2 class="modal-titulo">Editar Tratamiento</h2>
+            <form id="formEditarTratamiento">
+                <div class="grupo-campo"><label>Nombre incidencia</label><input type="text" id="editIncidencia"></div>
+                <div class="grupo-campo"><label>Nombre cultivo</label><input type="text" id="editCultivo"></div>
+                <div class="grupo-campo"><label>Descripción</label><input type="text" class="descripcion" id="editDescripcion"></div>
+                <div class="grupo-campo"><label>Tratamiento</label><input type="text" id="editTratamientoCampo"></div>
+                <div class="grupo-campo"><label>Fases</label><input type="text" id="editFases"></div>
+                <div class="modal-botones">
+                    <button type="submit" class="btn-guardar">
+                        <img src="/MP/img/guardar.svg" alt=""> Actualizar
+                    </button>
+                    <button type="button" id="btnCancelarEditar" class="btn-cancelar">
+                        <img src="/MP/img/cancelar.svg" alt=""> Cancelar
+                    </button>
                 </div>
-        </section>
-<div class="modal-overlay" id="modalTratamiento">
-    <div class="modal-contenedor">
-        <h2 class="modal-titulo">Nuevo Tratamiento</h2>
-        <form id="formNuevoTratamiento">
-            <div class="grupo-campo"><label>Nombre incidencia</label><input type="text"></div>
-            <div class="grupo-campo"><label>Nombre cultivo</label><input type="text"></div>
-            <div class="grupo-campo"><label>Descripción</label><input type="text" class="descripcion"></div>
-            <div class="grupo-campo"><label>Tratamiento</label><input type="text"></div>
-            <div class="grupo-campo"><label>Fases</label><input type="text"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Eliminar Tratamiento -->
+    <div class="modal-overlay" id="modalEliminar">
+        <div class="modal-contenedor">
+            <div class="cntdor-eliminar">
+                <img src="/MP/img/cntdor-eliminar.svg" alt="Eliminar">
+            </div>
+            <p class="pregunta">¿Eliminar Tratamiento?</p>
+            <h2 class="n-e-tratamiento">"TIZÓN TARDIO"</h2>
+            <p class="pregunta">
+                Esta acción no se puede deshacer. Se
+                eliminarán todos los datos asociados a
+                este Tratamiento.
+            </p>
             <div class="modal-botones">
-                <button type="submit" class="btn-guardar"><img src="/MP/img/guardar.svg" alt=""> Guardar</button>
-                <button type="button" id="btnCancelar" class="btn-cancelar"><img src="/MP/img/cancelar.svg" alt=""> Cancelar</button>
-            </div>
-        </form>
-    </div>
-</div>
-
-<div class="modal-overlay" id="modalEditar">
-    <div class="modal-contenedor">
-        <h2 class="modal-titulo">Editar Tratamiento</h2>
-        <form id="formEditarTratamiento">
-            <div class="grupo-campo"><label>Nombre incidencia</label><input type="text" id="editIncidencia"></div>
-            <div class="grupo-campo"><label>Nombre cultivo</label><input type="text" id="editCultivo"></div>
-            <div class="grupo-campo"><label>Descripción</label><input type="text" class="descripcion" id="editDescripcion"></div>
-            <div class="grupo-campo"><label>Tratamiento</label><input type="text" id="editTratamientoCampo"></div>
-            <div class="grupo-campo"><label>Fases</label><input type="text" id="editFases"></div>
-            <div class="modal-botones">
-                <button type="submit" class="btn-guardar"><img src="/MP/img/guardar.svg" alt=""> Actualizar</button>
-                <button type="button" id="btnCancelarEditar" class="btn-cancelar"><img src="/MP/img/cancelar.svg" alt=""> Cancelar</button>
-            </div>
-        </form>
-    </div>
-</div>
-
-<div class="modal-overlay" id="modalEliminar">
-    <div class="modal-contenedor">
-        
-        <div class="cntdor-eliminar">
-            <img src="/MP/img/cntdor-eliminar.svg" alt="Eliminar" >
-        </div>
-        
-        <p class="pregunta">¿Eliminar Tratamiento?</p>
-        <h2 class="n-e-tratamiento">"TIZÓN TARDIO"</h2>
-        
-        <p class="pregunta">
-            Esta acción no se puede deshacer. Se 
-            eliminarán todos los datos asociados a 
-            este Tratamiento.
-        </p>
-        
-        <div class="modal-botones">
-            <button type="button" id="btnCancelarEliminar">
-                ✕ Cancelar
-            </button>
-            
-            <button type="button" id="btnConfirmarEliminar" class="btn-eliminar"><img src="/MP/img/basura.svg" alt=""> Eliminar
-            </button>
-        </div>
-
-    </div>
-</div>
-<!-- fases -->
-<div class="modal-overlay" id="modalFases">
-    <div class="modal-contenedor">
-        <h2 class="modal-titulo">Fases del Tratamiento</h2>
-        <div class="lista-fases">
-            <div class="fase-item completada">
-                <div class="fase-icono"><img src="/MP/img/hecho.svg" alt=""></div>
-                <div class="fase-texto"><strong>Fase 1 . 7 / 12 / 24</strong><p>aplicar fungicida sistemico ( 200ml/ha)</p></div>
-            </div>
-            <div class="fase-item completada">
-                <div class="fase-icono"><img src="/MP/img/hecho.svg" alt=""></div>
-                <div class="fase-texto"><strong>Fase 2 . 8 / 12 / 24</strong><p>mejorar ventilacion entre plantas</p></div>
-            </div>
-            <div class="fase-item completada">
-                <div class="fase-icono"><img src="/MP/img/hecho.svg" alt=""></div>
-                <div class="fase-texto"><strong>Fase 3 . 8 / 12 / 24</strong><p>reducir freccuencia de rirgo foliar</p></div>
-            </div>
-            <div class="fase-item pendiente">
-                <div class="fase-icono"><img src="/MP/img/pendiente-mv.svg" alt=""></div>
-                <div class="fase-texto"><strong>Fase 4</strong><p>eliminar partes afectadas visibles</p></div>
-            </div>
-            <div class="fase-item pendiente">
-                <div class="fase-icono"><img src="/MP/img/pendiente-mv.svg" alt=""></div>
-                <div class="fase-texto"><strong>Fase 5</strong><p>monitorear evolucion (dia 7 )</p></div>
-            </div>
-            <div class="fase-item pendiente">
-                <div class="fase-icono"><img src="/MP/img/pendiente-mv.svg" alt=""></div>
-                <div class="fase-texto"><strong>Fase 6</strong><p>segunda aolicacion si es necesaria dia (10)</p></div>
+                <button type="button" id="btnCancelarEliminar">✕ Cancelar</button>
+                <button type="button" id="btnConfirmarEliminar" class="btn-eliminar">
+                    <img src="/MP/img/basura.svg" alt=""> Eliminar
+                </button>
             </div>
         </div>
-        <button id="btnCerrarModal" class="btn-volver">Volver</button>
     </div>
-</div>
-<!-- BARRA DE NAVEGACIÓN MÓVIL -->
+
+    <!-- Modal: Fases del Tratamiento -->
+    <div class="modal-overlay" id="modalFases">
+        <div class="modal-contenedor">
+            <h2 class="modal-titulo">Fases del Tratamiento</h2>
+            <div class="lista-fases">
+                <div class="fase-item completada">
+                    <div class="fase-icono"><img src="/MP/img/hecho.svg" alt=""></div>
+                    <div class="fase-texto">
+                        <strong>Fase 1 · 7/12/24</strong>
+                        <p>Aplicar fungicida sistémico (200ml/ha)</p>
+                    </div>
+                </div>
+                <div class="fase-item completada">
+                    <div class="fase-icono"><img src="/MP/img/hecho.svg" alt=""></div>
+                    <div class="fase-texto">
+                        <strong>Fase 2 · 8/12/24</strong>
+                        <p>Mejorar ventilación entre plantas</p>
+                    </div>
+                </div>
+                <div class="fase-item completada">
+                    <div class="fase-icono"><img src="/MP/img/hecho.svg" alt=""></div>
+                    <div class="fase-texto">
+                        <strong>Fase 3 · 8/12/24</strong>
+                        <p>Reducir frecuencia de riego foliar</p>
+                    </div>
+                </div>
+                <div class="fase-item pendiente">
+                    <div class="fase-icono"><img src="/MP/img/pendiente-mv.svg" alt=""></div>
+                    <div class="fase-texto">
+                        <strong>Fase 4</strong>
+                        <p>Eliminar partes afectadas visibles</p>
+                    </div>
+                </div>
+                <div class="fase-item pendiente">
+                    <div class="fase-icono"><img src="/MP/img/pendiente-mv.svg" alt=""></div>
+                    <div class="fase-texto">
+                        <strong>Fase 5</strong>
+                        <p>Monitorear evolución (día 7)</p>
+                    </div>
+                </div>
+                <div class="fase-item pendiente">
+                    <div class="fase-icono"><img src="/MP/img/pendiente-mv.svg" alt=""></div>
+                    <div class="fase-texto">
+                        <strong>Fase 6</strong>
+                        <p>Segunda aplicación si es necesaria (día 10)</p>
+                    </div>
+                </div>
+            </div>
+            <button id="btnCerrarModal" class="btn-volver">Volver</button>
+        </div>
+    </div>
+
+    <!-- BARRA DE NAVEGACIÓN MÓVIL -->
     <nav class="barra-nav-movil">
         <a href="/ajustes" class="nav-movil-item">
             <img src="/k/movil/configuraciones.png" class="nav-movil-icono" alt="Ajustes">
@@ -284,7 +337,7 @@
             <img src="/k/movil/logo.png" class="nav-movil-icono nav-movil-icono1" alt="Inicio">
             <span>Inicio</span>
         </a>
-        <a href="/perfil/perfil.html" class="nav-movil-item">
+        <a href="/perfil" class="nav-movil-item">
             <img src="/k/movil/user.png" class="nav-movil-icono" alt="Perfil">
             <span>Perfil</span>
         </a>
@@ -293,120 +346,101 @@
     <!-- MODAL DE CIERRE DE SESIÓN -->
     <div id="modal-cerrar-sesion" class="modal-cerrar-sesion">
         <div class="modal-contenido">
-            <p class="modal-texto-1">¿Deseas cerrar sesion?</p>
+            <p class="modal-texto-1">¿Deseas cerrar sesión?</p>
             <p class="modal-texto-2">"Yonatan Gomez"</p>
-            <p class="modal-texto-3">Esta accion cerrara tu sesion y podras volver a ingresar mas tarde.</p>
+            <p class="modal-texto-3">Esta acción cerrará tu sesión y podrás volver a ingresar más tarde.</p>
             <div class="modal-botones">
                 <button class="modal-btn modal-btn-cerrar" onclick="confirmarCerrarSesion()">Cerrar Sesión</button>
-                <button class="modal-btn modal-btn-cancelar" onclick="ocultarModalCerrarSesion()">X Cancelar</button>
+                <button class="modal-btn modal-btn-cancelar" onclick="ocultarModalCerrarSesion()">✕ Cancelar</button>
             </div>
         </div>
     </div>
+
     <script>
-    // =================================================================
-    // INTERCEPTOR DE CLICS GLOBAL (Funciona al 100% en PC y Móvil)
-    // =================================================================
-    document.addEventListener('click', (e) => {
-        
-        // --- 1. DETECTAR: ABRIR NUEVO TRATAMIENTO ---
-        if (e.target.closest('.btn-nuevo-item') || e.target.closest('#add-mv') || e.target.closest('.add-mv')) {
-            const modalNuevo = document.getElementById('modalTratamiento');
-            if (modalNuevo) modalNuevo.classList.add('mostrar');
-        }
+        // ================================================================
+        // INTERCEPTOR DE CLICS GLOBAL
+        // ================================================================
+        document.addEventListener('click', (e) => {
 
-        // --- 2. DETECTAR: ABRIR EDITAR TRATAMIENTO ---
-        if (e.target.closest('.btn-editar-tratamiento') || e.target.closest('#btnAbrirEditar') || e.target.closest('.btn-editar-mv')) {
-            const modalEditar = document.getElementById('modalEditar');
-            if (modalEditar) {
-                // Precarga de datos en los inputs del formulario
-                const inIncidencia = document.getElementById('editIncidencia');
-                const inCultivo = document.getElementById('editCultivo');
-                const inDescripcion = document.getElementById('editDescripcion');
-                const inTratamiento = document.getElementById('editTratamientoCampo');
-                const inFases = document.getElementById('editFases');
-
-                if (inIncidencia) inIncidencia.value = "Tizón Tardío";
-                if (inCultivo) inCultivo.value = "Maíz – zona A";
-                if (inDescripcion) inDescripcion.value = "Se aplicó 0.5 litros/ha de Priori Xtra, ya que el cultivo presento manchas en sus hojas.";
-                if (inTratamiento) inTratamiento.value = "Se aplicó 0.5L/ha de Priori Xtra";
-                if (inFases) inFases.value = "Fase 1";
-
-                modalEditar.classList.add('mostrar');
+            // 1. ABRIR NUEVO TRATAMIENTO
+            if (e.target.closest('.btn-nuevo-item') || e.target.closest('#add-mv') || e.target.closest('.add-mv')) {
+                const modal = document.getElementById('modalTratamiento');
+                if (modal) modal.classList.add('mostrar');
             }
-        }
 
-        // --- 3. DETECTAR: ABRIR ELIMINAR TRATAMIENTO ---
-        if (e.target.closest('.btn-eliminar-tratamiento') || e.target.closest('#btnAbrirEliminar') || e.target.closest('.btn-eliminar-mv')) {
-            const modalEliminar = document.getElementById('modalEliminar');
-            if (modalEliminar) modalEliminar.classList.add('mostrar');
-        }
+            // 2. ABRIR EDITAR TRATAMIENTO
+            if (e.target.closest('.btn-editar-tratamiento') || e.target.closest('#btnAbrirEditar') || e.target.closest('.btn-editar-mv')) {
+                const modal = document.getElementById('modalEditar');
+                if (modal) {
+                    const inIncidencia  = document.getElementById('editIncidencia');
+                    const inCultivo     = document.getElementById('editCultivo');
+                    const inDescripcion = document.getElementById('editDescripcion');
+                    const inTratamiento = document.getElementById('editTratamientoCampo');
+                    const inFases       = document.getElementById('editFases');
 
-        // --- 4. DETECTAR: ABRIR OJITO DE FASES ---
-        if (e.target.closest('.vr-fases')) {
-            const modalFases = document.getElementById('modalFases');
-            if (modalFases) modalFases.classList.add('mostrar');
-        }
-    });
+                    if (inIncidencia)  inIncidencia.value  = "Tizón Tardío";
+                    if (inCultivo)     inCultivo.value     = "Maíz – zona A";
+                    if (inDescripcion) inDescripcion.value = "Se aplicó 0.5 litros/ha de Priori Xtra, ya que el cultivo presentó manchas en sus hojas.";
+                    if (inTratamiento) inTratamiento.value = "Se aplicó 0.5L/ha de Priori Xtra";
+                    if (inFases)       inFases.value       = "Fase 1";
 
-    // =================================================================
-    // CONTROL DE BOTONES ESPECÍFICOS: CANCELAR Y ACCIONES
-    // =================================================================
-    
-    // Cancelar Nuevo
-    const btnCancelarNuevo = document.getElementById('btnCancelar');
-    if (btnCancelarNuevo) {
-        btnCancelarNuevo.addEventListener('click', () => {
+                    modal.classList.add('mostrar');
+                }
+            }
+
+            // 3. ABRIR ELIMINAR TRATAMIENTO
+            if (e.target.closest('.btn-eliminar-tratamiento') || e.target.closest('#btnAbrirEliminar') || e.target.closest('.btn-eliminar-mv')) {
+                const modal = document.getElementById('modalEliminar');
+                if (modal) modal.classList.add('mostrar');
+            }
+
+            // 4. ABRIR FASES (ojito)
+            if (e.target.closest('.vr-fases')) {
+                const modal = document.getElementById('modalFases');
+                if (modal) modal.classList.add('mostrar');
+            }
+        });
+
+        // ================================================================
+        // BOTONES CANCELAR / CERRAR
+        // ================================================================
+
+        document.getElementById('btnCancelar')?.addEventListener('click', () => {
             document.getElementById('modalTratamiento').classList.remove('mostrar');
         });
-    }
 
-    // Cancelar Editar
-    const btnCancelarEditar = document.getElementById('btnCancelarEditar');
-    if (btnCancelarEditar) {
-        btnCancelarEditar.addEventListener('click', () => {
+        document.getElementById('btnCancelarEditar')?.addEventListener('click', () => {
             document.getElementById('modalEditar').classList.remove('mostrar');
         });
-    }
 
-    // Cancelar Eliminar
-    const btnCancelarEliminar = document.getElementById('btnCancelarEliminar');
-    if (btnCancelarEliminar) {
-        btnCancelarEliminar.addEventListener('click', () => {
+        document.getElementById('btnCancelarEliminar')?.addEventListener('click', () => {
             document.getElementById('modalEliminar').classList.remove('mostrar');
         });
-    }
 
-    // Volver desde Fases
-    const btnCerrarFases = document.getElementById('btnCerrarModal');
-    if (btnCerrarFases) {
-        btnCerrarFases.addEventListener('click', () => {
+        document.getElementById('btnCerrarModal')?.addEventListener('click', () => {
             document.getElementById('modalFases').classList.remove('mostrar');
         });
-    }
 
-    // Confirmar eliminación física del elemento
-    const btnConfirmarEliminar = document.getElementById('btnConfirmarEliminar');
-    if (btnConfirmarEliminar) {
-        btnConfirmarEliminar.addEventListener('click', () => {
-            // Elimina la tarjeta del entorno que corresponda
-            const tarjetaPC = document.querySelector('.tarjeta-tratamiento');
+        // Confirmar eliminación
+        document.getElementById('btnConfirmarEliminar')?.addEventListener('click', () => {
+            const tarjetaPC    = document.querySelector('.tarjeta-tratamiento');
             const tarjetaMovil = document.querySelector('.contenedor-tratamiento');
-            
-            if (tarjetaPC) tarjetaPC.remove();
+            if (tarjetaPC)    tarjetaPC.remove();
             if (tarjetaMovil) tarjetaMovil.remove();
-
             document.getElementById('modalEliminar').classList.remove('mostrar');
         });
-    }
 
-    // --- 5. AUTOMÁTICO: CERRAR AL TOCAR EL FONDO OSCURO OVERLAY ---
-    window.addEventListener('click', (e) => {
-        if (e.target.classList.contains('modal-overlay')) {
-            e.target.classList.remove('mostrar');
-        }
-    });
-    //cerrar sesion---
-function mostrarModalCerrarSesion(event) {
+        // Cerrar al tocar el fondo oscuro
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-overlay')) {
+                e.target.classList.remove('mostrar');
+            }
+        });
+
+        // ================================================================
+        // CERRAR SESIÓN
+        // ================================================================
+        function mostrarModalCerrarSesion(event) {
             event.preventDefault();
             document.getElementById('modal-cerrar-sesion').style.display = 'flex';
         }
@@ -416,8 +450,9 @@ function mostrarModalCerrarSesion(event) {
         }
 
         function confirmarCerrarSesion() {
-            window.location.href = '/index.html';}
+            window.location.href = '/index.html';
+        }
     </script>
-</body>
 
+</body>
 </html>

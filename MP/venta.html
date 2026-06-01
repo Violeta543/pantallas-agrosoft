@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/MP/stilosV.css">
-    <title>ventas</title>
+    <title>Ventas</title>
 </head>
 <body>
+
+    <!-- BARRA LATERAL -->
     <aside class="barra-lateral">
         <div class="logo">
             <span class="logo-texto">AGROSOFT</span>
         </div>
-
         <nav class="menu-lateral">
             <a href="/k/dashboard.html" class="enlace-menu" data-seccion="dashboard">
                 <img src="/k/imagenes/dash.png" alt="Dashboard" class="icono-menu">
@@ -33,7 +34,7 @@
                 <img src="/k/imagenes/inventarios.png" alt="Inventario" class="icono-menu">
                 <span class="texto-menu">Inventario</span>
             </a>
-            <a href="#" class="enlace-menu activo" data-seccion="ventas">
+            <a href="/MP/venta.html" class="enlace-menu activo" data-seccion="ventas">
                 <img src="/k/imagenes/ventas.png" alt="Ventas" class="icono-menu">
                 <span class="texto-menu">Ventas</span>
             </a>
@@ -54,19 +55,20 @@
                 <span class="texto-menu">Ajustes</span>
             </a>
         </nav>
-
         <a href="#" class="boton-cerrar" onclick="mostrarModalCerrarSesion(event)">
             <img src="/k/imagenes/cerrar.png" alt="Cerrar" class="icono-cerrar">
             <span>Cerrar sesión</span>
         </a>
     </aside>
 
+    <!-- CONTENEDOR PRINCIPAL -->
     <main class="contenedor-principal">
+
         <header class="encabezado">
             <img src="/k/imagenes/logo.png" alt="Logo" class="Logo-header-icono">
             <div class="encabezado-texto">
                 <h1 class="titulo-pagina">VENTAS</h1>
-                <p class="subtitulo-pagina">Gestiona precios </p>
+                <p class="subtitulo-pagina">Gestiona precios</p>
             </div>
             <div class="usuario-contenedor">
                 <img src="/k/imagenes/perfil.png" alt="Perfil" class="usuario-icono">
@@ -77,97 +79,74 @@
             </div>
         </header>
 
+        <!-- CONTENIDO PC -->
         <section class="contenido-fondo">
-        <div class="modulo-ventas">
-            
-            <div class="barra-acciones">
-                <button class="btn-nuevo-item">
-                    <span><img src="/MP/img/agregar.svg" alt=""></span> Nuevo Item
-                </button>
-            </div>
+            <div class="modulo-ventas">
 
-            <div class="contenedor-tarjetas">
-                
-                <div class="tarjeta-venta">
-                    <div class="tarjeta-cabecera">VENTAS</div>
-                    <div class="tarjeta-cuerpo">
-                        <div class="info-principal">
-                            <h3 class="producto-nombre">MORA SILVESTRE</h3>
-                            <span class="producto-precio">$150.000</span>
-                        </div>
-                        <p class="producto-cantidad">Se vendieron 30 kilos</p>
-                        <div class="tarjeta-pie">
-                            <span class="venta-fecha">9 Sep 2026  <span>  10:00 a.m</span></span>
-                            <div class="acciones-iconos">
-                                <button class="btn-accion" title="Editar"><img src="/MP/img/editar.svg" alt=""></button>
-                                <button class="btn-accion" title="Eliminar"><img src="/MP/img/eliminar.svg" alt=""></button>
+                <div class="barra-acciones">
+                    <button class="btn-nuevo-item">
+                        <span><img src="/MP/img/agregar.svg" alt=""></span> Nuevo Item
+                    </button>
+                </div>
+
+                <div class="contenedor-tarjetas">
+
+                    <!-- Tarjeta real -->
+                    <div class="tarjeta-venta">
+                        <div class="tarjeta-cabecera">VENTAS</div>
+                        <div class="tarjeta-cuerpo">
+                            <div class="info-principal">
+                                <h3 class="producto-nombre">MORA SILVESTRE</h3>
+                                <span class="producto-precio">$150.000</span>
+                            </div>
+                            <p class="producto-cantidad">Se vendieron 30 kilos</p>
+                            <div class="tarjeta-pie">
+                                <span class="venta-fecha">9 Sep 2026 <span>10:00 a.m</span></span>
+                                <div class="acciones-iconos">
+                                    <button class="btn-accion" title="Editar"><img src="/MP/img/editar.svg" alt="Editar"></button>
+                                    <button class="btn-accion" title="Eliminar"><img src="/MP/img/eliminar.svg" alt="Eliminar"></button>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Tarjetas vacías -->
+                    <div class="tarjeta-venta vacia"><div class="tarjeta-cabecera">VENTAS</div><div class="tarjeta-cuerpo"></div></div>
+                    <div class="tarjeta-venta vacia"><div class="tarjeta-cabecera">VENTAS</div><div class="tarjeta-cuerpo"></div></div>
+                    <div class="tarjeta-venta vacia"><div class="tarjeta-cabecera">VENTAS</div><div class="tarjeta-cuerpo"></div></div>
+                    <div class="tarjeta-venta vacia"><div class="tarjeta-cabecera">VENTAS</div><div class="tarjeta-cuerpo"></div></div>
+                    <div class="tarjeta-venta vacia"><div class="tarjeta-cabecera">VENTAS</div><div class="tarjeta-cuerpo"></div></div>
+                    <div class="tarjeta-venta vacia"><div class="tarjeta-cabecera">VENTAS</div><div class="tarjeta-cuerpo"></div></div>
+                    <div class="tarjeta-venta vacia"><div class="tarjeta-cabecera">VENTAS</div><div class="tarjeta-cuerpo"></div></div>
+                    <div class="tarjeta-venta vacia"><div class="tarjeta-cabecera">VENTAS</div><div class="tarjeta-cuerpo"></div></div>
+
                 </div>
 
-                <div class="tarjeta-venta vacia">
-                    <div class="tarjeta-cabecera">VENTAS</div>
-                    <div class="tarjeta-cuerpo"></div>
+                <div class="paginacion">
+                    <button class="btn-flecha" title="Anterior"><img src="/MP/img/fl-atras.svg" alt="Anterior"></button>
+                    <span class="puntos-suspensivos">...</span>
+                    <button class="btn-flecha" title="Siguiente"><img src="/MP/img/fl-siguiente.svg" alt="Siguiente"></button>
                 </div>
 
-                <div class="tarjeta-venta vacia">
-                    <div class="tarjeta-cabecera">VENTAS</div>
-                    <div class="tarjeta-cuerpo"></div>
-                </div>
-
-                <div class="tarjeta-venta vacia">
-                    <div class="tarjeta-cabecera">VENTAS</div>
-                    <div class="tarjeta-cuerpo"></div>
-                </div>
-
-                <div class="tarjeta-venta vacia">
-                    <div class="tarjeta-cabecera">VENTAS</div>
-                    <div class="tarjeta-cuerpo"></div>
-                </div>
-
-                <div class="tarjeta-venta vacia">
-                    <div class="tarjeta-cabecera">VENTAS</div>
-                    <div class="tarjeta-cuerpo"></div>
-                </div>
-
-                <div class="tarjeta-venta vacia">
-                    <div class="tarjeta-cabecera">VENTAS</div>
-                    <div class="tarjeta-cuerpo"></div>
-                </div>
-
-                <div class="tarjeta-venta vacia">
-                    <div class="tarjeta-cabecera">VENTAS</div>
-                    <div class="tarjeta-cuerpo"></div>
-                </div>
-
-                <div class="tarjeta-venta vacia">
-                    <div class="tarjeta-cabecera">VENTAS</div>
-                    <div class="tarjeta-cuerpo"></div>
-                </div>
             </div>
-            <div class="paginacion">
-                <button class="btn-flecha" title="Anterior"><img src="/MP/img/fl-atras.svg" alt=""></button>
-                <span class="puntos-suspensivos">...</span>
-                <button class="btn-flecha" title="Siguiente"><img src="/MP/img/fl-siguiente.svg" alt=""></button>
-            </div>
-        </div>
         </section>
-    </main>
+
+        <!-- CONTENIDO MÓVIL (dentro del main) -->
         <section class="contenedor-movil-v">
             <div class="encabezado-texto-v">
                 <h1 class="titulo-pagina">VENTAS</h1>
             </div>
             <div class="barra-acciones-mv">
                 <button class="add-mv" id="add-mv">
-                    <span>AGREGAR VENTAS</span> <img src="/MP/img/add-mv.svg" alt="">
+                    <span>AGREGAR VENTAS</span>
+                    <img src="/MP/img/add-mv.svg" alt="">
                 </button>
             </div>
             <div class="contenedor-venta">
                 <span class="precio">$200.000</span>
                 <h3 class="n-venta">MORA SILVESTRE</h3>
                 <div class="caracteristicas">
-                    <p>Se vendieron 30 kilos </p> 
+                    <p>Se vendieron 30 kilos</p>
                 </div>
                 <div class="fecha-hora">
                     <span class="datos-p">9 Sep 2026</span>
@@ -180,119 +159,125 @@
             </div>
         </section>
 
-        <div class="modal-overlay-v" id="modalVenta">
-            <div class="modal-contenedor-v">
-                <h2 class="modal-titulo">Nueva Venta</h2>
-                <form id="formNuevaVenta">
-                    <div class="grupo-campo">
-                        <label>Nombre del cultivo</label>
+    </main>
+
+    <!-- ══════════════════════════════
+         MODALES
+    ══════════════════════════════ -->
+
+    <!-- Modal: Nueva Venta -->
+    <div class="modal-overlay-v" id="modalVenta">
+        <div class="modal-contenedor-v">
+            <h2 class="modal-titulo">Nueva Venta</h2>
+            <form id="formNuevaVenta">
+                <div class="grupo-campo">
+                    <label>Nombre del cultivo</label>
+                    <input type="text">
+                </div>
+                <div class="grupo-campo">
+                    <label>Descripción</label>
+                    <input type="text">
+                </div>
+                <div class="grupo-campo-2">
+                    <div class="campo-individual">
+                        <label>Cantidad</label>
                         <input type="text">
                     </div>
-                    <div class="grupo-campo">
-                        <label>Descripción:</label>
-                        <input type="text">
-                    </div>
-                    
-                    <div class="grupo-campo-2">
-                        <div class="campo-individual">
-                            <label>Cantidad</label>
-                            <input type="text">
-                        </div>
-                        <div class="campo-individual">
-                            <label>Estado</label>
-                            <div class="select-personalizado">
-                                <select name="estado" id="estado">
-                                    <option value="pendiente">Pendiente</option>
-                                    <option value="pagada">Pagada</option>
-                                    <option value="cancelada">Cancelada</option>
-                                </select>
-                            </div>
+                    <div class="campo-individual">
+                        <label>Estado</label>
+                        <div class="select-personalizado">
+                            <select name="estado" id="estado">
+                                <option value="pendiente">Pendiente</option>
+                                <option value="pagada">Pagada</option>
+                                <option value="cancelada">Cancelada</option>
+                            </select>
                         </div>
                     </div>
+                </div>
+                <div class="grupo-campo">
+                    <label>Precio unitario</label>
+                    <input type="text">
+                </div>
+                <div class="grupo-campo">
+                    <label>Precio total</label>
+                    <input type="text">
+                </div>
+                <div class="modal-botones">
+                    <button type="submit" class="btn-guardar"><img src="/MP/img/guardar.svg" alt=""> Guardar</button>
+                    <button type="button" id="btnCancelar" class="btn-cancelar"><img src="/MP/img/cancelar.svg" alt=""> Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-                    <div class="grupo-campo">
-                        <label>Precio unitario</label>
-                        <input type="text" class="descripcion">
+    <!-- Modal: Editar Venta -->
+    <div class="modal-overlay-v" id="modalEditarVenta">
+        <div class="modal-contenedor-v">
+            <h2 class="modal-titulo">Editar Venta</h2>
+            <form id="formEditarVenta">
+                <div class="grupo-campo">
+                    <label>Nombre del cultivo</label>
+                    <input type="text" id="editNombreCultivo">
+                </div>
+                <div class="grupo-campo">
+                    <label>Descripción</label>
+                    <input type="text" id="editDescripcion">
+                </div>
+                <div class="grupo-campo-2">
+                    <div class="campo-individual">
+                        <label>Cantidad</label>
+                        <input type="text" id="editCantidad">
                     </div>
-                    <div class="grupo-campo">
-                        <label>Precio total</label>
-                        <input type="text" class="descripcion">
-                    </div>
-                    <div class="modal-botones">
-                        <button type="submit" class="btn-guardar"><img src="/MP/img/guardar.svg" alt=""> Guardar</button>
-                        <button type="button" id="btnCancelar" class="btn-cancelar"><img src="/MP/img/cancelar.svg" alt=""> Cancelar</button>
-                    </div>
-                </form> </div> </div> <div class="modal-overlay-v" id="modalEditarVenta">
-            <div class="modal-contenedor-v">
-                <h2 class="modal-titulo">Editar Venta</h2> <form id="formEditarVenta"> <div class="grupo-campo">
-                        <label>Nombre del cultivo</label>
-                        <input type="text" id="editNombreCultivo">
-                    </div>
-                    <div class="grupo-campo">
-                        <label>Descripción:</label>
-                        <input type="text" id="editDescripcion">
-                    </div>
-                    
-                    <div class="grupo-campo-2">
-                        <div class="campo-individual">
-                            <label>Cantidad</label>
-                            <input type="text" id="editCantidad">
-                        </div>
-                        <div class="campo-individual">
-                            <label>Estado</label>
-                            <div class="select-personalizado">
-                                <select name="estado" id="editEstado">
-                                    <option value="pendiente">Pendiente</option>
-                                    <option value="pagada">Pagada</option>
-                                    <option value="cancelada">Cancelada</option>
-                                </select>
-                            </div>
+                    <div class="campo-individual">
+                        <label>Estado</label>
+                        <div class="select-personalizado">
+                            <select name="estado" id="editEstado">
+                                <option value="pendiente">Pendiente</option>
+                                <option value="pagada">Pagada</option>
+                                <option value="cancelada">Cancelada</option>
+                            </select>
                         </div>
                     </div>
+                </div>
+                <div class="grupo-campo">
+                    <label>Precio unitario</label>
+                    <input type="text" id="editPrecioU">
+                </div>
+                <div class="grupo-campo">
+                    <label>Precio total</label>
+                    <input type="text" id="editPrecioT">
+                </div>
+                <div class="modal-botones">
+                    <button type="submit" class="btn-guardar"><img src="/MP/img/guardar.svg" alt=""> Actualizar</button>
+                    <button type="button" id="btnCancelarEditar" class="btn-cancelar"><img src="/MP/img/cancelar.svg" alt=""> Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-                    <div class="grupo-campo">
-                        <label>Precio unitario</label>
-                        <input type="text" id="editPrecioU">
-                    </div>
-                    <div class="grupo-campo">
-                        <label>Precio total</label>
-                        <input type="text" id="editPrecioT">
-                    </div>
-                    <div class="modal-botones">
-                        <button type="submit" class="btn-guardar"><img src="/MP/img/guardar.svg" alt=""> Guardar</button>
-                        <button type="button" id="btnCancelarEditar" class="btn-cancelar"><img src="/MP/img/cancelar.svg" alt=""> Cancelar</button>
-                    </div>
-                </form>
+    <!-- Modal: Eliminar Venta -->
+    <div class="modal-overlay-v" id="modalEliminarVenta">
+        <div class="modal-contenedor-v">
+            <div class="cntdor-eliminar">
+                <img src="/MP/img/cntdor-eliminar.svg" alt="Eliminar">
+            </div>
+            <p class="pregunta">¿Eliminar venta?</p>
+            <h2 class="n-e-tratamiento">"MORA SILVESTRE"</h2>
+            <p class="pregunta">
+                Esta acción no se puede deshacer. Se
+                eliminarán todos los datos asociados a
+                esta venta.
+            </p>
+            <div class="modal-botones">
+                <button type="button" id="btnCancelarEliminar">✕ Cancelar</button>
+                <button type="button" id="btnConfirmarEliminar" class="btn-eliminar">
+                    <img src="/MP/img/basura.svg" alt=""> Eliminar
+                </button>
             </div>
         </div>
-        <div class="modal-overlay-v" id="modalEliminarVenta">
-    <div class="modal-contenedor-v">
-        
-        <div class="cntdor-eliminar">
-            <img src="/MP/img/cntdor-eliminar.svg" alt="Eliminar" >
-        </div>
-        
-        <p class="pregunta">¿Eliminar venta?</p>
-        <h2 class="n-e-tratamiento">"MORA SILVESTRE"</h2>
-        
-        <p class="pregunta">
-            Esta acción no se puede deshacer. Se 
-            eliminarán todos los datos asociados a 
-            esta venta.
-        </p>
-        
-        <div class="modal-botones">
-            <button type="button" id="btnCancelarEliminar">
-                ✕ Cancelar
-            </button>
-            
-            <button type="button" id="btnConfirmarEliminar" class="btn-eliminar"><img src="/MP/img/basura.svg" alt=""> Eliminar
-            </button>
-        </div>
-
     </div>
-</div>
-<!-- BARRA DE NAVEGACIÓN MÓVIL -->
+
+    <!-- BARRA DE NAVEGACIÓN MÓVIL -->
     <nav class="barra-nav-movil">
         <a href="/ajustes" class="nav-movil-item">
             <img src="/k/movil/configuraciones.png" class="nav-movil-icono" alt="Ajustes">
@@ -311,112 +296,95 @@
     <!-- MODAL DE CIERRE DE SESIÓN -->
     <div id="modal-cerrar-sesion" class="modal-cerrar-sesion">
         <div class="modal-contenido">
-            <p class="modal-texto-1">¿Deseas cerrar sesion?</p>
+            <p class="modal-texto-1">¿Deseas cerrar sesión?</p>
             <p class="modal-texto-2">"Yonatan Gomez"</p>
-            <p class="modal-texto-3">Esta accion cerrara tu sesion y podras volver a ingresar mas tarde.</p>
+            <p class="modal-texto-3">Esta acción cerrará tu sesión y podrás volver a ingresar más tarde.</p>
             <div class="modal-botones">
                 <button class="modal-btn modal-btn-cerrar" onclick="confirmarCerrarSesion()">Cerrar Sesión</button>
-                <button class="modal-btn modal-btn-cancelar" onclick="ocultarModalCerrarSesion()">X Cancelar</button>
+                <button class="modal-btn modal-btn-cancelar" onclick="ocultarModalCerrarSesion()">✕ Cancelar</button>
             </div>
         </div>
     </div>
-<script>
-    document.addEventListener('click', (e) =>{
-        if(e.target.closest('.btn-nuevo-item')|| e.target.closest('#add-mv')|| e.target.closest('.add-mv')){
-            const modalNuevo = document.getElementById('modalVenta');
-            if(modalNuevo) modalNuevo.classList.add('mostrar');
-        }// Cerrar
-            if (e.target.closest('#btnCancelar')) {
-                document.getElementById('modalVenta').classList.remove('mostrar');
+
+    <script>
+        // ================================================================
+        // INTERCEPTOR DE CLICS GLOBAL
+        // ================================================================
+        document.addEventListener('click', (e) => {
+
+            // 1. ABRIR NUEVA VENTA
+            if (e.target.closest('.btn-nuevo-item') || e.target.closest('#add-mv') || e.target.closest('.add-mv')) {
+                const modal = document.getElementById('modalVenta');
+                if (modal) modal.classList.add('mostrar');
             }
 
-            // --- 2. DETECTAR: ABRIR EDITAR VENTA ---
-    if (e.target.closest('[title="Editar"]') || e.target.closest('#btnAbrirEditar') || e.target.closest('.btn-editar-mv')) {
-        const modalEditar = document.getElementById('modalEditarVenta');
-        if (modalEditar) {
-            // Precarga de datos simulados en los inputs de la venta
-            const inNombre = document.getElementById('editNombreCultivo');
-            const inDescripcion = document.getElementById('editDescripcion');
-            const inCantidad = document.getElementById('editCantidad');
-            const inEstado = document.getElementById('editEstado');
-            const inPrecioU = document.getElementById('editPrecioU');
-            const inPrecioT = document.getElementById('editPrecioT');
+            // 2. ABRIR EDITAR VENTA
+            if (e.target.closest('[title="Editar"]') || e.target.closest('#btnAbrirEditar') || e.target.closest('.btn-editar-mv')) {
+                const modal = document.getElementById('modalEditarVenta');
+                if (modal) {
+                    const inNombre      = document.getElementById('editNombreCultivo');
+                    const inDescripcion = document.getElementById('editDescripcion');
+                    const inCantidad    = document.getElementById('editCantidad');
+                    const inEstado      = document.getElementById('editEstado');
+                    const inPrecioU     = document.getElementById('editPrecioU');
+                    const inPrecioT     = document.getElementById('editPrecioT');
 
-            if (inNombre) inNombre.value = "MORA SILVESTRE";
-            if (inDescripcion) inDescripcion.value = "Venta regular de cosecha premium para distribución intermedia.";
-            if (inCantidad) inCantidad.value = "30 kilos";
-            if (inEstado) inEstado.value = "pagada"; // Selecciona automáticamente 'Pagada' en el select
-            if (inPrecioU) inPrecioU.value = "$5.000";
-            if (inPrecioT) inPrecioT.value = "$150.000";
+                    if (inNombre)      inNombre.value      = "MORA SILVESTRE";
+                    if (inDescripcion) inDescripcion.value = "Venta regular de cosecha premium.";
+                    if (inCantidad)    inCantidad.value    = "30 kilos";
+                    if (inEstado)      inEstado.value      = "pagada";
+                    if (inPrecioU)     inPrecioU.value     = "$5.000";
+                    if (inPrecioT)     inPrecioT.value     = "$150.000";
 
-            modalEditar.classList.add('mostrar');
-        }
-    }
+                    modal.classList.add('mostrar');
+                }
+            }
 
-    // --- 3. DETECTAR: ABRIR ELIMINAR VENTA ---
-    if (e.target.closest('[title="Eliminar"]') || e.target.closest('#btnAbrirEliminar') || e.target.closest('.btn-eliminar-mv')) {
-        const modalEliminar = document.getElementById('modalEliminarVenta');
-        if (modalEliminar) modalEliminar.classList.add('mostrar');
-    }
-});
+            // 3. ABRIR ELIMINAR VENTA
+            if (e.target.closest('[title="Eliminar"]') || e.target.closest('#btnAbrirEliminar') || e.target.closest('.btn-eliminar-mv')) {
+                const modal = document.getElementById('modalEliminarVenta');
+                if (modal) modal.classList.add('mostrar');
+            }
+        });
 
-// =================================================================
-// CONTROL DE BOTONES ESPECÍFICOS: CANCELAR Y ACCIONES
-// =================================================================
+        // ================================================================
+        // BOTONES CANCELAR / CERRAR
+        // ================================================================
+        document.getElementById('btnCancelar')?.addEventListener('click', () => {
+            document.getElementById('modalVenta').classList.remove('mostrar');
+        });
 
-// Cancelar Nuevo
-const btnCancelarNuevo = document.getElementById('btnCancelar');
-if (btnCancelarNuevo) {
-    btnCancelarNuevo.addEventListener('click', () => {
-        document.getElementById('modalVenta').classList.remove('mostrar');
-    });
-}
+        document.getElementById('btnCancelarEditar')?.addEventListener('click', () => {
+            document.getElementById('modalEditarVenta').classList.remove('mostrar');
+        });
 
-// Cancelar Editar
-const btnCancelarEditar = document.getElementById('btnCancelarEditar');
-if (btnCancelarEditar) {
-    btnCancelarEditar.addEventListener('click', () => {
-        document.getElementById('modalEditarVenta').classList.remove('mostrar');
-    });
-}
+        document.getElementById('btnCancelarEliminar')?.addEventListener('click', () => {
+            document.getElementById('modalEliminarVenta').classList.remove('mostrar');
+        });
 
-// Cancelar Eliminar
-const btnCancelarEliminar = document.getElementById('btnCancelarEliminar');
-if (btnCancelarEliminar) {
-    btnCancelarEliminar.addEventListener('click', () => {
-        document.getElementById('modalEliminarVenta').classList.remove('mostrar');
-    });
-}
+        document.getElementById('btnConfirmarEliminar')?.addEventListener('click', () => {
+            const tarjetaPC    = document.querySelector('.tarjeta-venta:not(.vacia)');
+            const tarjetaMovil = document.querySelector('.contenedor-venta');
+            if (tarjetaPC)    tarjetaPC.remove();
+            if (tarjetaMovil) tarjetaMovil.remove();
+            document.getElementById('modalEliminarVenta').classList.remove('mostrar');
+        });
 
-// Confirmar eliminación física de la tarjeta de venta
-const btnConfirmarEliminar = document.getElementById('btnConfirmarEliminar');
-if (btnConfirmarEliminar) {
-    btnConfirmarEliminar.addEventListener('click', () => {
-        // Elimina la primera tarjeta de venta real que encuentre (PC y Móvil)
-        const tarjetaPC = document.querySelector('.tarjeta-venta:not(.vacia)');
-        const tarjetaMovil = document.querySelector('.contenedor-venta');
-        
-        if (tarjetaPC) tarjetaPC.remove();
-        if (tarjetaMovil) tarjetaMovil.remove();
+        // Cerrar al tocar el fondo oscuro
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-overlay-v')) {
+                e.target.classList.remove('mostrar');
+            }
+        });
 
-        document.getElementById('modalEliminarVenta').classList.remove('mostrar');
-    });
-}
+        // Prevenir recarga al enviar formularios
+        document.getElementById('formNuevaVenta')?.addEventListener('submit', (e) => e.preventDefault());
+        document.getElementById('formEditarVenta')?.addEventListener('submit', (e) => e.preventDefault());
 
-// --- 4. AUTOMÁTICO: CERRAR AL TOCAR EL FONDO OSCURO OVERLAY ---
-window.addEventListener('click', (e) => {
-    // Evalúa si lo que se tocó fue el fondo del overlay (aplica a los 3 modales por tener la misma clase)
-    if (e.target.classList.contains('modal-overlay-v')) {
-        e.target.classList.remove('mostrar');
-    }
-});
-
-// Prevenir recarga automática de página al enviar los formularios
-document.getElementById('formNuevaVenta')?.addEventListener('submit', (e) => e.preventDefault());
-document.getElementById('formEditarVenta')?.addEventListener('submit', (e) => e.preventDefault());
-
-//cerrar sesion---
-function mostrarModalCerrarSesion(event) {
+        // ================================================================
+        // CERRAR SESIÓN
+        // ================================================================
+        function mostrarModalCerrarSesion(event) {
             event.preventDefault();
             document.getElementById('modal-cerrar-sesion').style.display = 'flex';
         }
@@ -428,6 +396,7 @@ function mostrarModalCerrarSesion(event) {
         function confirmarCerrarSesion() {
             window.location.href = '/index.html';
         }
-</script>
+    </script>
+
 </body>
 </html>
