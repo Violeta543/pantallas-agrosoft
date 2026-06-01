@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrosoft Dashboard</title>
+    <link rel="stylesheet" href="ajustes.css">
+</head>
+<body>
+    <aside class="barra-lateral">
+        <div class="logo">
+            <span class="logo-texto">AGROSOFT</span>
+        </div>
+
+        <nav class="menu-lateral">
+            <a href="/k/dashboard.html" class="enlace-menu activo" data-seccion="dashboard">
+                <img src="/k/imagenes/dash.png" alt="Dashboard" class="icono-menu">
+                <span class="texto-menu">Dashboard</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="cultivos">
+                <img src="/k/imagenes/cultivos.png" alt="Cultivos" class="icono-menu">
+                <span class="texto-menu">Cultivos</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="tareas">
+                <img src="/k/imagenes/tareas.png" alt="Tareas" class="icono-menu">
+                <span class="texto-menu">Tareas</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="tratamiento">
+                <img src="/k/imagenes/tratamiento.png" alt="Tratamiento" class="icono-menu">
+                <span class="texto-menu">Tratamiento</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="inventario">
+                <img src="/k/imagenes/inventarios.png" alt="Inventario" class="icono-menu">
+                <span class="texto-menu">Inventario</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="ventas">
+                <img src="/k/imagenes/ventas.png" alt="Ventas" class="icono-menu">
+                <span class="texto-menu">Ventas</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="reportes">
+                <img src="/k/imagenes/reportes.png" alt="Reportes" class="icono-menu">
+                <span class="texto-menu">Reportes</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="historial">
+                <img src="/k/imagenes/historial.png" alt="Historial" class="icono-menu">
+                <span class="texto-menu">Historial</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="notificaciones">
+                <img src="/k/imagenes/notificaciones.png" alt="Notificaciones" class="icono-menu">
+                <span class="texto-menu">Notificaciones</span>
+            </a>
+            <a href="/index.html" class="enlace-menu" data-seccion="ajustes">
+            
+                <img src="/k/imagenes/ajustes.png" alt="Ajustes" class="icono-menu">
+                <span class="texto-menu">Ajustes</span>
+            </a>
+        </nav>
+
+        <a href="/index.html" class="boton-cerrar">
+            <img src="/k/imagenes/cerrar.png" alt="Cerrar" class="icono-cerrar">
+            <span>Cerrar sesión</span>
+        </a>
+    </aside>
+
+    <main class="contenedor-principal">
+        <header class="encabezado">
+           
+
+            <div class="encabezado-texto">
+                <h1 class="titulo-pagina"
+                id="titulopagina">
+                    
+                </h1>
+                <p class="subtitulo-pagina"
+                id="subtitulopagina">
+            </div>
+            <div class="usuario-contenedor">
+                <img src="/k/imagenes/perfil.png" alt="Perfil" class="usuario-icono">
+                <div class="usuario">
+                    <span class="usuario-nombre">Yonatan Gómez</span>
+                    <span class="usuario-rol">Administrador</span>
+                
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="ajuste-contenido">
+<h1 class="titulo-ajustes">AJUSTES</h1>
+<h4 class="subtitulo-ajustes">Edita a tu gusto Agrosoft </h4>
+<img src="/img/logo1.png" class="imagen-planta">
+<img src="/img/logo2.png" class="imagen-pajarito">
+ </div>
+        
+        </header>
+<div class="contenido-adentro">
+
+
+<img src="/ajuste/imagenes-ajustes/cuenta.svg" class="icono-cuenta">
+
+        <button class="login-boton" id="btnCuenta">Cuenta</button>
+
+
+<img src="/ajuste/imagenes-ajustes/ayuda.svg" class="icono-ayuda">
+<button class="login-boton" id="btnAyuda">Ayuda y comentarios</button>
+
+
+
+<h1 class="contenido-agrosof">AGROSOFT</h1>
+<img src="/k/imagenes/logo.png" class="logo-delcontenido">
+
+<button class="eliminar-cuenta" id="btnEliminarcuenta">ELIMINAR CUENTA</button>
+
+</div>
+
+<div class="yonatan">
+    <img src="/ajuste/imagenes-ajustes/yonatanfoto.svg" class="foto-yonatan">
+    <h1 class="nombre-detitulo">Yonatan Gomez</h1>
+    <button class="boton-administrador" id="btnEliminarcuenta">ADMINISTRADOR</button>
+
+    <div class="perfil-nombres">
+
+        <div class="campo">
+            <img src="/ajuste/imagenes-ajustes/perfil.svg" class="icon-perfil">
+<span class="titulo">NOMBRE</span>
+ <span class="dato"id="textonombre">@yonatan administrador</span>
+
+ <input type="text" 
+ id="inputnombre"
+ value="@yonatan administrador"
+ class="input-editar">
+
+ <img src="/ajuste/imagenes-ajustes/lapiz.svg" class="lapices" id="lapiznombre">
+ 
+        </div>
+ 
+        <div class="campo">
+            <img src="/ajuste/imagenes-ajustes/emaill.svg" class="icon-mail">
+ <span class="titulo">Correo Eletrónico</span>
+ <span class="dato" id="textocorreo">admin@agro.com</span>
+
+ <input type="text"
+ id="inputcorreo"
+ value="admin@agro.com"
+ class="input-editar">
+
+ <img src="/ajuste/imagenes-ajustes/lapiz.svg" class="lapices" id="lapizcorreo">
+        </div>
+
+<div class="campo">
+    <img src="/ajuste/imagenes-ajustes/seguridad.svg" class="icon-seguridad">
+<span class="titulo">Contraseña</span>
+ <span class="dato" id="textocontraseña">.........</span>
+ <input type="text"
+ id="inputcontraseña"
+ value="........."
+ class="input-editar">
+
+<img src="/ajuste/imagenes-ajustes/lapiz.svg" class="lapices" id="lapizcontraseña">
+</div>
+ 
+<div class="campo">
+<img src="/ajuste/imagenes-ajustes/llamada.svg" class="icon-llamada">
+<span class="titulo">Telefono</span>
+ <span class="dato" id="textotelefono">3134727022</span>
+
+ <input type="text"
+ id="inputtelefono"
+ value="3134727022"
+ class="input-editar">
+
+ <img src="/ajuste/imagenes-ajustes/lapiz.svg" class="lapices" id="lapiztelefono">
+</div>
+ 
+    </div>
+   <footer class="editar">
+    <button class="editando" id="btnEditar">
+EDITAR PERFIL
+    </button>
+   </footer>
+
+   <Footer class="acciones" id="accionesEdicion">
+<BUtton class="guardar" id="botonguardar">GUARDAR</BUtton>
+<img src="/ajuste/imagenes-ajustes/guardar.svg" class="guardar-icon">
+<BUtton class="cancelar">CANCELAR</BUtton>
+<img src="/ajuste/imagenes-ajustes/cancelar.svg" class="cancelar-icon">
+   </Footer>
+</div>
+
+<div id="panelAyuda" class="panel-ayuda" style="display: none;">
+<span class="envia-mensaje">Contacto:oporte@Agrosoft.com"</span>
+<button class="enviar"id="btnEnviar">Enviar</button>
+<div class="contacto"></div>
+<textarea
+placeholder="Escribe tu opinión..." 
+
+class="opinion"></textarea>
+<img src="/ajuste/imagenes-ajustes/mensaje.svg" class="enviar-mensaje">
+<div class="cajita-pequena">
+
+</div>
+
+
+</div>
+
+
+<div id="fondoOscuro" class="fondo-oscuro">
+
+    <div class="modal-eliminar">
+
+<img src="/ajuste/imagenes-ajustes/circulo.svg" class="icon-circulo">
+<img src="/ajuste/imagenes-ajustes/eliminar.svg" class="icon-eliminar">
+
+<h3 class="eliminar-cuemta">¿Eliminar Cuenta?</h3>
+
+<p class="gomez-s">"YONATAN GOMEZ"</p>
+<p>Esta acción no se puede deshacer.
+    Se eliminarán todos los datos asociados
+</p>
+
+<div class="contenedor-botones">
+    <img src="/ajuste/imagenes-ajustes/cancela.svg" class="cancela-aqui">
+
+    <button id="btncancelarmodal" class="boton-cancela">Cancelar</button>
+<button id="btnEliminarmodal" class="boton-elimina">eliminar</button>
+<img src="/ajuste/imagenes-ajustes/borrarcuenta.svg" class="borrar-cuenta">
+</div>
+
+
+    </div>
+
+</div>
+
+
+
+ </body>
+<script src="/ajuste/ajustes.js"></script>
+</html>
+
+    
+                
