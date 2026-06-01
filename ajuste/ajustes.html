@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agrosoft Dashboard</title>
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="ajustes.css">
 </head>
 <body>
     <aside class="barra-lateral">
@@ -49,7 +49,8 @@
                 <img src="/k/imagenes/notificaciones.png" alt="Notificaciones" class="icono-menu">
                 <span class="texto-menu">Notificaciones</span>
             </a>
-            <a href="#" class="enlace-menu" data-seccion="ajustes">
+            <a href="/ajuste/ajustes1.html" class="enlace-menu" data-seccion="ajustes">
+            
                 <img src="/k/imagenes/ajustes.png" alt="Ajustes" class="icono-menu">
                 <span class="texto-menu">Ajustes</span>
             </a>
@@ -63,10 +64,15 @@
 
     <main class="contenedor-principal">
         <header class="encabezado">
-            <img src="/k/imagenes/logo.png" alt="Logo" class="Logo-header-icono">
+           
+
             <div class="encabezado-texto">
-                <h1 class="titulo-pagina">Dashboard</h1>
-                <p class="subtitulo-pagina">Resumen general de tu gestión agrícola</p>
+                <h1 class="titulo-pagina"
+                id="titulopagina">
+                    
+                </h1>
+                <p class="subtitulo-pagina"
+                id="subtitulopagina">
             </div>
             <div class="usuario-contenedor">
                 <img src="/k/imagenes/perfil.png" alt="Perfil" class="usuario-icono">
@@ -132,10 +138,15 @@
 
 <section id="ajustes" class="seccion contenido-fondo" style="display: none;">
 
-    <h1>Ajustes</h1>
+    <div class="panel-ajustes">
+        <img src="/img/logo.png" class="hoja">
+        <img src="/img/logo.png" class="colibri">
+        <h1 class="configuracion">AJUSTES</h1>
+        <p class="subtitulo">Edita a tu gusto Agrosoft </p>
+
+    </div>
 
 </section>
 
-<script src=""></script>
 </body>
 </html>
