@@ -1,4 +1,10 @@
     document.addEventListener("DOMContentLoaded", () => {
+    const btonfiltrar = document.getElementById('bton-filtrar');
+    const menufiltrar = document.getElementById('menufiltrar');
+    const opcionesFiltro = document.querySelectorAll('.opcion-filtro');
+    const tarjetas = document.querySelectorAll('.cajapadre-inventario');
+
+
     const modalAgregar = document.getElementById("formulario-inventario");
     const btnAbrirAgregar = document.getElementById("bton-agregar-inventario");
     const btnCancelarAgregar = document.getElementById("btonCancelar");
@@ -7,6 +13,8 @@
     const btnCancelarEditar = document.getElementById("btonCancelarEditar");
     
     const botonesEditarTarjetas = document.querySelectorAll(".btn-editar");
+
+
 
     if (btnAbrirAgregar) {
         btnAbrirAgregar.addEventListener("click", () => {
@@ -19,6 +27,44 @@
             modalAgregar.style.display = "none";
         });
     }
+
+    // --------------------------------------
+
+    if (btonfiltrar && menufiltrar) {
+    btonfiltrar.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const estaAbierto = menufiltrar.style.display == 'flex';
+        menufiltrar.style.display = estaAbierto ? 'none' : 'flex';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (!menufiltrar.contains(event.target) && event.target !== btonfiltrar) {
+            menufiltrar.style.display = 'none';
+        }
+    });
+}
+
+    opcionesFiltro.forEach(boton => {
+        boton.addEventListener('click', () => {
+            const categoriaSeleccionada = boton.textContent.toLowerCase().trim();
+
+            tarjetas.forEach(tarjeta => {
+                const categoriaTarjeta = tarjeta.getAttribute('data-categoria');
+
+                // Si seleccionan "Todas" o la categoría coincide, mostramos; si no, ocultamos.
+                if (categoriaSeleccionada === "todas" || categoriaTarjeta === categoriaSeleccionada) {
+                    tarjeta.style.display = "flex";
+                } else {
+                    tarjeta.style.display = "none";
+                }
+            });
+
+            // Opcional: mover la clase 'activa' visualmente
+            opcionesFiltro.forEach(o => o.classList.remove('activa'));
+            boton.classList.add('activa');
+        });
+    });
+});
 
     //-----------------------------------------
 
@@ -43,7 +89,7 @@
             modalEditar.style.display = "none";
         }
     });
-});
+;
 
 //-------------------------------------------------
 
