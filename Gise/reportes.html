@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrosoft Dashboard</title>
+    <link rel="stylesheet" href="style8.css">
+</head>
+<body>
+    <!-- BARRA LATERAL -->
+    <aside class="barra-lateral">
+        <div class="logo">
+            <span class="logo-texto">AGROSOFT</span>
+        </div>
+
+        <nav class="menu-lateral">
+            <a href="#" class="enlace-menu activo" data-seccion="dashboard">
+                <img src="/k/imagenes/dash.png" alt="Dashboard" class="icono-menu">
+                <span class="texto-menu">Dashboard</span>
+            </a>
+            <a href="/M/Cultivos.html" class="enlace-menu" data-seccion="cultivos">
+                <img src="/k/imagenes/cultivos.png" alt="Cultivos" class="icono-menu">
+                <span class="texto-menu">Cultivos</span>
+            </a>
+            <a href="/M/Tareas.html" class="enlace-menu" data-seccion="tareas">
+                <img src="/k/imagenes/tareas.png" alt="Tareas" class="icono-menu">
+                <span class="texto-menu">Tareas</span>
+            </a>
+            <a href="/MP/tratamiento.html" class="enlace-menu" data-seccion="tratamiento">
+                <img src="/k/imagenes/tratamiento.png" alt="Tratamiento" class="icono-menu">
+                <span class="texto-menu">Tratamiento</span>
+            </a>
+            <a href="/Gise/inventario.html" class="enlace-menu" data-seccion="inventario">
+                <img src="/k/imagenes/inventarios.png" alt="Inventario" class="icono-menu">
+                <span class="texto-menu">Inventario</span>
+            </a>
+            <a href="/MP/venta.html" class="enlace-menu" data-seccion="ventas">
+                <img src="/k/imagenes/ventas.png" alt="Ventas" class="icono-menu">
+                <span class="texto-menu">Ventas</span>
+            </a>
+            <a href="/Gise/reportes.html" class="enlace-menu" data-seccion="reportes">
+                <img src="/k/imagenes/reportes.png" alt="Reportes" class="icono-menu">
+                <span class="texto-menu">Reportes</span>
+            </a>
+            <a href="/k/historial.html" class="enlace-menu" data-seccion="historial">
+                <img src="/k/imagenes/historial.png" alt="Historial" class="icono-menu">
+                <span class="texto-menu">Historial</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="notificaciones">
+                <img src="/k/imagenes/notificaciones.png" alt="Notificaciones" class="icono-menu">
+                <span class="texto-menu">Notificaciones</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="ajustes">
+                <img src="/k/imagenes/ajustes.png" alt="Ajustes" class="icono-menu">
+                <span class="texto-menu">Ajustes</span>
+            </a>
+        </nav>
+
+        <a href="#" class="boton-cerrar" onclick="mostrarModalCerrarSesion(event)">
+            <img src="/k/imagenes/cerrar.png" alt="Cerrar" class="icono-cerrar">
+            <span>Cerrar sesión</span>
+        </a>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor-principal">
+        <!-- ENCABEZADO -->
+        <header class="encabezado">
+            <img src="/k/imagenes/logo.png" alt="Logo" class="Logo-header-icono">
+            <div class="encabezado-texto">
+                <h1 class="titulo-pagina">REPORTES</h1>
+                <p class="subtitulo-pagina">Exporta datos en diferentes formatos</p>
+            </div>
+            <div class="usuario-contenedor">
+                <img src="/k/imagenes/perfil.png" alt="Perfil" class="usuario-icono">
+                <div class="usuario">
+                    <span class="usuario-nombre">Yonatan Gómez</span>
+                    <span class="usuario-rol">Administrador</span>
+                </div>
+            </div>
+        </header>
+        <section class="contenido-fondo">
+        <!---------------- Diseño Reporte -------->
+        <section class="contenido-fondo">
+    <div class="barra-busqueda">
+        <div class="caja-busqueda"> 
+            <img class="icono-filtro" src="/Gise/visual/filtro.svg">
+            <div class="contenedor-filtro">
+            <button class="boton-filtrar" id="bton-filtrar"> Filtrar <span class="flecha-filtrar"><img src="/Gise/visual/flecha-abajo.svg" alt=""></span></button>
+                <div class="menu-desplegable" id="menufiltrar">
+                <button type="button" class="opcion-filtro">Tareas</button>
+                <button type="button" class="opcion-filtro">Cultivos</button>
+                <button type="button" class="opcion-filtro">Ventas</button>
+                <button type="button" class="opcion-filtro">Tratamiento</button>
+                <button type="button" class="opcion-filtro activa">Reporte</button>
+                <button type="button" class="opcion-filtro">Inventario</button>
+                <button type="button" class="opcion-filtro">Notificaciones</button>
+            </div>
+        </div>
+            <input type="text" placeholder="Buscar..." class="input-busqueda">
+            <span> <img class="icono-lupa" src="/Gise/visual/lupa.svg" alt="icono"></span>
+        </div>
+        <button id="btonNuevoReporte" class="boton-reporte">
+            <span class="icono-plus"> <img src="/Gise/visual/Plus.svg" alt="Añadir"></span> Nuevo Reporte
+        </button> 
+    </div>
+    <div class="caja-reportes">
+        <div class="cajapadre-reporte">
+            <div class="caja-reporte">
+                <span class="titulo-reporte"><strong> Nombre:</strong> Reporte de ventas</span>
+                <button class="icono-descargar"> <img src="/Gise/visual/descargar.svg" alt="Descargar"> </button>
+            </div>
+            <div class="cuerpo-tarjeta">
+                <p><strong>Descripción:</strong></p> <br><br>
+                <p><strong>Tipo:</strong>Ventas</p> <br>
+                <p><strong>Periodo:</strong>1 sep 2026 - 8 sep 2026</p>
+            </div>
+            <div class="pie-reporte"> 
+                <span> <img class="fecha-reporte" src="/Gise/visual/calendario.svg"> 9 sep 2026</span>
+                <span> <img class="hora-reporte" src="/Gise/visual/relog.svg"> 10:00 a.m.</span>
+                <button class="boton-eliminar"> <img src="/Gise/visual/basura.svg"></button>
+            </div>
+        </div>
+        <div class="cajapadre-reporte vacia">
+            <div class="caja-reporte-vacia"></div>
+        </div>
+        <div class="cajapadre-reporte vacia">
+            <div class="caja-reporte-vacia"></div>
+        </div>
+        <div class="cajapadre-reporte vacia">
+            <div class="caja-reporte-vacia"></div>
+        </div>
+        <div class="cajapadre-reporte vacia">
+            <div class="caja-reporte-vacia"></div>
+        </div>
+    </div> 
+    <div class="desplazar-pagina">
+        <button class="izquierda"><img src="/Gise/visual/Izquierda.svg"></button>
+        <span><img src="/Gise/visual/puntos-pagina.svg"></span>
+        <button class="derecha"><img src="/Gise/visual/Derecha.svg"></button>
+    </div>
+</section>
+    </main>
+<!----------------- Ventana Crear Reporte  ------------------->
+    <div id="formulario-reporte" class="cajapadre-formulario">
+        <div class="contenido-formulario">
+            <h2> Generar Nuevo Reporte </h2>
+
+            <form class="formulario-reporte">
+                <div class="campo1">
+                    <label for="nombrereporte"> Nombre de Reporte: </label>
+                    <input type="text" id="nombrereporte" placeholder="Reporte de ventas">
+                </div>
+
+                <div class="campo1"> 
+                    <label for="descripcionreporte">  Descripción: </label>
+                    <textarea id="descripcionreporte" placeholder="Reporte de venta"></textarea>
+                </div>
+
+                <div class="campo1">
+                    <label for="tiporeporte"> Tipo de reporte: </label>
+                    <select id="tiporeporte">
+                        <option value="ventas">Ventas</option>
+                        <option value="tratamientos">Tratamientos</option>
+                        <option value="cultivos">Cultivos</option>
+                        <option value="inventario">Inventario</option>
+                    </select>
+                </div>
+
+                <div class="campo1">
+                    <label> Perido: </label>
+                    <div class="campo-fecha">
+                        <input type="date" id="fechainicio">
+                        <input type="date" id="fechafin">
+                    </div>
+                </div>
+
+                <div class="botones">
+                    <button type="submit" class="bton-guardar"> Guardar </button>
+                    <button type="button" id="btonCancelar" class="btn-cancelar">✕ Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<!------------------- Ventana Descargar Reporte  ----------------->
+    <div id="descargar-reporte" class="cajapadre-formulario2">
+        <div class="contenido-formulario2">
+            <h2 class="subti-descargar"> Descargar Reporte </h2>
+            <form class="formulario-reporte">
+                <div class="campo1">
+                    <label for="nombreDescarga"> Nombre del reporte </label>
+                    <input type="text" id="nombredescarga" value="Repor de Ventas" readonly>
+                </div>
+
+                <div class="campo1">
+                    <label for="formatodescarga"> Tipo de formato </label>
+                    <select id="formatodescarga" required>
+                        <option value="PDF"> Formato PDF</option>
+                        <option value="WORD"> Formato Word</option>
+                        <option value="EXCEL"> Formato Excel</option>
+                    </select>
+                </div>
+
+                <div class="botones">
+                    <button type="submit" class="bton-guardar"> Descargar </button>
+                    <button type="button" id="btonCancelarDescarga" class="btoncancelardescarga"> Cancelar </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<!---------------- Ventana Eliminar reporte  ------------------->
+
+    <div id="eliminar-reporte" class="cajapadre-formulario">
+        <div class="contenido-formulario-alerta">
+            <div class="contenedor-alerta">
+                <img class="icono-basura-alerta" src="/Gise/visual/Icono alerta.svg" alt="icono-alerta">
+            </div>
+
+            <p class="pregunta-eliminar"> ¿Eliminar Reporte? </p>
+            <h2 class="nombre-alerta"> "Reporte Venta" </h2>
+            <p class="advertencia-eliminar"> Esta acción no se puede deshacer. Se eliminarán todos los datos asociados a este reporte. </p>
+
+            <div class="boton-alerta">
+                <button type="button" id="bton-cancelar-eliminar" class="bton-cancelar-alerta"> X Cancelar </button>
+                <button type="button" id="bton-eliminar-alerta" class=" bton-confirmar"> Eliminar </button>
+            </div>
+        </div>
+    </div>
+
+    <!----------------- MOvil Reporte  ------------------->
+
+    <div class="contenido-movil">
+        <div class="fondo-blanco"></div>
+        <h2 class="titulo-movil">REPORTES</h2>
+        <div class="busqueda-movil">
+                <button class="bton-movilreporte" id="bton-movilreporte"><img src="/Gise/visual/Circuloplus.svg" class="icono-agregar-movil"></button>
+                <input type="text" placeholder="Buscar" class="input-buscar-movil">
+                <img class="lupa-movil" src="/Gise/visual/lupa.svg">
+        </div>
+    </div>
+
+    <div class="tarjeta-reporte-movil" id="tarjeta-reporte-movil">
+        <div class="encabezado-tarjeta">
+            <div class="reporte-informacion">
+                <h3 class="titulo-tarjeta"> <strong>Nombre:</strong> Reporte de Ventas</h3>
+                <p class="descripcion-tarjeta" ><strong>Descripción:</strong>Reporte de ventas cultivo de mora, ubicado en el Lote B</p>
+                <p class="tipo-tarjeta" ><strong>Tipo:</strong>Ventas</p>
+                <p class="periodo-tarjeta" ><strong>Periodo:</strong>1 sep 2026 - 8 sep 2026</p>
+            </div>
+            <button type="button" id="bton-abrir-descarga-movil" class="descargar-tarjeta">
+                <img src="/Gise/visual/descargar.svg" class="icono-descargar">
+            </button>
+        </div>
+
+        <div class="detalles-tarjeta">
+            <div class="tiempo-tarjeta">
+                <img src="/Gise/visual/calendario.svg" class="icono-tiempo">
+                <span> 9 sep 2026</span>
+            </div>
+            <div class="tiempo-tarjeta">
+                <img src="/Gise/visual/relog.svg" class="icono-tiempo">
+                <span>10:00 a.m.</span>
+            </div>
+        </div>
+    </div>
+
+    <!----------------- MOvil Crear Reporte  ------------------->
+    
+    <div class="formulario-reporte-movil oculto" id="formulario-reporte-movil">
+        <div class="fondo-blanco-movil"></div>
+        <h3 class="formulario-titulo-principal">Generar Nuevo Reporte</h3>
+
+        <form class="cuerpo-formulario-movil">
+            <div class="grupo-campo-movil">
+                <label class="etiqueta-campo-movil">Nombre de Reporte:</label>
+                <input type="text" placeholder="Reporte de ventas" class="entrada-texto-movil">
+            </div>
+
+            <div class="grupo-campo-movil">
+                <label class="etiqueta-campo-movil">Descripción:</label>
+                <textarea placeholder="Reporte de ventas" class="area-texto-movil" rows="4"></textarea>
+            </div>
+
+            <div class="grupo-campo-movil">
+                <label class="etiqueta-campo-movil">Tipo de Reporte:</label>
+                <input type="text" placeholder="Tratamientos" class="entrada-texto-movil">
+            </div>
+
+            <div class="grupo-campo-movil">
+                <label class="etiqueta-campo-movil">Periodo:</label>
+                <div class="contenedor-fechas-movil">
+                    <input type="text" placeholder="dd/mm/aaaa" class="entrada-fecha-movil">
+                    <input type="text" placeholder="dd/mm/aaaa" class="entrada-fecha-movil">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!----------------- MOvil Descargar Reporte  ------------------->
+
+    <div class="descargar-reporte-movil oculto" id="descargar-reporte-movil">
+        <div class="fondo-blanco-movil"></div>
+        <h3 class="formulario-titulo-principal">Descargar Reporte</h3>
+
+        <form class="cuerpo-formulario-movil">
+            <div class="grupo-campo-movil">
+                <label class="etiqueta-campo-movil">Nombre de Reporte:</label>
+                <input type="text" placeholder="Reporte de ventas" class="entrada-texto-movil">
+            </div>
+
+            <div class="contenedor-descarga-movil">
+                <div class="formato-descarga-movil">
+                    <select class="seleccionar-formato">
+                    <option value="" disabled selected>Seleccionar Formato</option>
+                    <option value="pdf">Formato PDF</option>
+                    <option value="word">Formato WORD</option>
+                    <option value="excel">Formato EXCEL</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="bton-descargar">
+                    <img src="/Gise/visual/descargar.svg" >
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- BARRA DE NAVEGACIÓN PRINCIPAL MÓVIL (Pie de página) -->
+
+    <nav class="barra-nav-movil">
+        <a href="/ajustes" class="nav-movil-item">
+            <img src="/k/movil/configuraciones.png" class="nav-movil-icono" alt="Ajustes">
+            <span>Ajustes</span>
+        </a>
+        <a href="/k/dashboard.html" class="nav-movil-inicio activo">
+            <img src="/k/movil/logo.png" class="movil-icono1" alt="Inicio">
+            <span>Inicio</span>
+        </a>
+        <a href="/perfil" class="nav-movil-item">
+            <img src="/k/movil/user.png" class="nav-movil-icono" alt="Perfil">
+            <span>Perfil</span>
+        </a>
+    </nav>
+
+<!------------------------ Final de Diseño  ---------------------->
+    <script src="reportes.js"></script>
+</body>
+</html>
