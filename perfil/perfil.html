@@ -54,18 +54,110 @@
                 </div>
             </div>
 
-            <a class="boton-editar" href="#">Editar Perfil</a>
+            <a class="boton-editar" href="#" onclick="abrirModalEditar(event)">Editar Perfil</a>
+
+            <!-- MODAL DE EDICIÓN -->
+            <div id="modal-editar" class="modal-editar">
+                <div class="modal-fondo-distorsionado"></div>
+                <div class="modal-contenido-editar">
+                    <div class="encabezado">
+                        <div class="foto">
+                            <img src="img/perfil.png" alt="Foto de perfil">
+                            <div class="foto-camara" onclick="abrirModalFoto(event)">
+                                <img src="img/camara.png" alt="Cambiar foto">
+                            </div>
+                        </div>
+                        <div class="marca">
+                            <div class="marca-superior">
+                                <img src="img/lo.png" alt="Logo Agrosoft">
+                                <h3>AGROSOFT</h3>
+                            </div>
+                            <input type="text" class="input-nombre" value="yonatan gomez">
+                            <div class="rol">ADMINISTRADOR</div>
+                        </div>
+                    </div>
+
+                    <div class="campos">
+                        <div class="campo">
+                            <img src="img/User.png" alt="Icono nombre">
+                            <div class="campo-contenido">
+                                <span class="campo-titulo">Nombre</span>
+                                <input type="text" class="input-campo" value="yonatan administrador">
+                            </div>
+                        </div>
+                        <div class="campo">
+                            <img src="img/Mail.png" alt="Icono correo">
+                            <div class="campo-contenido">
+                                <span class="campo-titulo">Correo Electrónico</span>
+                                <input type="email" class="input-campo" value="admin@agro.com">
+                            </div>
+                        </div>
+                        <div class="campo">
+                            <img src="img/Lock.png" alt="Icono contraseña">
+                            <div class="campo-contenido">
+                                <span class="campo-titulo">Contraseña</span>
+                                <input type="password" class="input-campo" value="••••••••">
+                            </div>
+                        </div>
+                        <div class="campo">
+                            <img src="img/Phone.png" alt="Icono teléfono">
+                            <div class="campo-contenido">
+                                <span class="campo-titulo">Teléfono</span>
+                                <input type="tel" class="input-campo" value="3134727022">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-botones">
+                        <button class="btn-guardar" onclick="guardarCambios()">
+                            <img src="img/guardar.png" alt="Guardar">
+                            Guardar
+                        </button>
+                        <button class="btn-eliminar" onclick="eliminarPerfil()">
+                            <img src="img/eliminar.png" alt="Eliminar">
+                            Eliminar
+                        </button>
+                    </div>
+
+                    <button class="btn-cerrar-modal" onclick="cerrarModalEditar()">✕</button>
+                </div>
+            </div>
+
+            <!-- MODAL DE EDICIÓN DE FOTO -->
+            <div id="modal-foto" class="modal-foto">
+                <div class="modal-fondo-distorsionado"></div>
+                <div class="modal-contenido-foto">
+                    <h3 class="modal-foto-titulo">Editar foto de perfil</h3>
+                    
+                    <button class="opcion-foto" onclick="tomarFoto()">
+                        <span>Tomar foto nueva</span>
+                        <img src="img/camara.png" alt="Tomar foto">
+                    </button>
+                    
+                    <button class="opcion-foto" onclick="seleccionarFoto()">
+                        <span>Seleccionar foto</span>
+                        <img src="img/galeria.png" alt="Seleccionar foto">
+                    </button>
+                    
+                    <button class="opcion-foto opcion-eliminar" onclick="eliminarFoto()">
+                        <span>Eliminar foto</span>
+                        <img src="img/eliminar.png" alt="Eliminar foto">
+                    </button>
+
+                    <button class="btn-cerrar-modal-foto" onclick="cerrarModalFoto()">✕</button>
+                </div>
+            </div>
 
             <div class="nav-inferior">
-                <a href="#" class="nav-ajustes">
+                <a href="/ajustes" class="nav-ajustes">
                     <img src="img/ajustes.png" alt="Ajustes">
                     <span>Ajustes</span>
                 </a>
-                <a href="#" class="nav-inicio">
+                <a href="/k/dashboard.html" class="nav-inicio">
                     <img src="img/lo.png" alt="Inicio">
                     <span>Inicio</span>
                 </a>
-                <a href="#" class="nav-perfil">
+                <a href="/perfil" class="nav-perfil">
                     <img src="img/User.png" alt="Perfil">
                     <span>Perfil</span>
                 </a>
@@ -73,4 +165,57 @@
         </div>
     </div>
 </body>
+<script>
+    function abrirModalEditar(event) {
+        event.preventDefault();
+        document.getElementById('modal-editar').style.display = 'flex';
+    }
+
+    function cerrarModalEditar() {
+        document.getElementById('modal-editar').style.display = 'none';
+    }
+
+    function abrirModalFoto(event) {
+        event.stopPropagation();
+        document.getElementById('modal-foto').style.display = 'flex';
+    }
+
+    function cerrarModalFoto() {
+        document.getElementById('modal-foto').style.display = 'none';
+    }
+
+    function guardarCambios() {
+        // Aquí se puede agregar lógica para guardar los cambios
+        alert('Cambios guardados correctamente');
+        cerrarModalEditar();
+    }
+
+    function eliminarPerfil() {
+        if (confirm('¿Estás seguro de que deseas eliminar tu perfil?')) {
+            // Aquí se puede agregar lógica para eliminar el perfil
+            alert('Perfil eliminado');
+            window.location.href = '/index.html';
+        }
+    }
+
+    function tomarFoto() {
+        // Aquí se puede agregar lógica para abrir la cámara
+        alert('Abriendo cámara...');
+        cerrarModalFoto();
+    }
+
+    function seleccionarFoto() {
+        // Aquí se puede agregar lógica para seleccionar foto de la galería
+        alert('Abriendo galería...');
+        cerrarModalFoto();
+    }
+
+    function eliminarFoto() {
+        if (confirm('¿Estás seguro de que deseas eliminar tu foto de perfil?')) {
+            // Aquí se puede agregar lógica para eliminar la foto
+            alert('Foto eliminada');
+            cerrarModalFoto();
+        }
+    }
+</script>
 </html>
