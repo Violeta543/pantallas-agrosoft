@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrosoft Dashboard</title>
+    <link rel="stylesheet" href="style9.css">
+</head>
+<body>
+    <!-- BARRA LATERAL -->
+    <aside class="barra-lateral">
+        <div class="logo">
+            <span class="logo-texto">AGROSOFT</span>
+        </div>
+
+        <nav class="menu-lateral">
+            <a href="/k/dashboard.html" class="enlace-menu activo" data-seccion="dashboard">
+                <img src="/k/imagenes/dash.png" alt="Dashboard" class="icono-menu">
+                <span class="texto-menu">Dashboard</span>
+            </a>
+            <a href="/M/Cultivos.html" class="enlace-menu" data-seccion="cultivos">
+                <img src="/k/imagenes/cultivos.png" alt="Cultivos" class="icono-menu">
+                <span class="texto-menu">Cultivos</span>
+            </a>
+            <a href="/M/Tareas.html" class="enlace-menu" data-seccion="tareas">
+                <img src="/k/imagenes/tareas.png" alt="Tareas" class="icono-menu">
+                <span class="texto-menu">Tareas</span>
+            </a>
+            <a href="/MP/tratamiento.html" class="enlace-menu" data-seccion="tratamiento">
+                <img src="/k/imagenes/tratamiento.png" alt="Tratamiento" class="icono-menu">
+                <span class="texto-menu">Tratamiento</span>
+            </a>
+            <a href="/Gise/inventario.html" class="enlace-menu" data-seccion="inventario">
+                <img src="/k/imagenes/inventarios.png" alt="Inventario" class="icono-menu">
+                <span class="texto-menu">Inventario</span>
+            </a>
+            <a href="/MP/venta.html" class="enlace-menu" data-seccion="ventas">
+                <img src="/k/imagenes/ventas.png" alt="Ventas" class="icono-menu">
+                <span class="texto-menu">Ventas</span>
+            </a>
+            <a href="/Gise/reportes.html" class="enlace-menu" data-seccion="reportes">
+                <img src="/k/imagenes/reportes.png" alt="Reportes" class="icono-menu">
+                <span class="texto-menu">Reportes</span>
+            </a>
+            <a href="/k/historial.html" class="enlace-menu" data-seccion="historial">
+                <img src="/k/imagenes/historial.png" alt="Historial" class="icono-menu">
+                <span class="texto-menu">Historial</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="notificaciones">
+                <img src="/k/imagenes/notificaciones.png" alt="Notificaciones" class="icono-menu">
+                <span class="texto-menu">Notificaciones</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="ajustes">
+                <img src="/k/imagenes/ajustes.png" alt="Ajustes" class="icono-menu">
+                <span class="texto-menu">Ajustes</span>
+            </a>
+        </nav>
+        <a href="#" class="boton-cerrar" onclick="mostrarModalCerrarSesion(event)">
+            <img src="/k/imagenes/cerrar.png" alt="Cerrar" class="icono-cerrar">
+            <span>Cerrar sesión</span>
+        </a>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor-principal">
+        <!-- ENCABEZADO -->
+        <header class="encabezado">
+            <img src="/k/imagenes/logo.png" alt="Logo" class="Logo-header-icono">
+            <div class="encabezado-texto">
+                <h1 class="titulo-pagina">INVENTARIO</h1>
+                <p class="subtitulo-pagina">Gestiona pesticidas, abonos y herramientas</p>
+            </div>
+            <div class="usuario-contenedor">
+                <img src="/k/imagenes/perfil.png" alt="Perfil" class="usuario-icono">
+                <div class="usuario">
+                    <span class="usuario-nombre">Yonatan Gómez</span>
+                    <span class="usuario-rol">Administrador</span>
+                </div>
+            </div>
+        </header>
+        <section class="contenido-fondo">
+
+        <!-------- Diseño Inventario -------->
+
+        <section class="contenido-fondo">
+    <div class="barra-busqueda">
+        <!-- <div class="caja-busqueda"> 
+            <img class="icono-filtro" src="/Gise/visual/filtro.svg">
+            <div class="contenedor-filtro">
+            <button class="boton-filtrar" id="bton-filtrar"> Filtrar <span class="flecha-filtrar"><img src="/Gise/visual/flecha-abajo.svg" alt=""></span></button>
+                <div class="menu-desplegable" id="menufiltrar">
+                <button type="button" class="opcion-filtro">Tareas</button>
+                <button type="button" class="opcion-filtro">Cultivos</button>
+                <button type="button" class="opcion-filtro">Ventas</button>
+                <button type="button" class="opcion-filtro">Tratamiento</button>
+                <button type="button" class="opcion-filtro activa">Reporte</button>
+                <button type="button" class="opcion-filtro">Inventario</button>
+                <button type="button" class="opcion-filtro">Notificaciones</button>
+            </div>
+        </div> 
+            <input type="text" placeholder="Buscar..." class="input-busqueda">
+            <span> <img class="icono-lupa" src="/Gise/visual/lupa.svg" alt="icono"></span>
+        </div> -->
+        <button id="bton-agregar-inventario" class="boton-inventario">
+            <span class="icono-plus"> <img src="/Gise/visual/Plus.svg" alt="Añadir"></span> Agregar Inventario
+        </button> 
+    </div>
+    <div class="caja-inventario">
+        <div class="cajapadre-inventario">
+            <div class="caja-inventario2">
+                <span class="encabezado-inventario"> Inventario </span>
+            </div>
+            <div class="cuerpo-tarjeta">
+                <p><strong> Fungicida Sistémico Premium </strong></p> 
+                <p>Pesticida</p> <br>
+                <p>Cantidad: 5 Litros</p>
+            <div class="iconos-accion">
+            <button type="button" class="btn-editar">
+                <img src="/Gise/visual/editar.svg" >
+            </button>
+            <button type="button" class="btn-eliminar">
+                <img src="/Gise/visual/basura.svg" >
+            </button>
+            </div>
+        </div>
+    </div>
+
+        <div class="cajapadre-inventario vacia">
+            <div class="caja-reporte-vacia"></div>
+        </div>
+        <div class="cajapadre-inventario vacia">
+            <div class="caja-reporte-vacia"></div>
+        </div>
+        <div class="cajapadre-inventario vacia">
+            <div class="caja-reporte-vacia"></div>
+        </div>
+        <div class="cajapadre-inventario vacia">
+            <div class="caja-reporte-vacia"></div>
+        </div>
+    </div>
+
+    <div class="desplazar-pagina">
+        <button class="izquierda"><img src="/Gise/visual/Izquierda.svg"></button>
+        <span><img src="/Gise/visual/puntos-pagina.svg"></span>
+        <button class="derecha"><img src="/Gise/visual/Derecha.svg"></button>
+    </div>
+</section>
+    </main>
+
+
+<!----------------- Ventana Editar Inventario  ------------------->
+
+    <div id="formulario-editar-inventario" class="cajapadre-formulario">
+    <div class="contenido-formulario">
+        <h2> EDITAR INVENTARIO </h2>
+
+        <form class="formulario-inventario">
+            <div class="campo">
+                <label for="editar-nombreproducto">Nombre del producto</label>
+                <input type="text" id="editar-nombreproducto" value="Fungicida Sistémico Premium">
+            </div>
+
+            <div class="campo"> 
+                <label for="editar-categoriaproducto">Categoría</label>
+                <select id="editar-categoriaproducto">
+                    <option value="Pesticida" selected>Pesticida</option>
+                    <option value="Abono">Abono</option>
+                    <option value="Herramienta">Herramienta</option>
+                </select>
+            </div>
+
+            <div class="campo-fila-doble">
+                <div class="campo">
+                    <label for="editar-cantidadproducto">Cantidad</label>
+                    <input type="number" id="editar-cantidadproducto" value="5">
+                </div>
+                
+                <div class="campo">
+                    <label for="editar-unidadproducto">Unidad</label>
+                    <select id="editar-unidadproducto">
+                        <option value="litros" selected>Litros</option>
+                        <option value="kilos">Kilos</option>
+                        <option value="unidades">Unidades</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label for="editar-stockminimo">Stock mínimo</label>
+                <input type="number" id="editar-stockminimo" value="5">
+            </div>
+
+            <div class="botones">
+                <button type="submit" class="bton-guardar">✓ Actualizar</button>
+                <button type="button" id="btonCancelarEditar" class="btn-cancelar">✕ Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!----------------- Agregar Inventario   ------------------->
+
+    <div id="formulario-inventario" class="cajapadre-formulario">
+        <div class="contenido-formulario">
+            <h2> AGREGAR INVENTARIO </h2>
+
+            <form class="formulario-inventario">
+                <div class="campo">
+                    <label for="nombrereporte"> Nombre del producto: </label>
+                    <input type="text" id="nombreproducto" placeholder="Fungicida Sistémico Premium">
+                </div>
+
+                <div class="campo">
+                    <label for="categoria-producto">Categoría</label>
+                <select id="categoria-producto">
+                    <option value="" disabled selected>Selecciona una categoría</option>
+                    <option value="Pesticida">Pesticida</option>
+                    <option value="Abono">Abono</option>
+                    <option value="Herramienta">Herramienta</option>
+                </select>
+            </div>
+
+            <div class="campo-fila-doble">
+                <div class="campo">
+                    <label for="cantidad-producto">Cantidad</label>
+                    <input type="number" id="cantidad-producto" placeholder="5">
+                </div>
+                
+                <div class="campo">
+                    <label for="unidad-producto">Unidad</label>
+                    <select id="unidad-producto">
+                        <option value="" disabled selected>seleccione una unidad</option>
+                        <option value="litros">Litros</option>
+                        <option value="kilos">Kilos</option>
+                        <option value="unidades">Unidades</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label for="stockminimo">Stock mínimo</label>
+                <input type="number" id="stockminimo" placeholder="0">
+            </div>
+
+            <div class="botones">
+                <button type="submit" class="bton-guardar">✓ Guardar</button>
+                <button type="button" id="btonCancelar" class="btn-cancelar">✕ Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!------------------- Eliminar Inventario  ----------------->
+
+    <div id="modal-eliminar" class="cajapadre-formulario">
+    <div class="contenido-formulario-eliminar">
+        <img src="/Gise/visual/basura.svg" alt="Eliminar" class="icono-alerta">
+        
+        <h2>¿Eliminar Inventario?</h2>
+        <p>“Fungicida Sistémico Premium”</p>
+        <p class="aviso">Esta acción no se puede deshacer. Se eliminarán todos los datos asociados a este Inventario.</p>
+        
+        <div class="botones">
+            <button type="button" id="btn-cancelar-eliminar" class="btn-cancelar">✕ Cancelar</button>
+            <button type="button" id="btn-confirmar-eliminar" class="btn-eliminar-accion">✕ Eliminar</button>
+        </div>
+    </div>
+</div>
+
+
+
+    <!----------------- MOvil Inventario  ------------------->
+
+    <div class="contenido-movil">
+        <div class="fondo-blanco"></div>
+        <h2 class="titulo-movil">INVENTARIO</h2>
+        <div class="busqueda-movil">
+                <button class="bton-movil-inventario"><img src="/Gise/visual/Circuloplus.svg" class="icono-agregar-movil" id="bton-movilinventario"></button>
+                <input type="text" placeholder="Buscar" class="input-buscar-movil">
+                <img class="lupa-movil" src="/Gise/visual/lupa.svg">
+        </div>
+    </div>
+
+    <div class="tarjeta-inventario-movil" id="tarjeta-inventario-movil">
+        <div class="encabezado-tarjeta">
+            <div class="inventario-informacion">
+                <h3 class="titulo-tarjeta"> Fungicida Sistémico Premium </h3>
+                <p class="descripcion-tarjeta"> Pesticida </p>
+                <p class="tipo-tarjeta" > Cantidad: 5 litros</p>
+            </div>
+        </div>
+
+        <div class="detalles-tarjeta">
+            <button type="button" class="bton-editar-movil" id="bton-editar-producto"> Editar </button>
+            <button type="button" class="bton-eliminar-movil" id="bton-eliminar-movil"> Eliminar </button>
+        </div>
+    </div>
+
+
+    <!----------------- MOvil Agregar Reporte  ------------------->
+
+    <div class="agregar-inventario-movil oculto" id="agregar-inventario-movil">
+        <div class="fondo-blanco-movil"></div>
+        <h3 class="formulario-titulo-principal">AGREGAR AL INVENTARIO</h3>
+
+        <form class="cuerpo-formulario-movil">
+            <div class="grupo-campo-movil">
+                <label class="etiqueta-campo-movil">Nombre del producto:</label>
+                <input type="text" placeholder="" class="entrada-texto-movil">
+            </div>
+
+            <div class="categoria-movil">
+                <label class="etiqueta-movil">Categoría</label>
+                <div class="formato-categoria-movil">
+                    <select class="seleccionar-formato">
+                    <option value="" disabled selected>Seleccionar Categoria</option>
+                    <option value="pesticida">Pesticida</option>
+                    <option value="fertilizante">Fertilizantes</option>
+                    <option value="herramienta">Herramienta</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="detalles-tarjeta">
+                <div class="grupo-campo-movil">
+                    <label class="campo-movil">Cantidad</label>
+                    <input type="number" placeholder="5" class="numero-movil">
+            </div>
+
+
+            <div class="formato-categoria-movil2">
+                <label class="etiqueta-campo-movil">Unidad</label>
+                    <select class="seleccionar-formato2">
+                    <option value="" disabled selected>Seleccionar unidad</option>
+                    <option value="unidad">Unidad</option>
+                    <option value="litros">Litro</option>
+                    <option value="Kg">Kg</option>
+                    <option value="Ml">Ml</option>
+                    <option value="Galones">Galones</option>
+                    <option value="Gramos">Gramos</option>
+                    </select>
+            </div>
+        </div>
+        <div class="grupo-campo-movil">
+            <label class="etiqueta-campo-movil">Stock mínimo</label>
+            <input type="number" placeholder="5" class="numero-movil">
+        </div>
+        <div class="detalles-tarjeta" style="margin-top: 25px;">
+                <button type="submit" class="bton-editar-movil" id="bton-guardar-inventario">
+                    Registrar
+                </button>
+                <button type="button" class="bton-eliminar-movil" id="bton-cancelar-inventario">
+                    Cancelar
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!------------ Editar Inventario ------------>
+
+    <div class="agregar-inventario-movil oculto" id="editar-inventario-movil"> <div class="fondo-blanco-movil"></div>
+    <h3 class="formulario-titulo-principal">EDITAR DEL INVENTARIO</h3> <form class="cuerpo-formulario-movil">
+        <div class="grupo-campo-movil">
+            <label class="etiqueta-campo-movil">Nombre del producto:</label>
+            <input type="text" id="editar-nombre" class="entrada-texto-movil">
+        </div>
+
+        <div class="categoria-movil">
+            <label class="etiqueta-movil">Categoría</label>
+            <div class="formato-categoria-movil">
+                <select id="editar-categoria" class="seleccionar-formato">
+                    <option value="" disabled selected>Seleccionar Categoria</option>
+                    <option value="pesticida">Pesticida</option>
+                    <option value="fertilizante">Fertilizantes</option>
+                    <option value="herramienta">Herramienta</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="detalles-tarjeta">
+            <div class="grupo-campo-movil">
+                <label class="campo-movil">Cantidad</label>
+                <input type="number" id="editar-cantidad" class="numero-movil">
+            </div>
+
+            <div class="formato-categoria-movil2">
+                <label class="etiqueta-campo-movil">Unidad</label>
+                <select id="editar-unidad" class="seleccionar-formato2">
+                    <option value="" disabled selected>Seleccionar unidad</option>
+                    <option value="unidad">Unidad</option>
+                    <option value="litros">Litro</option>
+                    <option value="Kg">Kg</option>
+                    <option value="Ml">Ml</option>
+                    <option value="Galones">Galones</option>
+                    <option value="Gramos">Gramos</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grupo-campo-movil">
+            <label class="etiqueta-campo-movil">Stock mínimo</label>
+            <input type="number" id="editar-stock" class="numero-movil">
+        </div>
+
+        <div class="detalles-tarjeta" style="margin-top: 25px;">
+            <button type="submit" class="bton-editar-movil" id="bton-actualizar-inventario">
+                Guardar </button>
+            <button type="button" class="bton-eliminar-movil" id="bton-cancelar-editar">
+                Cancelar
+            </button>
+        </div>
+    </form>
+</div>
+
+    <!------------ Eliminar Inventario ------------>
+
+    <div id="eliminar-inventario" class="cajapadre-inventario oculto">
+        <div class="eliminar-alerta">
+            <div class="contenedor-alerta">
+                <img class="icono-basura-alerta" src="/Gise/visual/Icono alerta.svg" alt="icono-alerta">
+            </div>
+
+            <p class="pregunta-eliminar"> ¿Eliminar Inventario? </p>
+            <h2 class="nombre-alerta"> "FUNGICIDA SISTÉMICO" </h2>
+            <p class="advertencia-eliminar"> Esta acción no se puede deshacer. Se eliminarán todos los datos asociados. </p>
+
+            <div class="boton-alerta">
+                <button type="button" id="bton-cancelar-eliminar" class="bton-cancelar-alerta"> X Cancelar </button>
+                <button type="button" id="bton-eliminar-alerta" class=" bton-confirmar"> Eliminar </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BARRA DE NAVEGACIÓN PRINCIPAL MÓVIL (Pie de página) -->
+
+    <nav class="barra-nav-movil">
+        <a href="/ajustes" class="nav-movil-item">
+            <img src="/k/movil/configuraciones.png" class="nav-movil-icono" alt="Ajustes">
+            <span>Ajustes</span>
+        </a>
+        <a href="/k/dashboard.html" class="nav-movil-inicio activo">
+            <img src="/k/movil/logo.png" class="movil-icono1" alt="Inicio">
+            <span>Inicio</span>
+        </a>
+        <a href="/perfil" class="nav-movil-item">
+            <img src="/k/movil/user.png" class="nav-movil-icono" alt="Perfil">
+            <span>Perfil</span>
+        </a>
+    </nav>
+
+<!------------------------ Final de Diseño  ---------------------->
+    <script src="inventario.js"></script>
+</body>
+</html>

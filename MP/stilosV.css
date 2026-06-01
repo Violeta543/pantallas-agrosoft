@@ -1,27 +1,23 @@
 /* ── Variables globales de color y tipografía ── */
 :root {
-    --fondo-oscuro: #2d5132;      /* Verde muy oscuro */
-    --fondo-claro: #f7f9f3;       /* Blanco verdoso suave */
-    --texto-principal: #1f2e1f;   /* Color de texto base */
-    --gris-suave: #7d8a7f;        /* Gris verdoso para textos secundarios */
-    --verde: #3f7a4d;             /* Verde principal de la marca */
-    --azul: #243f6a;              /* Azul para acentos */
-    --morado: #7f4fa2;            /* Morado para acentos */
+    --fondo-oscuro: #2d5132;
+    --fondo-claro: #f7f9f3;
+    --texto-principal: #1f2e1f;
+    --gris-suave: #7d8a7f;
+    --verde: #3f7a4d;
+    --azul: #243f6a;
+    --morado: #7f4fa2;
 }
-/* Fuente serif para títulos elegantes */
+
 @font-face {
     font-family: "DM Serif";
     src: url(/LE/DMSerifDisplay-Regular.ttf);
 }
 
-/* Fuente sans-serif para texto general */
 @font-face {
     font-family: "DM Sans";
     src: url(/LE/DMSans-Regular.ttf);
 }
-/* ========================================
-TÍTULOS
-   ======================================== */
 
 h2 {
     color: rgba(50, 98, 33, 1);
@@ -31,12 +27,10 @@ h2 {
     text-align: center;
 }
 
-/* Incluye padding y borde dentro del ancho/alto de todos los elementos */
 * {
     box-sizing: border-box;
 }
 
-/* Estilos base del documento: fondo degradado y fuente principal */
 body {
     margin: 0;
     color: var(--texto-principal);
@@ -45,7 +39,7 @@ body {
     font-family: "DM Sans", sans-serif;
 }
 
-/* Menú lateral fijo a la izquierda con fondo verde */
+/* ── SIDEBAR ── */
 .barra-lateral {
     position: fixed;
     left: 0;
@@ -59,9 +53,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 50;
 }
 
-/* Nombre/marca de la app en la parte superior del sidebar */
 .logo {
     font-size: 1.3rem;
     font-weight: 700;
@@ -72,7 +66,6 @@ body {
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Contenedor de los enlaces del menú lateral */
 .menu-lateral {
     display: grid;
     gap: 5px;
@@ -82,7 +75,6 @@ body {
     margin-top: 20px;
 }
 
-/* Cada enlace individual del menú lateral */
 .enlace-menu {
     display: flex;
     flex-direction: row;
@@ -98,7 +90,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Ícono dentro de cada enlace del menú lateral */
 .icono-menu {
     width: 28px;
     height: 28px;
@@ -108,7 +99,6 @@ body {
     flex-shrink: 0;
 }
 
-/* Ícono del botón de cerrar sesión (ligeramente más grande) */
 .icono-cerrar {
     width: 35px;
     height: 35px;
@@ -118,7 +108,6 @@ body {
     flex-shrink: 0;
 }
 
-/* Texto de cada ítem del menú lateral */
 .texto-menu {
     font-size: 20px;
     text-align: left;
@@ -127,25 +116,24 @@ body {
     text-overflow: ellipsis;
 }
 
-/* Resalta el enlace al pasar el cursor o cuando está activo */
 .enlace-menu:hover,
 .enlace-menu.activo {
     background: rgb(49, 95, 32);
     transform: translateX(4px);
 }
 
-/* Aclara el ícono al hacer hover o cuando el enlace está activo */
 .enlace-menu:hover .icono-menu,
 .enlace-menu.activo .icono-menu {
     filter: brightness(1.3);
 }
 
-/* Botón de cerrar sesión al fondo del sidebar */
 .boton-cerrar {
     margin-top: 5px;
     border: none;
+    background: transparent;
     width: 100%;
     padding: 12px;
+    padding-top: 15px;
     border-radius: 10px;
     color: white;
     font-size: 0.9rem;
@@ -155,40 +143,36 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding-top: 15px;
     transition: all 0.3s ease;
     text-decoration: none;
 }
 
-/* Efecto hover del botón de cerrar sesión */
 .boton-cerrar:hover {
     background: rgba(50, 98, 33, 1);
     transform: translateY(-2px);
 }
 
-/* Área de contenido principal desplazada a la derecha del sidebar */
+/* ── CONTENEDOR PRINCIPAL ── */
 .contenedor-principal {
     margin-left: 280px;
-    margin-right: 0;
     padding: 0;
     background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(/k/imagenes/fondo.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    /* CORREGIDO: sin height fijo ni overflow hidden */
+    overflow-y: auto;
 }
 
-/* Capa de contenido con z-index para superponerse al fondo */
 .contenido-fondo {
     position: relative;
     z-index: 3;
-    height: 100vh;
-    overflow: hidden;
+    /* CORREGIDO: sin height fijo ni overflow hidden */
 }
 
-/* Barra superior con título de página y datos del usuario */
+/* ── ENCABEZADO ── */
 .encabezado {
     display: flex;
     align-items: center;
@@ -201,15 +185,13 @@ body {
     z-index: 10;
 }
 
-/* Columna izquierda del encabezado: título y subtítulo */
-.encabezado-texto{
+.encabezado-texto {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-/* Título principal de la página actual */
 .titulo-pagina {
     margin: 0;
     font-size: 2.2rem;
@@ -217,13 +199,12 @@ body {
     font-family: "DM Serif";
     color: rgba(50, 98, 33, 1);
 }
-/* Texto del logo con fuente serif decorativa */
+
 .logo-texto {
     font-family: "DM Serif", sans-serif;
     font-size: 34px;
 }
 
-/* Descripción breve debajo del título de página */
 .subtitulo-pagina {
     margin: 0;
     color: var(--gris-suave);
@@ -231,7 +212,6 @@ body {
     line-height: 1.6;
 }
 
-/* Tarjeta del usuario en la esquina superior derecha */
 .usuario-contenedor {
     display: flex;
     align-items: center;
@@ -243,7 +223,6 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Columna de texto dentro de la tarjeta de usuario */
 .usuario {
     display: flex;
     flex-direction: column;
@@ -252,7 +231,6 @@ body {
     flex: 1;
 }
 
-/* Ícono/avatar del usuario */
 .usuario-icono {
     width: 45px;
     height: 45px;
@@ -260,7 +238,6 @@ body {
     flex-shrink: 0;
 }
 
-/* Logo circular en el encabezado */
 .Logo-header-icono {
     width: 75px;
     height: 75px;
@@ -270,7 +247,6 @@ body {
     padding: 4px;
 }
 
-/* Nombre del usuario en negrilla */
 .usuario-nombre {
     display: block;
     font-weight: 700;
@@ -278,50 +254,52 @@ body {
     color: var(--texto-principal);
 }
 
-/* Rol o cargo del usuario en color secundario */
 .usuario-rol {
     display: block;
     color: var(--gris-suave);
     font-size: 0.85rem;
 }
 
-.modulo-ventas{
+/* ── MÓDULO VENTAS ── */
+.modulo-ventas {
     padding: 15px 30px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    height: calc(100vh - 120px);
-    overflow: hidden;
+    /* CORREGIDO: sin height fijo ni overflow hidden */
+    padding-bottom: 30px;
 }
-.barra-acciones{
+
+.barra-acciones {
     display: flex;
     justify-content: flex-end;
     width: 100%;
 }
-.btn-nuevo-item{
-    background-color:#326221;
-    color:white;
-    border:none;
-    padding: 12px 24px;
+
+.btn-nuevo-item {
+    background-color: #326221;
+    color: white;
+    border: none;
+    padding: 8px 20px;
     border-radius: 12px;
     font-family: "DM Sans";
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
 }
-.contenedor-tarjetas{
+
+.contenedor-tarjetas {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     margin-top: 10px;
-    flex: 1;
-    overflow: hidden;
 }
-.tarjeta-venta{
-    background-color:white;
+
+.tarjeta-venta {
+    background-color: white;
     border: 1px solid #3B7A57;
     border-radius: 18px;
     overflow: hidden;
@@ -330,80 +308,92 @@ body {
     flex-direction: column;
     min-height: 180px;
 }
-.tarjeta-cabecera{
-    background-color:#F7F4D3 ;
+
+.tarjeta-cabecera {
+    background-color: #F7F4D3;
     color: black;
     text-align: center;
     font-weight: 700;
     font-size: 0.9rem;
     padding: 10px;
-    letter-spacing: 0.05em;}
-.tarjeta-cuerpo{
-    padding: 25px 8px;
+    letter-spacing: 0.05em;
+}
+
+.tarjeta-cuerpo {
+    padding: 16px;
     display: flex;
     flex-direction: column;
     flex: 1;
     justify-content: space-between;
 }
-.info-pricipal{
+
+.info-principal {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     gap: 10px;
-    max-width: 100%;
 }
-.producto-nombre{
+
+.producto-nombre {
     margin: 0;
     font-size: 1.1rem;
     font-weight: 800;
     color: black;
     font-family: "DM Sans";
 }
-.producto-precio{
+
+.producto-precio {
     font-size: 1.1rem;
     font-weight: 800;
     color: black;
-    position: relative;
-    left: 200px;
-    flex: 1;
+    white-space: nowrap;
+    /* CORREGIDO: quitado el left:200px que descuadraba el precio */
 }
-.producto-cantidad{
+
+.producto-cantidad {
     margin: 8px 0 0 0;
-    color:black ;
+    color: black;
     font-size: 0.9rem;
 }
-.tarjeta-pie{
+
+.tarjeta-pie {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 15px;
 }
-.venta-fecha{
+
+.venta-fecha {
     display: flex;
     gap: 40px;
     font-size: 0.85rem;
-    color:black;
+    color: black;
 }
-.acciones-iconos{
-    margin-left: auto;
+
+.acciones-iconos {
     display: flex;
     gap: 8px;
-} 
-.btn-accion{
+}
+
+.btn-accion {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 1.1rem;
     padding: 4px;
 }
-.paginacion{
+
+/* ── PAGINACIÓN ── */
+.paginacion {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
     margin-top: 15px;
-    padding-bottom: 0;
+    padding-bottom: 20px;
 }
-.btn-flecha{
+
+.btn-flecha {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -412,7 +402,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
+
 .puntos-suspensivos {
     font-size: 1.5rem;
     color: #2b5126;
@@ -420,6 +413,12 @@ body {
     line-height: 1;
 }
 
+/* ── VERSIÓN MÓVIL: oculta por defecto en PC ── */
+.contenedor-movil-v {
+    display: none;
+}
+
+/* ── MODALES ── */
 .modal-overlay-v {
     position: fixed;
     top: 0;
@@ -437,14 +436,16 @@ body {
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
+
 .modal-overlay-v.mostrar {
     opacity: 1;
     pointer-events: auto;
 }
+
 .modal-contenedor-v {
     background-color: white;
     width: 100%;
-    max-width: 400px; /* Se encoge en celulares y frena en PC */
+    max-width: 400px;
     border-radius: 24px;
     padding: 24px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
@@ -452,20 +453,23 @@ body {
     flex-direction: column;
     box-sizing: border-box;
 }
-.modal-titulo{
+
+.modal-titulo {
     font-family: "DM Sans";
     color: black;
     font-size: 25px;
+    margin: 0 0 16px 0;
 }
-.grupo-campo{
+
+.grupo-campo {
     display: flex;
     flex-direction: column;
     gap: 6px;
     width: 100%;
     margin-bottom: 14px;
 }
-/* CORRECCIÓN: Optimización del Grid dual. Ahora las dos cajas internas heredan correctamente el 50% de espacio cada una */
-.grupo-campo-2{
+
+.grupo-campo-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
@@ -480,7 +484,7 @@ body {
     gap: 6px;
 }
 
-.grupo-campo label, 
+.grupo-campo label,
 .campo-individual label {
     font-family: "DM Sans";
     font-size: 14px;
@@ -488,7 +492,7 @@ body {
     text-align: left;
 }
 
-.grupo-campo input, 
+.grupo-campo input,
 .campo-individual input[type="text"] {
     width: 100%;
     padding: 10px 14px;
@@ -501,17 +505,11 @@ body {
     outline: none;
 }
 
-/* ==========================================================================
-   NUEVOS ESTILOS PARA ADAPTAR EL SELECTOR DE ESTADO COMO EN FIGMA
-   ========================================================================== */
-
-/* ADICIÓN: Contenedor relativo que nos permite posicionar una flecha vectorial sobrepuesta */
 .select-personalizado {
     position: relative;
     width: 100%;
 }
 
-/* ADICIÓN: Homologación del select para que mida y tenga los mismos bordes/curvas que tus text inputs */
 .select-personalizado select {
     width: 100%;
     padding: 10px 32px 10px 14px;
@@ -523,14 +521,11 @@ body {
     box-sizing: border-box;
     outline: none;
     cursor: pointer;
-    
-    /* Elimina las flechas feas y grises por defecto de Windows/Chrome/Safari */
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
 
-/* ADICIÓN: Flecha en forma de triángulo minimalista simulando el vector limpio de Figma */
 .select-personalizado::after {
     content: "";
     position: absolute;
@@ -540,63 +535,17 @@ body {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid #6C6868;
-    pointer-events: none; /* Permite clickear a través del triángulo */
+    pointer-events: none;
 }
 
-.modal-botones {
-    display: flex;
-    justify-content: space-between;
-    gap: 14px;
-    margin-top: 10px;
-}
-
-.btn-guardar, .btn-cancelar {
-    flex: 1;
-    padding: 12px;
-    border-radius: 12px;
-    font-family: "DM Sans";
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    border: none;
-}
-
-.btn-guardar {
-    background-color: #326221;
-    color: white;
-}
-
-.btn-cancelar {
-    background-color: #F8F9FA;
-    color: #ff0000;
-    border: 1px solid #E0E0E0;
-}
-.cntdor-eliminar{   
-    margin: auto;
-}
-.pregunta{
-    margin: auto;
-    text-align: center;
-    font-family: "DM Sans";
-    padding: 10px;
-}
-.n-e-tratamiento{
-    color: #FF0707;
-    font-size: 30px;
-    font-family: "DM Sans";
-    font-weight: 0;
-}
 .modal-botones {
     display: flex;
     width: 100%;
     gap: 12px;
     margin-top: 16px;
 }
-.modal-botones button{
+
+.modal-botones button {
     flex: 1;
     height: 40px;
     border: none;
@@ -610,114 +559,138 @@ body {
     justify-content: center;
     gap: 8px;
 }
-.btn-eliminar { 
-    background-color: #F82733; 
-    color:white; 
-    font-weight: 600; 
+
+.btn-guardar {
+    background-color: #326221;
+    color: white;
 }
 
+.btn-cancelar {
+    background-color: #F8F9FA;
+    color: #ff0000;
+    border: 1px solid #E0E0E0 !important;
+}
+
+.btn-eliminar {
+    background-color: #F82733;
+    color: white;
+    font-weight: 600;
+}
+
+.cntdor-eliminar {
+    margin: auto;
+}
+
+.pregunta {
+    margin: auto;
+    text-align: center;
+    font-family: "DM Sans";
+    padding: 10px;
+}
+
+.n-e-tratamiento {
+    color: #FF0707;
+    font-size: 30px;
+    font-family: "DM Sans";
+    font-weight: 400;
+    text-align: center;
+}
+
+/* ── RESPONSIVE 1200px ── */
 @media (max-width: 1200px) {
-    .contenedor-tarjetas{
-        grid-template-columns: repeat(2,1fr);
+    .contenedor-tarjetas {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
-@media (max-width: 980px) {
 
-    /* Reduce el ancho del sidebar */
+/* ── RESPONSIVE 980px ── */
+@media (max-width: 980px) {
     .barra-lateral {
         width: 260px;
         padding: 25px 15px;
     }
-    /* Ajusta el margen del contenido al nuevo ancho del sidebar */
+
     .contenedor-principal {
         margin-left: 260px;
     }
-    /* Encabezado en columna vertical */
+
     .encabezado {
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
     }
-    /* Tarjeta de usuario ocupa todo el ancho */
+
     .usuario-contenedor {
         width: 100%;
         min-width: auto;
     }
-    .contenedor-tarjetas{
-        grid-template-columns: repeat(1,1fr);
+
+    .contenedor-tarjetas {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
-@media(max-width:768px){
-    .barra-lateral {display: none;}
+
+/* ── RESPONSIVE MÓVIL 768px ── */
+@media (max-width: 768px) {
+
+    .barra-lateral {
+        display: none;
+    }
+
     .contenedor-principal {
         margin-left: 0;
         padding-bottom: 80px;
-        background-image:url(/MP/img/fondo-mv.png);
+        background-image: url(/MP/img/fondo-mv.png);
         background-size: cover;
         background-position: center;
         min-height: 100vh;
-}
-.encabezado {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 32px 20px 16px;
-        background-color: transparent;
-        box-shadow: none;
-        gap: 0;
+        overflow-y: auto;
     }
-    .Logo-header-icono,
-    .usuario-contenedor,
-    .subtitulo-pagina,
-    .encabezado {
+
+    /* Ocultar elementos de escritorio */
+    .encabezado,
+    .contenido-fondo {
         display: none;
     }
-    .barra-acciones{
-        display: none;
-    }
-    .contenedor-tarjetas{
-        display: none;
-    }
-    .paginacion{
-        display: none;
-    }
-    .contenedor-movil-v{
+
+    /* Mostrar versión móvil */
+    .contenedor-movil-v {
+        display: block;
         min-height: 100px;
         margin: 16px 18px 22px;
         padding: 12px 12px 14px;
         border-radius: 15px;
         background: rgba(255, 255, 255, 0.6);
+        min-height: 600px;
     }
+
     .encabezado-texto-v {
         text-align: center;
         width: 100%;
     }
-    .contenedor-movil-v h1{
-        display: inline-block; 
+
+    .contenedor-movil-v h1 {
+        display: inline-block;
         font-size: 45px;
-
-    /* 2. Tu degradado exacto de Figma con 76% de opacidad (RGBA) */
-    background: linear-gradient(
-        to right, 
-        rgba(0, 75, 43, 0.76) 0%,
-        rgba(0, 177, 101, 0.76) 100% 
-    );
-
-    /* 3. El truco definitivo: Recortar el degradado solo a las siluetas */
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    /* 4. Volver invisible el relleno de la tipografía para que pase el degradado */
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    -webkit-text-stroke: 0.01px rgb(0,75,43,0.7);
+        background: linear-gradient(
+            to right,
+            rgba(0, 75, 43, 0.76) 0%,
+            rgba(0, 177, 101, 0.76) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        -webkit-text-stroke: 0.01px rgb(0, 75, 43, 0.7);
     }
-    .barra-acciones-mv{
+
+    .barra-acciones-mv {
         display: flex;
         justify-content: center;
         width: 100%;
     }
-    .add-mv{
+
+    .add-mv {
         flex: 1;
         height: 56px;
         background-color: white;
@@ -728,8 +701,10 @@ body {
         justify-content: space-around;
         gap: 20px;
         font-size: 16px;
+        cursor: pointer;
     }
-    .contenedor-venta{
+
+    .contenedor-venta {
         position: relative;
         margin-top: 20px;
         min-height: 150px;
@@ -739,48 +714,53 @@ body {
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         display: flex;
-        flex-direction:column;
+        flex-direction: column;
         padding: 16px;
         box-sizing: border-box;
     }
-    .n-venta{
+
+    .n-venta {
         margin: 0;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: black;
-    font-family: "DM Sans";
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: black;
+        font-family: "DM Sans";
     }
-    .precio{
+
+    .precio {
         position: absolute;
-        top:20px;
-        right: 40px;    
-        gap: 6px;
+        top: 20px;
+        right: 40px;
     }
-    .caracteristicas p{
+
+    .caracteristicas p {
         margin: 0;
-        line-height: 1.4;}
-.fecha-hora{
+        line-height: 1.4;
+    }
+
+    .fecha-hora {
         display: flex;
-        justify-content:start;
+        justify-content: start;
         gap: 60px;
         align-items: center;
         margin-top: 5px;
         text-align: center;
         margin-left: 12px;
-        }
-    .modulo-btn{
+    }
+
+    .modulo-btn {
         display: flex;
         justify-content: space-between;
         padding: 10px;
         gap: 20px;
     }
-    .btn-editar-mv{
+
+    .btn-editar-mv {
         flex: 1;
         max-width: 180px;
-        width: 121px;
         height: 33px;
-        background-color:#3D765E;
-        color:#FFFDFD;
+        background-color: #3D765E;
+        color: #FFFDFD;
         border: none;
         padding: 10px 20px;
         border-radius: 8px;
@@ -788,20 +768,21 @@ body {
         font-size: 15px;
         cursor: pointer;
     }
-    .btn-eliminar-mv{
+
+    .btn-eliminar-mv {
         flex: 1;
         max-width: 180px;
-        width: 121px;
         height: 33px;
-        background-color:#f4f4f4;
-        color:#ff0000;
+        background-color: #f4f4f4;
+        color: #ff0000;
         border: none;
         padding: 10px 20px;
         border-radius: 8px;
-        font-family: "DM Sans";
         font-size: 15px;
         cursor: pointer;
     }
+
+    /* Barra de navegación inferior móvil */
     .barra-nav-movil {
         display: flex;
         position: fixed;
@@ -817,6 +798,7 @@ body {
         justify-content: space-around;
         padding: 0 8px;
     }
+
     .nav-movil-item {
         display: flex;
         flex-direction: column;
@@ -831,6 +813,7 @@ body {
         transition: all 0.2s ease;
         flex: 1;
     }
+
     .nav-movil-item.activo {
         color: rgba(50, 98, 33, 1);
     }
@@ -856,7 +839,14 @@ body {
     }
 }
 
-/* MODAL DE CIERRE DE SESIÓN */
+/* Ocultar nav móvil solo en escritorio */
+@media (min-width: 769px) {
+    .barra-nav-movil {
+        display: none;
+    }
+}
+
+/* ── MODAL DE CIERRE DE SESIÓN ── */
 .modal-cerrar-sesion {
     display: none;
     position: fixed;
@@ -896,15 +886,6 @@ body {
 .modal-texto-2 {
     color: red;
     font-size: 22px;
-}
-
-.modal-botones {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    margin-top: 20px;
-    align-items: center;
 }
 
 .modal-btn {
