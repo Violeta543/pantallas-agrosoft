@@ -37,6 +37,33 @@ if (btonfiltrar && menufiltrar) {
     });
 }
 
+//-------------- Filtrar Categoria PC 
+
+const opcionesFiltro = document.querySelectorAll('.opcion-filtro');
+const tarjetasReporte = document.querySelectorAll('.cajapadre-reporte');
+
+opcionesFiltro.forEach(boton => {
+    boton.addEventListener('click', () => {
+
+        const categoriaSeleccionada = boton.textContent.toLowerCase().trim();
+
+        tarjetasReporte.forEach(tarjeta => {
+            const categoriaTarjeta = tarjeta.getAttribute('data-categoria');
+
+
+            if (categoriaTarjeta === categoriaSeleccionada) {
+                tarjeta.style.display = "flex";
+            } else {
+                tarjeta.style.display = "none";
+            }
+        });
+
+        opcionesFiltro.forEach(o => o.classList.remove('activa'));
+        boton.classList.add('activa');
+        
+        menufiltrar.style.display = 'none';
+    });
+});
 
 // -------------- Descargar Reporte --------------
 
@@ -127,3 +154,5 @@ if (formularioDescargaMovil && modalDescargarMovil) {
         modalDescargarMovil.classList.add("oculto"); 
     });
 }
+
+//------------------ Filtrar Movil 

@@ -14,7 +14,7 @@
         </div>
 
         <nav class="menu-lateral">
-            <a href="/k/dashboard.html" class="enlace-menu " data-seccion="dashboard">
+            <a href="/k/dashboard.html" class="enlace-menu activo" data-seccion="dashboard">
                 <img src="/k/imagenes/dash.png" alt="Dashboard" class="icono-menu">
                 <span class="texto-menu">Dashboard</span>
             </a>
@@ -55,6 +55,7 @@
                 <span class="texto-menu">Ajustes</span>
             </a>
         </nav>
+
         <a href="#" class="boton-cerrar" onclick="mostrarModalCerrarSesion(event)">
             <img src="/k/imagenes/cerrar.png" alt="Cerrar" class="icono-cerrar">
             <span>Cerrar sesión</span>
@@ -84,35 +85,32 @@
 
         <section class="contenido-fondo">
     <div class="barra-busqueda">
-        <!-- <div class="caja-busqueda"> 
+        <div class="caja-busqueda"> 
             <img class="icono-filtro" src="/Gise/visual/filtro.svg">
             <div class="contenedor-filtro">
             <button class="boton-filtrar" id="bton-filtrar"> Filtrar <span class="flecha-filtrar"><img src="/Gise/visual/flecha-abajo.svg" alt=""></span></button>
                 <div class="menu-desplegable" id="menufiltrar">
-                <button type="button" class="opcion-filtro">Tareas</button>
-                <button type="button" class="opcion-filtro">Cultivos</button>
-                <button type="button" class="opcion-filtro">Ventas</button>
-                <button type="button" class="opcion-filtro">Tratamiento</button>
-                <button type="button" class="opcion-filtro activa">Reporte</button>
-                <button type="button" class="opcion-filtro">Inventario</button>
-                <button type="button" class="opcion-filtro">Notificaciones</button>
+                <button type="button" class="opcion-filtro">Herramientas</button>
+                <button type="button" class="opcion-filtro">Abono</button>
+                <button type="button" class="opcion-filtro activa">Pesticidas</button>
             </div>
         </div> 
             <input type="text" placeholder="Buscar..." class="input-busqueda">
             <span> <img class="icono-lupa" src="/Gise/visual/lupa.svg" alt="icono"></span>
-        </div> -->
+        </div>
         <button id="bton-agregar-inventario" class="boton-inventario">
             <span class="icono-plus"> <img src="/Gise/visual/Plus.svg" alt="Añadir"></span> Agregar Inventario
         </button> 
     </div>
+
     <div class="caja-inventario">
-        <div class="cajapadre-inventario">
+        <div class="cajapadre-inventario" data-categoria="pesticidas">
             <div class="caja-inventario2">
                 <span class="encabezado-inventario"> Inventario </span>
             </div>
             <div class="cuerpo-tarjeta">
                 <p><strong> Fungicida Sistémico Premium </strong></p> 
-                <p>Pesticida</p> <br>
+                <p>Categoría: Pesticida</p> <br>
                 <p>Cantidad: 5 Litros</p>
             <div class="iconos-accion">
             <button type="button" class="btn-editar">
@@ -125,19 +123,52 @@
         </div>
     </div>
 
-        <div class="cajapadre-inventario vacia">
-            <div class="caja-reporte-vacia"></div>
+    <div class="cajapadre-inventario" data-categoria="herramientas">
+        <div class="caja-inventario2">
+            <span class="encabezado-inventario"> Inventario </span>
         </div>
-        <div class="cajapadre-inventario vacia">
-            <div class="caja-reporte-vacia"></div>
-        </div>
-        <div class="cajapadre-inventario vacia">
-            <div class="caja-reporte-vacia"></div>
-        </div>
-        <div class="cajapadre-inventario vacia">
-            <div class="caja-reporte-vacia"></div>
+        <div class="cuerpo-tarjeta">
+            <p><strong> Nombre del Producto 2 </strong></p> 
+            <p>Categoría: Herramientas</p> <br>
+            <p>Cantidad: X unidades</p>
+            <div class="iconos-accion">
+                <button type="button" class="btn-editar"><img src="/Gise/visual/editar.svg"></button>
+                <button type="button" class="btn-eliminar"><img src="/Gise/visual/basura.svg"></button>
+            </div>
         </div>
     </div>
+
+    <div class="cajapadre-inventario" data-categoria="abono">
+        <div class="caja-inventario2">
+            <span class="encabezado-inventario"> Inventario </span>
+        </div>
+        <div class="cuerpo-tarjeta">
+            <p><strong> Nombre del Producto 3 </strong></p> 
+            <p>Categoría: Abono</p> <br>
+            <p>Cantidad: X unidades</p>
+            <div class="iconos-accion">
+                <button type="button" class="btn-editar"><img src="/Gise/visual/editar.svg"></button>
+                <button type="button" class="btn-eliminar"><img src="/Gise/visual/basura.svg"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cajapadre-inventario" data-categoria="abono">
+        <div class="caja-inventario2">
+            <span class="encabezado-inventario"> Inventario </span>
+        </div>
+        <div class="cuerpo-tarjeta">
+            <p><strong> Nombre del Producto 4 </strong></p> 
+            <p>Categoría: Abono</p> <br>
+            <p>Cantidad: X unidades</p>
+            <div class="iconos-accion">
+                <button type="button" class="btn-editar"><img src="/Gise/visual/editar.svg"></button>
+                <button type="button" class="btn-eliminar"><img src="/Gise/visual/basura.svg"></button>
+            </div>
+        </div>
+    </div>
+
+<!----------------- Desplazar paginas   ------------------->
 
     <div class="desplazar-pagina">
         <button class="izquierda"><img src="/Gise/visual/Izquierda.svg"></button>
@@ -268,6 +299,35 @@
     </div>
 </div>
 
+<!-- MODAL DE CIERRE DE SESIÓN -->
+    <div id="modal-cerrar-sesion" class="modal-cerrar-sesion">
+        <div class="modal-contenido">
+            <p class="modal-texto-1">¿Deseas cerrar sesion?</p>
+            <p class="modal-texto-2">"Yonatan Gomez"</p>
+            <p class="modal-texto-3">Esta accion cerrara tu sesion y podras volver a ingresar mas tarde.</p>
+            <div class="modal-botones">
+                <button class="modal-btn modal-btn-cerrar" onclick="confirmarCerrarSesion()">Cerrar Sesión</button>
+                <button class="modal-btn modal-btn-cancelar" onclick="ocultarModalCerrarSesion()">X Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        function mostrarModalCerrarSesion(event) {
+            event.preventDefault();
+            document.getElementById('modal-cerrar-sesion').style.display = 'flex';
+        }
+
+        function ocultarModalCerrarSesion() {
+            document.getElementById('modal-cerrar-sesion').style.display = 'none';
+        }
+
+        function confirmarCerrarSesion() {
+            window.location.href = '/index.html';
+        }
+    </script>
+
 
 
     <!----------------- MOvil Inventario  ------------------->
@@ -276,7 +336,7 @@
         <div class="fondo-blanco"></div>
         <h2 class="titulo-movil">INVENTARIO</h2>
         <div class="busqueda-movil">
-                <button class="bton-movil-inventario"><img src="/Gise/visual/Circuloplus.svg" class="icono-agregar-movil" id="bton-movilinventario"></button>
+                <button class="bton-movil-inventario"><img id="bton-movilinventario" src="/Gise/visual/Circuloplus.svg" class="icono-agregar-movil"></button>
                 <input type="text" placeholder="Buscar" class="input-buscar-movil">
                 <img class="lupa-movil" src="/Gise/visual/lupa.svg">
         </div>
@@ -451,5 +511,6 @@
 
 <!------------------------ Final de Diseño  ---------------------->
     <script src="inventario.js"></script>
+    <!-- <script src="movil-inventario.js"></script> -->
 </body>
 </html>

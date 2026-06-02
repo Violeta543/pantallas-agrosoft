@@ -80,7 +80,9 @@
             </div>
         </header>
         <section class="contenido-fondo">
+            
         <!---------------- Diseño Reporte -------->
+        
         <section class="contenido-fondo">
     <div class="barra-busqueda">
         <div class="caja-busqueda"> 
@@ -104,8 +106,10 @@
             <span class="icono-plus"> <img src="/Gise/visual/Plus.svg" alt="Añadir"></span> Nuevo Reporte
         </button> 
     </div>
+
+
     <div class="caja-reportes">
-        <div class="cajapadre-reporte">
+        <div class="cajapadre-reporte" data-categoria="cultivos">
             <div class="caja-reporte">
                 <span class="titulo-reporte"><strong> Nombre:</strong> Reporte de ventas</span>
                 <button class="icono-descargar"> <img src="/Gise/visual/descargar.svg" alt="Descargar"> </button>
@@ -121,18 +125,9 @@
                 <button class="boton-eliminar"> <img src="/Gise/visual/basura.svg"></button>
             </div>
         </div>
-        <div class="cajapadre-reporte vacia">
-            <div class="caja-reporte-vacia"></div>
-        </div>
-        <div class="cajapadre-reporte vacia">
-            <div class="caja-reporte-vacia"></div>
-        </div>
-        <div class="cajapadre-reporte vacia">
-            <div class="caja-reporte-vacia"></div>
-        </div>
-        <div class="cajapadre-reporte vacia">
-            <div class="caja-reporte-vacia"></div>
-        </div>
+
+
+
     </div> 
     <div class="desplazar-pagina">
         <button class="izquierda"><img src="/Gise/visual/Izquierda.svg"></button>
@@ -141,7 +136,9 @@
     </div>
 </section>
     </main>
+
 <!----------------- Ventana Crear Reporte  ------------------->
+
     <div id="formulario-reporte" class="cajapadre-formulario">
         <div class="contenido-formulario">
             <h2> Generar Nuevo Reporte </h2>
@@ -227,6 +224,35 @@
             </div>
         </div>
     </div>
+
+    <!-- MODAL DE CIERRE DE SESIÓN -->
+    <div id="modal-cerrar-sesion" class="modal-cerrar-sesion">
+        <div class="modal-contenido">
+            <p class="modal-texto-1">¿Deseas cerrar sesion?</p>
+            <p class="modal-texto-2">"Yonatan Gomez"</p>
+            <p class="modal-texto-3">Esta accion cerrara tu sesion y podras volver a ingresar mas tarde.</p>
+            <div class="modal-botones">
+                <button class="modal-btn modal-btn-cerrar" onclick="confirmarCerrarSesion()">Cerrar Sesión</button>
+                <button class="modal-btn modal-btn-cancelar" onclick="ocultarModalCerrarSesion()">X Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        function mostrarModalCerrarSesion(event) {
+            event.preventDefault();
+            document.getElementById('modal-cerrar-sesion').style.display = 'flex';
+        }
+
+        function ocultarModalCerrarSesion() {
+            document.getElementById('modal-cerrar-sesion').style.display = 'none';
+        }
+
+        function confirmarCerrarSesion() {
+            window.location.href = '/index.html';
+        }
+    </script>
 
     <!----------------- MOvil Reporte  ------------------->
 
