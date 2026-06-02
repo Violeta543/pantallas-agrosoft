@@ -711,7 +711,7 @@ body {
     display: none !important;
 }
     .titulo-movil{
-        font-family: 'DM Serif Display', sans-serif;
+        font-family: 'DM Serif', sans-serif;
         font-size: 45px;
         -webkit-text-stroke: 0.8px #004b2a;
         background-image: linear-gradient(to right, #004B2B, #00B165);
@@ -787,12 +787,12 @@ body {
     .tarjeta-inventario-movil{
         background-color: white;
         border: 1.5px solid #004B2B;
-        border-radius: 25px;
-        padding: 24px 20px;
-        width: 90%;
-        max-width: 360px;
+        border-radius: 20px;
+        padding: 15px 15px;
+        width: 80%;
+        max-width: 300px;
         height: auto;
-        margin: 15px auto;
+        margin: 10px auto;
         font-family: 'DM Sans', sans-serif;
     }
     .titulo-tarjeta{
@@ -828,9 +828,9 @@ body {
     }
     .bton-editar-movil{
     background-color: #f2f2f2; 
-    width: 45%;
-    padding: 10px 0;
-    border-radius: 12px;
+    width: 25%;
+    padding: 5px 0;
+    border-radius: 10px;
     border: none;
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
@@ -844,9 +844,9 @@ body {
     .bton-eliminar-movil {
     background-color: #f2f2f2;
     color: #ff3b30;
-    width: 45%;
-    padding: 10px 0;
-    border-radius: 12px;
+    width: 25%;
+    padding: 5px 0;
+    border-radius: 10px;
     border: none;
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;

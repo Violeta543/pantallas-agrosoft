@@ -14,7 +14,7 @@
         </div>
 
         <nav class="menu-lateral">
-            <a href="/k/dashboard.html" class="enlace-menu activo" data-seccion="dashboard">
+            <a href="/k/dashboard.html" class="enlace-menu" data-seccion="dashboard">
                 <img src="/k/imagenes/dash.png" alt="Dashboard" class="icono-menu">
                 <span class="texto-menu">Dashboard</span>
             </a>
@@ -30,7 +30,7 @@
                 <img src="/k/imagenes/tratamiento.png" alt="Tratamiento" class="icono-menu">
                 <span class="texto-menu">Tratamiento</span>
             </a>
-            <a href="/Gise/inventario.html" class="enlace-menu" data-seccion="inventario">
+            <a href="/Gise/inventario.html" class="enlace-menu activo" data-seccion="inventario">
                 <img src="/k/imagenes/inventarios.png" alt="Inventario" class="icono-menu">
                 <span class="texto-menu">Inventario</span>
             </a>
@@ -110,7 +110,7 @@
             </div>
             <div class="cuerpo-tarjeta">
                 <p><strong> Fungicida Sistémico Premium </strong></p> 
-                <p>Pesticida</p> <br>
+                <p>Categoría: Pesticida</p> <br>
                 <p>Cantidad: 5 Litros</p>
             <div class="iconos-accion">
             <button type="button" class="btn-editar">
@@ -123,13 +123,13 @@
         </div>
     </div>
 
-    <div class="cajapadre-inventario">
+    <div class="cajapadre-inventario" data-categoria="herramientas">
         <div class="caja-inventario2">
             <span class="encabezado-inventario"> Inventario </span>
         </div>
         <div class="cuerpo-tarjeta">
             <p><strong> Nombre del Producto 2 </strong></p> 
-            <p>Categoría</p> <br>
+            <p>Categoría: Herramientas</p> <br>
             <p>Cantidad: X unidades</p>
             <div class="iconos-accion">
                 <button type="button" class="btn-editar"><img src="/Gise/visual/editar.svg"></button>
@@ -138,13 +138,13 @@
         </div>
     </div>
 
-    <div class="cajapadre-inventario">
+    <div class="cajapadre-inventario" data-categoria="abono">
         <div class="caja-inventario2">
             <span class="encabezado-inventario"> Inventario </span>
         </div>
         <div class="cuerpo-tarjeta">
             <p><strong> Nombre del Producto 3 </strong></p> 
-            <p>Categoría</p> <br>
+            <p>Categoría: Abono</p> <br>
             <p>Cantidad: X unidades</p>
             <div class="iconos-accion">
                 <button type="button" class="btn-editar"><img src="/Gise/visual/editar.svg"></button>
@@ -153,13 +153,13 @@
         </div>
     </div>
 
-    <div class="cajapadre-inventario">
+    <div class="cajapadre-inventario" data-categoria="abono">
         <div class="caja-inventario2">
             <span class="encabezado-inventario"> Inventario </span>
         </div>
         <div class="cuerpo-tarjeta">
             <p><strong> Nombre del Producto 4 </strong></p> 
-            <p>Categoría</p> <br>
+            <p>Categoría: Abono</p> <br>
             <p>Cantidad: X unidades</p>
             <div class="iconos-accion">
                 <button type="button" class="btn-editar"><img src="/Gise/visual/editar.svg"></button>
@@ -336,7 +336,7 @@
         <div class="fondo-blanco"></div>
         <h2 class="titulo-movil">INVENTARIO</h2>
         <div class="busqueda-movil">
-                <button class="bton-movil-inventario"><img src="/Gise/visual/Circuloplus.svg" class="icono-agregar-movil" id="bton-movilinventario"></button>
+                <button class="bton-movil-inventario"><img id="bton-movilinventario" src="/Gise/visual/Circuloplus.svg" class="icono-agregar-movil"></button>
                 <input type="text" placeholder="Buscar" class="input-buscar-movil">
                 <img class="lupa-movil" src="/Gise/visual/lupa.svg">
         </div>
@@ -511,5 +511,6 @@
 
 <!------------------------ Final de Diseño  ---------------------->
     <script src="inventario.js"></script>
+    <!-- <script src="movil-inventario.js"></script> -->
 </body>
 </html>

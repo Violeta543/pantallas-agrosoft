@@ -121,7 +121,6 @@ btnCancelarEliminar.addEventListener("click", () => {
 
 // MOVIL ------------------------------------------------
 
-document.addEventListener('DOMContentLoaded', () => {
     const modalAgregar = document.getElementById('agregar-inventario-movil');
     const modalEditar = document.getElementById('editar-inventario-movil');
     const modalEliminar = document.getElementById('eliminar-inventario');
@@ -176,4 +175,4 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Eliminado con éxito.");
         }
     });
-});
+;

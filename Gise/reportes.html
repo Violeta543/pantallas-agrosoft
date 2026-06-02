@@ -14,7 +14,7 @@
         </div>
 
         <nav class="menu-lateral">
-            <a href="/k/dashboard.html" class="enlace-menu activo" data-seccion="dashboard">
+            <a href="/k/dashboard.html" class="enlace-menu" data-seccion="dashboard">
                 <img src="/k/imagenes/dash.png" alt="Dashboard" class="icono-menu">
                 <span class="texto-menu">Dashboard</span>
             </a>
@@ -38,7 +38,7 @@
                 <img src="/k/imagenes/ventas.png" alt="Ventas" class="icono-menu">
                 <span class="texto-menu">Ventas</span>
             </a>
-            <a href="/Gise/reportes.html" class="enlace-menu" data-seccion="reportes">
+            <a href="/Gise/reportes.html" class="enlace-menu activo" data-seccion="reportes">
                 <img src="/k/imagenes/reportes.png" alt="Reportes" class="icono-menu">
                 <span class="texto-menu">Reportes</span>
             </a>
@@ -50,11 +50,7 @@
                 <img src="/k/imagenes/notificaciones.png" alt="Notificaciones" class="icono-menu">
                 <span class="texto-menu">Notificaciones</span>
             </a>
-<<<<<<< HEAD
-            <a href="/ajuste/ajustes1.html" class="enlace-menu" data-seccion="ajustes">
-=======
             <a href="/ajuste/ajustes.html" class="enlace-menu" data-seccion="ajustes">
->>>>>>> 243c5ba6b6e48553e42002abce8be66926452481
                 <img src="/k/imagenes/ajustes.png" alt="Ajustes" class="icono-menu">
                 <span class="texto-menu">Ajustes</span>
             </a>
@@ -84,7 +80,9 @@
             </div>
         </header>
         <section class="contenido-fondo">
+            
         <!---------------- Diseño Reporte -------->
+        
         <section class="contenido-fondo">
     <div class="barra-busqueda">
         <div class="caja-busqueda"> 
@@ -108,8 +106,10 @@
             <span class="icono-plus"> <img src="/Gise/visual/Plus.svg" alt="Añadir"></span> Nuevo Reporte
         </button> 
     </div>
+
+
     <div class="caja-reportes">
-        <div class="cajapadre-reporte">
+        <div class="cajapadre-reporte" data-categoria="cultivos">
             <div class="caja-reporte">
                 <span class="titulo-reporte"><strong> Nombre:</strong> Reporte de ventas</span>
                 <button class="icono-descargar"> <img src="/Gise/visual/descargar.svg" alt="Descargar"> </button>
@@ -125,18 +125,9 @@
                 <button class="boton-eliminar"> <img src="/Gise/visual/basura.svg"></button>
             </div>
         </div>
-        <div class="cajapadre-reporte vacia">
-            <div class="caja-reporte-vacia"></div>
-        </div>
-        <div class="cajapadre-reporte vacia">
-            <div class="caja-reporte-vacia"></div>
-        </div>
-        <div class="cajapadre-reporte vacia">
-            <div class="caja-reporte-vacia"></div>
-        </div>
-        <div class="cajapadre-reporte vacia">
-            <div class="caja-reporte-vacia"></div>
-        </div>
+
+
+
     </div> 
     <div class="desplazar-pagina">
         <button class="izquierda"><img src="/Gise/visual/Izquierda.svg"></button>
@@ -145,7 +136,9 @@
     </div>
 </section>
     </main>
+
 <!----------------- Ventana Crear Reporte  ------------------->
+
     <div id="formulario-reporte" class="cajapadre-formulario">
         <div class="contenido-formulario">
             <h2> Generar Nuevo Reporte </h2>
