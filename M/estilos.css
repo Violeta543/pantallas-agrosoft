@@ -13,7 +13,7 @@
 :root {
     --texto-principal: #1f2e1f;
     --gris-suave: #7d8a7f;
-    --verde: #3f7a4d;
+    --verde: #326221;
     --azul: #243f6a;
     --morado: #7f4fa2;
 }
@@ -270,7 +270,7 @@ body {
     display: flex;
     align-items: center;
     gap: 7px;
-    padding: 9px 16px;
+    padding: 16px 16px;
     border: 1.5px solid #c8d8c8;
     border-radius: 8px;
     background: white;
@@ -290,6 +290,7 @@ body {
     .btn-filtro svg {
     width: 15px;
     height: 15px;
+    color:#326221
     }
 
     .buscador-contenedor {
@@ -319,7 +320,7 @@ body {
     border: none;
     outline: none;
     width: 100%;
-    padding: 9px 0;
+    padding: 16px 0;
     font-size: 0.9rem;
     background: transparent;
     color: var(--texto-principal);
@@ -335,8 +336,8 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 20px;
-    background: var(--verde);
+    padding: 16px 20px;
+    background: #326221;
     color: white;
     border: none;
     border-radius: 8px;
@@ -737,7 +738,7 @@ body {
     .btn-modal-guardar {
     flex: 1;
     padding: 11px;
-    background: var(--verde);
+    background: #326221;
     color: white;
     border: none;
     border-radius: 8px;
@@ -1184,13 +1185,14 @@ body {
         align-items: center;
         justify-content: flex-end;
         margin-bottom: 16px;
+        margin-top: -40px;
     }
 
     .btn-nueva-tarea {
         display: flex;
         align-items: center;
         gap: 8px;
-        padding: 10px 20px;
+        padding: 16px 20px;
         background: var(--verde);
         color: white;
         border: none;
