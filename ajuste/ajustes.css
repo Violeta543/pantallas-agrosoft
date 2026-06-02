@@ -539,6 +539,12 @@ body {
                 padding: 20px !important;
                 gap: 12px !important;
             }
+            .modal-cerrar-sesion .modal-contenido {
+                width: 85% !important;
+                max-width: 350px !important;
+                height: auto !important;
+                min-height: 300px !important;
+            }
 }
 
 @media (max-width: 620px) {
