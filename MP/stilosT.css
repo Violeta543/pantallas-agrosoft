@@ -175,7 +175,7 @@ body {
     /* CORREGIDO: sin height fijo ni overflow hidden */
 }
 
-/* ── ENCABEZADO ── */
+/* ENCABEZADO */
 .encabezado {
     display: flex;
     align-items: center;
@@ -197,15 +197,10 @@ body {
 
 .titulo-pagina {
     margin: 0;
-    font-size: 2.2rem;
-    letter-spacing: -0.04em;
-    font-family: "DM Serif";
-    color: rgba(50, 98, 33, 1);
-}
-
-.logo-texto {
+    font-size: 50px;
+    letter-spacing: 2px;
     font-family: "DM Serif", sans-serif;
-    font-size: 34px;
+    color: rgba(50, 98, 33, 1);
 }
 
 .subtitulo-pagina {
