@@ -892,14 +892,13 @@ body {
     font-size: 20px;
     text-align: center;
     z-index: 1000;
-    margin-top: -15px;
     font-weight: bold;
     }
 .cuerpo-formulario-movil {
     background-color: white;
     width: 80%;
     max-width: 360px;
-    margin-top: -90px;
+    margin-top: -96px;
     padding: 35px 22px 15px 22px;
     border-radius: 24px;
     border: 1.5px solid #004B2B;
@@ -977,34 +976,30 @@ body {
 
     /*------------ Descargar Movil ---------------*/
 
-/* 1. Fondo semitransparente (overlay) */
 .descargar-reporte-movil {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.4); /* Fondo gris oscuro con transparencia */
+    background: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
-
-/* 2. Tarjeta blanca del formulario */
 .cuerpo-descargar-movil {
     background-color: white;
-    width: 90%;
-    max-width: 350px;
+    width: 80%;
+    max-width: 340px;
     padding: 25px;
     border-radius: 24px;
     border: 1.5px solid #004B2B;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    margin-top: -130px;
 }
-
-/* 3. Estilos de los campos */
 .formulario-titulo-principal {
     font-family: 'DM Sans', sans-serif;
     font-size: 20px;
@@ -1012,14 +1007,12 @@ body {
     margin-top: 0;
     margin-bottom: 20px;
 }
-
 .etiqueta-campo-movil {
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     margin-bottom: 8px;
     display: block;
 }
-
 .entrada-texto-movil {
     width: 100%;
     padding: 12px;
@@ -1029,23 +1022,19 @@ body {
     margin-bottom: 20px;
     box-sizing: border-box;
 }
-
-/* 4. Contenedor para el select y el botón */
 .contenedor-descarga-movil {
     display: flex;
-    align-items: center; /* Alinea verticalmente el select y el botón */
-    gap: 15px;           /* Espacio entre el select y la flecha */
+    align-items: center;
+    gap: 15px;
     margin-bottom: 10px;
 }
-
 .seleccionar-formato {
-    flex: 1; /* El select ocupa todo el espacio disponible */
+    flex: 1;
     padding: 12px;
     background-color: #ededed;
     border: 1px solid #e0e0e0;
     border-radius: 14px;
 }
-
 .bton-descargar {
     background: none;
     border: none;
@@ -1053,12 +1042,10 @@ body {
     display: flex;
     align-items: center;
 }
-
 .bton-descargar img {
     width: 32px;
     height: 32px;
 }
-
 .eliminar-movil-reporte {
     background-color: #f2f2f2;
     color: #ff3b30;
