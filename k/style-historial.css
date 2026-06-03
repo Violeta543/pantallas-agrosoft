@@ -3,6 +3,96 @@ body, html {
     width: 100%;
 }
 
+/* ENCABEZADO */
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 25px 35px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 10;
+}
+
+.encabezado-texto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.titulo-pagina {
+    margin: 0;
+    font-size: 50px;
+    letter-spacing: 2px;
+    font-family: "DM Serif", sans-serif;
+    color: rgba(50, 98, 33, 1);
+}
+
+.subtitulo-pagina {
+    margin: 0;
+    color: var(--gris-suave);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.usuario-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    min-width: 280px;
+    box-shadow: none;
+}
+
+.usuario {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: right;
+    flex: 1;
+}
+
+.usuario-icono {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-left: 120px;
+}
+
+.Logo-header-icono {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.usuario-nombre {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--texto-principal);
+}
+
+.usuario-rol {
+    display: block;
+    color: var(--gris-suave);
+    font-size: 0.85rem;
+    background-color: #326221;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+/* ------------- BARRA DE BUSQUEDAD ----------------- */
 .barra-busqueda {
     display: flex;
     align-items: center;
@@ -12,7 +102,6 @@ body, html {
     border-radius: 15px;
     width: 95%;
     margin: 20px auto;
-    margin-top: -15px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     position: relative;
 }
@@ -71,18 +160,15 @@ body, html {
 }
 
 .filtro-opcion:hover {
-    background: rgba(0, 75, 43, 0.1); /* Color verde suave */
+    background: rgba(0, 75, 43, 0.1);
 }
 
-
-/* Tarjetas de historial */
 .tarjetas-historial {
     display: grid;
-    /* Ajusta minmax(320px, 1fr) para que siempre tengan un tamaño mínimo legible */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
     margin: 30px 35px;
-    align-items: start; /* Esto evita que las tarjetas se estiren verticalmente */
+    align-items: start;
 }
 
 .tarjeta-historial {
@@ -205,7 +291,7 @@ body, html {
 .tarjeta-historial-base {
     display: flex;
     align-items: center;
-    gap: 8px; /* Espacio uniforme entre elementos */
+    gap: 8px;
     padding-top: 10px;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -220,14 +306,14 @@ body, html {
     height: 24px;
     object-fit: contain;
     margin: 0;
-    transform: none; /* Eliminamos el translateX */
+    transform: none; 
 }
 
 .tarjeta-historial-hora,
 .tarjeta-historial-fecha {
     font-size: 0.9rem;
     color: var(--gris-suave);
-    flex-grow: 1; /* Esto empuja el siguiente icono hacia la derecha */
+    flex-grow: 1; 
 }
 
 .tarjeta-historial-fecha {
@@ -270,13 +356,12 @@ body, html {
     z-index: 1000;
 }
 
-/* Contenido adaptado con las propiedades de tu antiguo formulario */
 .modal-eliminar-contenido {
     background-color: white;
     width: 400px;
     height: 500px;
-    border-radius: 20px; /* Actualizado a 20px como el original */
-    padding: 40px;      /* Actualizado a 40px como el original */
+    border-radius: 20px; 
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -286,18 +371,16 @@ body, html {
     text-align: center;
 }
 
-/* Icono adaptado */
 .modal-eliminar-imagen {
-    width: 50px;       /* Ajustado a 50px del antiguo .icono-alerta */
+    width: 50px;      
     height: auto;
     object-fit: contain;
     filter: grayscale(100%) sepia(100%) saturate(1000%) hue-rotate(-50deg);
 }
 
-/* Textos adaptados a las jerarquías que tenías */
 .modal-eliminar-texto-1 {
     margin: 0;
-    font-size: 15px;    /* Ajustado del antiguo h2 */
+    font-size: 15px; 
     font-weight: 700;
     color: var(--texto-principal);
     text-align: center;
@@ -306,8 +389,8 @@ body, html {
 
 .modal-eliminar-texto-2 {
     margin: 0;
-    font-size: 25px;    /* Ajustado del antiguo nth-child(3) */
-    color: red;         /* Color de alerta mantenido */
+    font-size: 25px;
+    color: red;
     font-weight: 600;
     text-align: center;
     margin-top: 5px;
@@ -315,11 +398,11 @@ body, html {
 
 .modal-eliminar-texto-3 {
     margin: 0;
-    font-size: 15px;    /* Ajustado del antiguo nth-child(4) */
+    font-size: 15px; 
     color: var(--gris-suave);
     text-align: center;
     margin-top: -20px;
-    margin-bottom: 40px; /* Ajuste para dar espacio a los botones */
+    margin-bottom: 40px;
 }
 
 /* Botones */
@@ -330,16 +413,15 @@ body, html {
 }
 
 .modal-eliminar-btn {
-    padding: 10px 20px; /* Ajustado al padding del antiguo btn-eliminar-accion */
+    padding: 10px 20px;
     border: none;
     border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 500ms ease; /* Mantenemos el tiempo de transición que tenías */
+    transition: all 500ms ease; 
 }
 
-/* Estilo botón confirmar (basado en el hover de tu antiguo botón) */
 .modal-eliminar-btn-confirmar {
     background-color: #f8f8f8;
     color: var(--texto-principal);

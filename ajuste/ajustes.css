@@ -176,8 +176,8 @@ body {
 
 .titulo-pagina {
     margin: 0;
-    font-size: 2.2rem;
-    letter-spacing: -0.04em;
+    font-size: 50px;
+    letter-spacing: 2px;
     font-family: "DM Serif", sans-serif;
     color: rgba(50, 98, 33, 1);
 }
