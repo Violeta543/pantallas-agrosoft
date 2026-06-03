@@ -293,9 +293,16 @@ body, html {
 .tarjeta-historial-base {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding-top: 10px;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     width: 100%;
+}
+
+.grupo-base-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .tarjeta-historial-base .tarjeta-historial-icono-base:first-of-type {
@@ -304,7 +311,7 @@ body, html {
 
 .tarjeta-historial-base .tarjeta-historial-icono-base:last-of-type {
     margin-left: auto;
-    margin-right: 6px;
+    margin-right: 10px;
     transform: none;
 }
 
@@ -312,14 +319,16 @@ body, html {
     width: 24px;
     height: 24px;
     object-fit: contain;
+    flex-shrink: 0;
+    transform: none !important;
 }
 
 .tarjeta-historial-ojo,
 .tarjeta-historial-fecha {
     font-size: 0.9rem;
     color: var(--gris-suave);
-    display: flex;
-    align-items: center;
+    white-space: nowrap;
+    margin: 0 !important;
 }
 
 
