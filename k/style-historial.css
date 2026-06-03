@@ -256,7 +256,7 @@ body, html {
     height: 30px;
 }
 
-/* Modal de eliminación */
+/* -------------------- Modal de eliminación ---------------- */
 .modal-eliminar {
     display: none;
     position: fixed;
