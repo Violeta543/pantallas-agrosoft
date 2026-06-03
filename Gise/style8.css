@@ -139,17 +139,17 @@ body {
     margin-top: 5px;
     border: none;
     width: 100%;
-    padding: 12px;
+    padding: 16px;
     border-radius: 10px;
     color: white;
-    font-size: 0.9rem;
+    font-size: 1rem;
     cursor: pointer;
     font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding-top: 15px;
+    padding-top: 18px;
     transition: all 0.3s ease;
     text-decoration: none;
 }
@@ -216,11 +216,11 @@ body {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 14px 18px;
-    background: linear-gradient(135deg, rgba(240, 240, 240, 1), rgba(250, 250, 250, 1));
-    border-radius: 12px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
     min-width: 280px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: none;
 }
 
 .usuario {
@@ -236,6 +236,7 @@ body {
     height: 45px;
     object-fit: contain;
     flex-shrink: 0;
+    margin-left: 120px;
 }
 
 .Logo-header-icono {
@@ -250,7 +251,7 @@ body {
 .usuario-nombre {
     display: block;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--texto-principal);
 }
 
@@ -258,6 +259,11 @@ body {
     display: block;
     color: var(--gris-suave);
     font-size: 0.85rem;
+    background-color: #326221;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    display: inline-block;
 }
 
 
@@ -740,6 +746,35 @@ body {
     .contenedor-principal,
     .contenedor-busqueda {
         display: none;
+    }
+
+    .contenedor-movil-v {
+        display: block;
+        min-height: 100px;
+        margin: 16px 18px 22px;
+        padding: 12px 12px 14px;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.6);
+    }
+
+    .encabezado-texto-v {
+        text-align: center;
+        width: 100%;
+    }
+
+    .contenedor-movil-v h1 {
+        display: inline-block;
+        font-size: 45px;
+        background: linear-gradient(
+            to right,
+            rgba(0, 75, 43, 0.76) 0%,
+            rgba(0, 177, 101, 0.76) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        -webkit-text-stroke: 0.01px rgb(0, 75, 43, 0.7);
     }
     .titulo-movil{
         content: "REPORTES";
