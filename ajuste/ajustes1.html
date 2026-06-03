@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agrosoft Dashboard</title>
-    <link rel="stylesheet" href="ajustes.css">
+    <link rel="stylesheet" href="/ajuste/ajustes.css">
+    
+      
 </head>
 <body>
+    <!-- BARRA LATERAL -->
     <aside class="barra-lateral">
         <div class="logo">
             <span class="logo-texto">AGROSOFT</span>
         </div>
-
+ 
         <nav class="menu-lateral">
-            <a href="/k/dashboard.html" class="enlace-menu activo" data-seccion="dashboard">
+            <a href="/k/dashboard.html" class="enlace-menu" data-seccion="dashboard">
                 <img src="/k/imagenes/dash.png" alt="Dashboard" class="icono-menu">
                 <span class="texto-menu">Dashboard</span>
             </a>
@@ -49,193 +52,339 @@
                 <img src="/k/imagenes/notificaciones.png" alt="Notificaciones" class="icono-menu">
                 <span class="texto-menu">Notificaciones</span>
             </a>
-            <a href="/index.html" class="enlace-menu" data-seccion="ajustes">
-            
+            <a href="/ajuste/ajustes1.html" class="enlace-menu activo" data-seccion="ajustes">
                 <img src="/k/imagenes/ajustes.png" alt="Ajustes" class="icono-menu">
                 <span class="texto-menu">Ajustes</span>
             </a>
         </nav>
-
-        <a href="/index.html" class="boton-cerrar">
+ 
+        <a href="#" class="boton-cerrar" onclick="mostrarModalCerrarSesion(event)">
             <img src="/k/imagenes/cerrar.png" alt="Cerrar" class="icono-cerrar">
             <span>Cerrar sesión</span>
         </a>
     </aside>
-
+ 
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="contenedor-principal">
+ 
+        <!-- ENCABEZADO -->
         <header class="encabezado">
-           
-
+            <img src="/k/imagenes/logo.png" alt="Logo" class="Logo-header-icono">
             <div class="encabezado-texto">
-                <h1 class="titulo-pagina"
-                id="titulopagina">
-                    
-                </h1>
-                <p class="subtitulo-pagina"
-                id="subtitulopagina">
+                <h1 class="titulo-pagina">Ajustes</h1>
+                <p class="subtitulo-pagina">Edita a tu gusto Agrosoft</p>
             </div>
             <div class="usuario-contenedor">
                 <img src="/k/imagenes/perfil.png" alt="Perfil" class="usuario-icono">
                 <div class="usuario">
                     <span class="usuario-nombre">Yonatan Gómez</span>
                     <span class="usuario-rol">Administrador</span>
-                
-
-                    </div>
-
                 </div>
             </div>
-            <div class="ajuste-contenido">
-<h1 class="titulo-ajustes">AJUSTES</h1>
-<h4 class="subtitulo-ajustes">Edita a tu gusto Agrosoft </h4>
-<img src="/img/logo1.png" class="imagen-planta">
-<img src="/img/logo2.png" class="imagen-pajarito">
- </div>
-        
         </header>
-<div class="contenido-adentro">
-
-
-<img src="/ajuste/imagenes-ajustes/cuenta.svg" class="icono-cuenta">
-
-        <button class="login-boton" id="btnCuenta">Cuenta</button>
-
-
-<img src="/ajuste/imagenes-ajustes/ayuda.svg" class="icono-ayuda">
-<button class="login-boton" id="btnAyuda">Ayuda y comentarios</button>
-
-
-
-<h1 class="contenido-agrosof">AGROSOFT</h1>
-<img src="/k/imagenes/logo.png" class="logo-delcontenido">
-
-<button class="eliminar-cuenta" id="btnEliminarcuenta">ELIMINAR CUENTA</button>
-
-</div>
-
-<div class="yonatan">
-    <img src="/ajuste/imagenes-ajustes/yonatanfoto.svg" class="foto-yonatan">
-    <h1 class="nombre-detitulo">Yonatan Gomez</h1>
-    <button class="boton-administrador" id="btnEliminarcuenta">ADMINISTRADOR</button>
-
-    <div class="perfil-nombres">
-
-        <div class="campo">
-            <img src="/ajuste/imagenes-ajustes/perfil.svg" class="icon-perfil">
-<span class="titulo">NOMBRE</span>
- <span class="dato"id="textonombre">@yonatan administrador</span>
-
- <input type="text" 
- id="inputnombre"
- value="@yonatan administrador"
- class="input-editar">
-
- <img src="/ajuste/imagenes-ajustes/lapiz.svg" class="lapices" id="lapiznombre">
  
+        <!-- PANEL IZQUIERDO -->
+        <div class="contenido-adentro">
+            <div class="boton-con-icono">
+                <img src="/ajuste/imagenes-ajustes/cuenta.svg" class="icono-cuenta">
+                <button class="login-boton" id="btnCuenta">Cuenta</button>
+            </div>
+            <div class="boton-con-icono">
+                <img src="/ajuste/imagenes-ajustes/ayuda.svg" class="icono-ayuda">
+                <button class="login-boton" id="btnAyuda">Ayuda y comentarios</button>
+            </div>
+            <h1 class="contenido-agrosof">AGROSOFT</h1>
+            <img src="/k/imagenes/logo.png" class="logo-delcontenido">
+            <button class="eliminar-cuenta" id="btnEliminarcuenta">ELIMINAR CUENTA</button>
         </div>
  
-        <div class="campo">
-            <img src="/ajuste/imagenes-ajustes/emaill.svg" class="icon-mail">
- <span class="titulo">Correo Eletrónico</span>
- <span class="dato" id="textocorreo">admin@agro.com</span>
-
- <input type="text"
- id="inputcorreo"
- value="admin@agro.com"
- class="input-editar">
-
- <img src="/ajuste/imagenes-ajustes/lapiz.svg" class="lapices" id="lapizcorreo">
+        <!-- PANEL PERFIL -->
+        <div class="yonatan">
+            <img src="/ajuste/imagenes-ajustes/yonatanfoto.svg" class="foto-yonatan">
+            <h1 class="nombre-detitulo">Yonatan Gomez</h1>
+            <button class="boton-administrador">ADMINISTRADOR</button>
+ 
+            <div class="perfil-nombres">
+                <div class="campo">
+                    <img src="/ajuste/imagenes-ajustes/perfil.svg" class="icon-perfil">
+                    <span class="titulo">NOMBRE</span>
+                    <span class="dato" id="textonombre">@yonatan administrador</span>
+                    <input type="text" id="inputnombre" value="@yonatan administrador" class="input-editar">
+                    <img src="/ajuste/imagenes-ajustes/lapiz.svg" class="lapices" id="lapiznombre">
+                </div>
+                <div class="campo">
+                    <img src="/ajuste/imagenes-ajustes/emaill.svg" class="icon-mail">
+                    <span class="titulo">Correo Electrónico</span>
+                    <span class="dato" id="textocorreo">admin@agro.com</span>
+                    <input type="text" id="inputcorreo" value="admin@agro.com" class="input-editar">
+                    <img src="/ajuste/imagenes-ajustes/lapiz.svg" class="lapices" id="lapizcorreo">
+                </div>
+                <div class="campo">
+                    <img src="/ajuste/imagenes-ajustes/seguridad.svg" class="icon-seguridad">
+                    <span class="titulo">Contraseña</span>
+                    <span class="dato" id="textocontraseña">.........</span>
+                    <input type="text" id="inputcontraseña" value="........." class="input-editar">
+                    <img src="/ajuste/imagenes-ajustes/lapiz.svg" class="lapices" id="lapizcontraseña">
+                </div>
+                <div class="campo">
+                    <img src="/ajuste/imagenes-ajustes/llamada.svg" class="icon-llamada">
+                    <span class="titulo">Teléfono</span>
+                    <span class="dato" id="textotelefono">3134727022</span>
+                    <input type="text" id="inputtelefono" value="3134727022" class="input-editar">
+                    <img src="/ajuste/imagenes-ajustes/lapiz.svg" class="lapices" id="lapiztelefono">
+                </div>
+            </div>
+ 
+            <footer class="editar">
+                <button class="editando" id="btnEditar">EDITAR PERFIL</button>
+            </footer>
+ 
+            <footer class="acciones" id="accionesEdicion">
+                <button class="guardar" id="botonguardar">GUARDAR</button>
+                <img src="/ajuste/imagenes-ajustes/guardar.svg" class="guardar-icon">
+                <button class="cancelar">CANCELAR</button>
+                <img src="/ajuste/imagenes-ajustes/cancelar.svg" class="cancelar-icon">
+            </footer>
         </div>
-
-<div class="campo">
-    <img src="/ajuste/imagenes-ajustes/seguridad.svg" class="icon-seguridad">
-<span class="titulo">Contraseña</span>
- <span class="dato" id="textocontraseña">.........</span>
- <input type="text"
- id="inputcontraseña"
- value="........."
- class="input-editar">
-
-<img src="/ajuste/imagenes-ajustes/lapiz.svg" class="lapices" id="lapizcontraseña">
-</div>
  
-<div class="campo">
-<img src="/ajuste/imagenes-ajustes/llamada.svg" class="icon-llamada">
-<span class="titulo">Telefono</span>
- <span class="dato" id="textotelefono">3134727022</span>
-
- <input type="text"
- id="inputtelefono"
- value="3134727022"
- class="input-editar">
-
- <img src="/ajuste/imagenes-ajustes/lapiz.svg" class="lapices" id="lapiztelefono">
-</div>
+        <!-- PANEL AYUDA -->
+        <div id="panelAyuda" class="panel-ayuda" style="display: none;">
+            <span class="envia-mensaje">Contacto: soporte@Agrosoft.com</span>
+            <button class="enviar" id="btnEnviar">Enviar</button>
+            <div class="contacto"></div>
+            <textarea placeholder="Escribe tu opinión..." class="opinion"></textarea>
+            <img src="/ajuste/imagenes-ajustes/mensaje.svg" class="enviar-mensaje">
+            <div class="cajita-pequena"></div>
+        </div>
  
-    </div>
-   <footer class="editar">
-    <button class="editando" id="btnEditar">
-EDITAR PERFIL
-    </button>
-   </footer>
+        
+    </main>
 
-   <Footer class="acciones" id="accionesEdicion">
-<BUtton class="guardar" id="botonguardar">GUARDAR</BUtton>
-<img src="/ajuste/imagenes-ajustes/guardar.svg" class="guardar-icon">
-<BUtton class="cancelar">CANCELAR</BUtton>
-<img src="/ajuste/imagenes-ajustes/cancelar.svg" class="cancelar-icon">
-   </Footer>
-</div>
-
-<div id="panelAyuda" class="panel-ayuda" style="display: none;">
-<span class="envia-mensaje">Contacto:oporte@Agrosoft.com"</span>
-<button class="enviar"id="btnEnviar">Enviar</button>
-<div class="contacto"></div>
-<textarea
-placeholder="Escribe tu opinión..." 
-
-class="opinion"></textarea>
-<img src="/ajuste/imagenes-ajustes/mensaje.svg" class="enviar-mensaje">
-<div class="cajita-pequena">
-
-</div>
-
-
-</div>
-
-
-<div id="fondoOscuro" class="fondo-oscuro">
-
-    <div class="modal-eliminar">
-
-<img src="/ajuste/imagenes-ajustes/circulo.svg" class="icon-circulo">
-<img src="/ajuste/imagenes-ajustes/eliminar.svg" class="icon-eliminar">
-
-<h3 class="eliminar-cuemta">¿Eliminar Cuenta?</h3>
-
-<p class="gomez-s">"YONATAN GOMEZ"</p>
-<p>Esta acción no se puede deshacer.
-    Se eliminarán todos los datos asociados
-</p>
-
-<div class="contenedor-botones">
-    <img src="/ajuste/imagenes-ajustes/cancela.svg" class="cancela-aqui">
-
-    <button id="btncancelarmodal" class="boton-cancela">Cancelar</button>
-<button id="btnEliminarmodal" class="boton-elimina">eliminar</button>
-<img src="/ajuste/imagenes-ajustes/borrarcuenta.svg" class="borrar-cuenta">
-</div>
-
-
+    <!-- MODAL ELIMINAR CUENTA -->
+    <div id="fondoOscuro" class="fondo-oscuro">
+        <div class="modal-eliminar">
+            <img src="/ajuste/imagenes-ajustes/circulo.svg" class="icon-circulo">
+            <img src="/ajuste/imagenes-ajustes/eliminar.svg" class="icon-eliminar">
+            <h3 class="eliminar-cuemta">¿Eliminar Cuenta?</h3>
+            <p class="gomez-s">"YONATAN GOMEZ"</p>
+            <p>Esta acción no se puede deshacer. Se eliminarán todos los datos asociados.</p>
+            <div class="contenedor-botones">
+                <img src="/ajuste/imagenes-ajustes/cancela.svg" class="cancela-aqui">
+                <button id="btncancelarmodal" class="boton-cancela">Cancelar</button>
+                <button id="btnEliminarmodal" class="boton-elimina">Eliminar</button>
+                <img src="/ajuste/imagenes-ajustes/borrarcuenta.svg" class="borrar-cuenta">
+            </div>
+        </div>
     </div>
 
-</div>
+    <!-- CONTENIDO MÓVIL -->
+    <div class="contenedor-movil" id="vista-ajustes">
+        <h1 class="titulo-movil">Ajustes</h1>
 
+        <div class="contenedor-blanco">
+            <div class="item-movil" onclick="mostrarVistaCuenta()">
+                <img src="/ajuste/imagenes-ajustes/cuenta.svg" class="icono-item-movil" alt="Cuenta">
+                <span class="texto-item-movil">Cuenta</span>
+            </div>
 
+            <div class="item-movil" onclick="mostrarVistaAyuda()">
+                <img src="/ajuste/imagenes-ajustes/ayuda.svg" class="icono-item-movil" alt="Ayuda">
+                <span class="texto-item-movil">Ayuda y comentarios</span>
+            </div>
 
- </body>
-<script src="/ajuste/ajustes.js"></script>
+            <div class="item-movil" onclick="mostrarVistaNotificaciones()">
+                <img src="/ajuste/imagenes-ajustes/seguridad.svg" class="icono-item-movil" alt="Notificaciones">
+                <span class="texto-item-movil">Notificaciones</span>
+            </div>
+
+            <div class="item-movil" onclick="mostrarVistaAlmacenamiento()">
+                <img src="/ajuste/imagenes-ajustes/llamada.svg" class="icono-item-movil" alt="Almacenamiento">
+                <span class="texto-item-movil">Almacenamiento</span>
+            </div>
+
+            <button class="boton-cerrar-movil" onclick="mostrarModalCerrarSesion(event)">Cerrar sesión</button>
+        </div>
+    </div>
+
+    <!-- VISTA CUENTA MÓVIL -->
+    <div class="contenedor-movil" id="vista-cuenta" style="display: none;">
+        <h1 class="titulo-movil">Ajustes</h1>
+
+        <div class="contenedor-blanco">
+            <h2 class="titulo-cuenta-movil">Cuenta</h2>
+
+            <a href="/perfil/perfil.html" class="item-movil">
+                <img src="/ajuste/imagenes-ajustes/perfil.svg" class="icono-item-movil" alt="Editar perfil">
+                <span class="texto-item-movil">Editar perfil</span>
+            </a>
+
+            <div class="item-movil" onclick="mostrarVistaEliminarCuenta()">
+                <img src="/ajuste/imagenes-ajustes/cuenta.svg" class="icono-item-movil" alt="Eliminar cuenta">
+                <span class="texto-item-movil-rojo">Eliminar cuenta</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- VISTA ELIMINAR CUENTA MÓVIL -->
+    <div class="contenedor-movil" id="vista-eliminar-cuenta" style="display: none;">
+        <h1 class="titulo-movil">Ajustes</h1>
+
+        <div class="contenedor-blanco">
+            <img src="/ajuste/imagenes-ajustes/eliminar.svg" class="icon-eliminar-movil" alt="">
+            <h3 class="eliminar-cuemta-movil">¿Eliminar Cuenta?</h3>
+            <p class="gomez-s-movil">"YONATAN GOMEZ"</p>
+            <p class="texto-advertencia-movil">Esta acción no se puede deshacer. Se eliminarán todos los datos asociados.</p>
+            
+            <div class="contenedor-botones-movil">
+                <button class="boton-cancela-movil" onclick="ocultarVistaEliminarCuenta()">Cancelar</button>
+                <button class="boton-elimina-movil" onclick="confirmarEliminarCuenta()">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- VISTA NOTIFICACIONES MÓVIL -->
+    <div class="contenedor-movil" id="vista-notificaciones" style="display: none;">
+        <h1 class="titulo-movil">Ajustes</h1>
+
+        <div class="contenedor-blanco">
+            <h2 class="titulo-cuenta-movil">Notificaciones</h2>
+            
+            <div class="item-movil-toggle">
+                <span class="texto-item-movil">Mostrar notificaciones</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+
+            <div class="item-movil-toggle">
+                <span class="texto-item-movil">Recolección de riego</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+
+            <div class="item-movil-toggle">
+                <span class="texto-item-movil">Sonido</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+
+            <div class="item-movil-toggle">
+                <span class="texto-item-movil">Vibración</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- VISTA ALMACENAMIENTO MÓVIL -->
+    <div class="contenedor-movil" id="vista-almacenamiento" style="display: none;">
+        <h1 class="titulo-movil">Ajustes</h1>
+
+        <div class="contenedor-blanco">
+            <h2 class="titulo-cuenta-movil">Almacenamiento</h2>
+            
+            <div class="item-movil">
+                <img src="/ajuste/imagenes-ajustes/cuenta.svg" class="icono-item-movil" alt="Espacio usado">
+                <span class="texto-item-movil">Espacio usado: 2.4GB</span>
+            </div>
+
+            <div class="item-movil">
+                <img src="/ajuste/imagenes-ajustes/ayuda.svg" class="icono-item-movil" alt="Espacio disponible">
+                <span class="texto-item-movil">Espacio disponible: 5.6GB</span>
+            </div>
+
+            <div class="item-movil-toggle">
+                <span class="texto-item-movil">Guardar imágenes</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+
+            <div class="item-movil-toggle">
+                <span class="texto-item-movil">Guardar reportes</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- VISTA AYUDA MÓVIL -->
+    <div class="contenedor-movil" id="vista-ayuda" style="display: none;">
+        <h1 class="titulo-movil">Ajustes</h1>
+
+        <div class="contenedor-blanco">
+            <h2 class="titulo-cuenta-movil">Ayuda y comentarios</h2>
+            
+            <div class="item-movil">
+                <img src="/ajuste/imagenes-ajustes/cuenta.svg" class="icono-item-movil" alt="Contacto">
+                <span class="texto-item-movil">Contacto: <span class="texto-rojo-movil">soporte@agrosoft.com</span></span>
+            </div>
+
+            <div class="item-movil" onclick="expandirComentario()">
+                <img src="/ajuste/imagenes-ajustes/ayuda.svg" class="icono-item-movil" alt="Comentario">
+                <span class="texto-item-movil">Escribe tu comentario</span>
+            </div>
+
+            <div class="comentario-expandible" id="comentario-expandible" style="display: none;">
+                <textarea placeholder="Escribe tu opinión..." class="textarea-movil"></textarea>
+                <button class="boton-enviar-movil">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BARRA DE NAVEGACIÓN MÓVIL (fuera del main) -->
+    <nav class="barra-nav-movil">
+        <a href="/ajuste/ajustes1.html" class="nav-movil-item activo">
+            <img src="/k/movil/configuraciones.png" class="nav-movil-icono" alt="Ajustes">
+            <span>Ajustes</span>
+        </a>
+        <a href="/k/dashboard.html" class="nav-movil-item">
+            <img src="/k/movil/logo.png" class="nav-movil-icono nav-movil-icono1" alt="Inicio">
+            <span>Inicio</span>
+        </a>
+        <a href="/perfil/perfil.html" class="nav-movil-item">
+            <img src="/k/movil/user.png" class="nav-movil-icono" alt="Perfil">
+            <span>Perfil</span>
+        </a>
+    </nav>
+ 
+    <!-- MODAL DE CIERRE DE SESIÓN -->
+    <div id="modal-cerrar-sesion" class="modal-cerrar-sesion">
+        <div class="modal-contenido">
+            <p class="modal-texto-1">¿Deseas cerrar sesión?</p>
+            <p class="modal-texto-2">"Yonatan Gomez"</p>
+            <p class="modal-texto-3">Esta acción cerrará tu sesión y podrás volver a ingresar más tarde.</p>
+            <div class="modal-botones">
+                <button class="modal-btn modal-btn-cerrar" onclick="confirmarCerrarSesion()">Cerrar Sesión</button>
+                <button class="modal-btn modal-btn-cancelar" onclick="ocultarModalCerrarSesion()">X Cancelar</button>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- SCRIPTS -->
+    <script>
+        function mostrarModalCerrarSesion(event) {
+            event.preventDefault();
+            document.getElementById('modal-cerrar-sesion').style.display = 'flex';
+        }
+        function ocultarModalCerrarSesion() {
+            document.getElementById('modal-cerrar-sesion').style.display = 'none';
+        }
+        function confirmarCerrarSesion() {
+            window.location.href = '/index.html';
+        }
+    </script>
+    <script src="/ajuste/ajustes.js"></script>
+ 
+</body>
 </html>
-
-    
-                

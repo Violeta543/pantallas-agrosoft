@@ -132,22 +132,16 @@ const btncancelarmodal = document.getElementById("btncancelarmodal");
 const btnEliminarmodal = document.getElementById("btnEliminarmodal");
 
 btnEliminarcuenta.addEventListener("click",function() {
-
     fondoOscuro.style.display = "flex";
+});
 
-    btncancelarmodal.addEventListener("click",function() {
-
-fondoOscuro.style.display = "none";
- });
-
-
+btncancelarmodal.addEventListener("click",function() {
+    fondoOscuro.style.display = "none";
 });
 
 btnEliminarmodal.addEventListener("click",function() {
-alert("La cuenta a sido eliminada");
-
-window.location.href = "../index.html";
-
+    alert("La cuenta a sido eliminada");
+    window.location.href = "../index.html";
 });
 
 
@@ -170,3 +164,72 @@ panelAyuda.style.display = ("none");
 perfil.style.display = ("flex");
 
 });
+
+// Funciones para vista móvil
+function mostrarVistaCuenta() {
+    document.getElementById('vista-ajustes').style.display = 'none';
+    document.getElementById('vista-cuenta').style.display = 'block';
+    document.getElementById('vista-notificaciones').style.display = 'none';
+    document.getElementById('vista-almacenamiento').style.display = 'none';
+    document.getElementById('vista-ayuda').style.display = 'none';
+    document.getElementById('vista-eliminar-cuenta').style.display = 'none';
+}
+
+function mostrarVistaNotificaciones() {
+    document.getElementById('vista-ajustes').style.display = 'none';
+    document.getElementById('vista-notificaciones').style.display = 'block';
+    document.getElementById('vista-cuenta').style.display = 'none';
+    document.getElementById('vista-almacenamiento').style.display = 'none';
+    document.getElementById('vista-ayuda').style.display = 'none';
+    document.getElementById('vista-eliminar-cuenta').style.display = 'none';
+}
+
+function mostrarVistaAlmacenamiento() {
+    document.getElementById('vista-ajustes').style.display = 'none';
+    document.getElementById('vista-almacenamiento').style.display = 'block';
+    document.getElementById('vista-cuenta').style.display = 'none';
+    document.getElementById('vista-notificaciones').style.display = 'none';
+    document.getElementById('vista-ayuda').style.display = 'none';
+    document.getElementById('vista-eliminar-cuenta').style.display = 'none';
+}
+
+function mostrarVistaAyuda() {
+    document.getElementById('vista-ajustes').style.display = 'none';
+    document.getElementById('vista-ayuda').style.display = 'block';
+    document.getElementById('vista-cuenta').style.display = 'none';
+    document.getElementById('vista-notificaciones').style.display = 'none';
+    document.getElementById('vista-almacenamiento').style.display = 'none';
+    document.getElementById('vista-eliminar-cuenta').style.display = 'none';
+}
+
+function mostrarVistaEliminarCuenta() {
+    document.getElementById('vista-ajustes').style.display = 'none';
+    document.getElementById('vista-eliminar-cuenta').style.display = 'block';
+    document.getElementById('vista-cuenta').style.display = 'none';
+    document.getElementById('vista-notificaciones').style.display = 'none';
+    document.getElementById('vista-almacenamiento').style.display = 'none';
+    document.getElementById('vista-ayuda').style.display = 'none';
+}
+
+function ocultarVistaEliminarCuenta() {
+    document.getElementById('vista-eliminar-cuenta').style.display = 'none';
+    document.getElementById('vista-ajustes').style.display = 'block';
+}
+
+function confirmarEliminarCuenta() {
+    alert("La cuenta ha sido eliminada");
+    window.location.href = "../index.html";
+}
+
+function expandirComentario() {
+    const comentario = document.getElementById('comentario-expandible');
+    if (comentario.style.display === 'none') {
+        comentario.style.display = 'block';
+    } else {
+        comentario.style.display = 'none';
+    }
+}
+
+function mostrarModalEliminarCuenta() {
+    document.getElementById('fondoOscuro').style.display = 'flex';
+}
