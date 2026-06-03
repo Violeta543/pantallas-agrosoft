@@ -68,7 +68,7 @@ opcionesFiltro.forEach(boton => {
 
 // -------------- Descargar Reporte --------------
 
-const btonIconoDescargar = document.querySelectorAll('.icono-descargar'); 
+const btonIconoDescargar = document.querySelectorAll('button.icono-descargar');
 const btonCancelarDescargar = document.getElementById('btonCancelarDescarga');
 const modalDescarga = document.getElementById('descargar-reporte'); 
 
@@ -178,6 +178,15 @@ if (formularioDescargaMovil && modalDescargarMovil) {
 if (btnCancelarDescarga && modalDescargarMovil) {
     btnCancelarDescarga.addEventListener("click", () => {
         modalDescargarMovil.classList.add("oculto");
+    });
+}
+
+// Prevenir que el click en el formulario cierre el modal
+if (modalDescargarMovil) {
+    modalDescargarMovil.addEventListener("click", (e) => {
+        if (e.target === modalDescargarMovil) {
+            modalDescargarMovil.classList.add("oculto");
+        }
     });
 }
 

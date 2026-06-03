@@ -1518,6 +1518,12 @@ body {
         margin-top: 4px;
     }
 
+    
+
+    .titulo-movil {
+        display: none;
+    }
+
         /* movil*/
         @media (max-width: 768px) {
             .barra-lateral {
@@ -1561,6 +1567,21 @@ body {
             }
 
             .contenedor-movil-v h1 {
+                display: inline-block;
+                font-size: 45px;
+                background: linear-gradient(
+                    to right,
+                    rgba(0, 75, 43, 0.76) 0%,
+                    rgba(0, 177, 101, 0.76) 100%
+                );
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+                -webkit-text-stroke: 0.01px rgb(0, 75, 43, 0.7);
+            }
+
+            .titulo-movil {
                 display: inline-block;
                 font-size: 45px;
                 background: linear-gradient(

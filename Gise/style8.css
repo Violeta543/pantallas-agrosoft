@@ -176,6 +176,10 @@ body {
     z-index: 3;
 }
 
+.titulo-movil {
+    display: none;
+}
+
 /* ENCABEZADO */
 
 .encabezado {
@@ -776,19 +780,18 @@ body {
         -webkit-text-stroke: 0.01px rgb(0, 75, 43, 0.7);
     }
     .titulo-movil{
-        font-family: 'DM Serif Display', sans-serif;
+        display: inline-block;
         font-size: 45px;
-        -webkit-text-stroke: 0.8px #004b2a;
-        background-image: linear-gradient(to right, #004B2B, #00B165);
-        background-clip: text;
+        background: linear-gradient(
+            to right,
+            rgba(0, 75, 43, 0.76) 0%,
+            rgba(0, 177, 101, 0.76) 100%
+        );
         -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
         color: transparent;
-        letter-spacing: 3px;
-        margin-top: 40px;
-        margin-bottom: 10px;
-        text-align: center;
-        display: block;
-        font-weight: lighter;
+        -webkit-text-stroke: 0.01px rgb(0, 75, 43, 0.7);
     }
 
     .titulo-pagina {
@@ -1024,88 +1027,9 @@ body {
     transition: 500ms;
     }
 
-    /*------------ Descargar Movil ---------------*/
-
-.descargar-reporte-movil {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-.cuerpo-descargar-movil {
-    background-color: white;
-    width: 80%;
-    max-width: 340px;
-    padding: 25px;
-    border-radius: 24px;
-    border: 1.5px solid #004B2B;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    margin-top: -100px;
-}
-.formulario-titulo-principal {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 20px;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-.etiqueta-campo-movil {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    margin-bottom: 8px;
-    display: block;
-}
-.entrada-texto-movil {
-    width: 100%;
-    padding: 12px;
-    background-color: #ededed;
-    border: 1px solid #e0e0e0;
-    border-radius: 14px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-}
-.contenedor-descarga-movil {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
-}
-.seleccionar-formato {
-    flex: 1;
-    padding: 12px;
-    background-color: #ededed;
-    border: 1px solid #e0e0e0;
-    border-radius: 14px;
-}
-.bton-descargar {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-.bton-descargar img {
-    width: 32px;
-    height: 32px;
-}
-.eliminar-movil-reporte {
-    background-color: #f2f2f2;
-    color: #ff3b30;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 20px;
-    border: none;
-    font-family: 'DM Sans', sans-serif;
-}
+.oculto {
+    display: none;
+    }
 
     /* ------ Final Movil --------*/
 
@@ -1151,5 +1075,110 @@ body {
     }
     .oculto {
         display: none;
+    }
+
+    /*------------ Descargar Movil ---------------*/
+
+    /* 1. Fondo semitransparente (overlay) */
+    .descargar-reporte-movil {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        overflow: hidden;
+    }
+
+    .descargar-reporte-movil.oculto {
+        display: none;
+    }
+
+    /* 2. Tarjeta blanca del formulario */
+    .cuerpo-descargar-movil {
+        background-color: white;
+        width: 90%;
+        max-width: 350px;
+        min-width: 300px;
+        padding: 25px;
+        border-radius: 24px;
+        border: 1.5px solid #004B2B;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 1001;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    /* 3. Estilos de los campos */
+    .formulario-titulo-principal {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .etiqueta-campo-movil {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 14px;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .entrada-texto-movil {
+        width: 100%;
+        padding: 12px;
+        background-color: #ededed;
+        border: 1px solid #e0e0e0;
+        border-radius: 14px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+
+    /* 4. Contenedor para el select y el botón */
+    .contenedor-descarga-movil {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    .seleccionar-formato {
+        flex: 1;
+        padding: 12px;
+        background-color: #ededed;
+        border: 1px solid #e0e0e0;
+        border-radius: 14px;
+    }
+
+    .bton-descargar {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .bton-descargar img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .eliminar-movil-reporte {
+        background-color: #f2f2f2;
+        color: #ff3b30;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 20px;
+        border: none;
+        font-family: 'DM Sans', sans-serif;
     }
     }
