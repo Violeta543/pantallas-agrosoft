@@ -50,8 +50,9 @@ opcionesFiltro.forEach(boton => {
         tarjetasReporte.forEach(tarjeta => {
             const categoriaTarjeta = tarjeta.getAttribute('data-categoria');
 
-
-            if (categoriaTarjeta === categoriaSeleccionada) {
+            if (categoriaSeleccionada === 'todos') {
+                tarjeta.style.display = "flex"; 
+            } else if (categoriaTarjeta === categoriaSeleccionada) {
                 tarjeta.style.display = "flex";
             } else {
                 tarjeta.style.display = "none";
@@ -67,15 +68,15 @@ opcionesFiltro.forEach(boton => {
 
 // -------------- Descargar Reporte --------------
 
-const btonIconoDescargar = document.querySelector('.icono-descargar'); 
+const btonIconoDescargar = document.querySelectorAll('.icono-descargar'); 
 const btonCancelarDescargar = document.getElementById('btonCancelarDescarga');
 const modalDescarga = document.getElementById('descargar-reporte'); 
 
-if (btonIconoDescargar) {
-    btonIconoDescargar.addEventListener('click', () => {
-        modalDescarga.style.display = 'flex'; 
+btonIconoDescargar.forEach(boton => {
+    boton.addEventListener('click', () => {
+        modalDescarga.style.display = 'flex';
     });
-}
+});
 
 btonCancelarDescargar.addEventListener('click', () =>{
     modalDescarga.style.display = 'none'; 
@@ -91,16 +92,16 @@ window.addEventListener('click', (event) => {
 });
 
 // -------------- Eliminar Reporte --------------
-const btonIconoEliminar = document.querySelector('.boton-eliminar');
+const btonIconoEliminar = document.querySelectorAll('.boton-eliminar');
 const btonCancelarEliminar = document.getElementById('bton-cancelar-eliminar');
 const btonConfirmarEliminar = document.getElementById('bton-eliminar-alerta'); 
 const modalEliminar = document.getElementById('eliminar-reporte'); 
 
-if (btonIconoEliminar) {
-    btonIconoEliminar.addEventListener('click', () =>{
-        modalEliminar.style.display = "flex"; 
+btonIconoEliminar.forEach(boton => {
+    boton.addEventListener('click', () => {
+        modalEliminar.style.display = 'flex';
     });
-}
+});
 
 if (btonCancelarEliminar) {
     btonCancelarEliminar.addEventListener('click', () => {

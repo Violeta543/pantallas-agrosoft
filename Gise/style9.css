@@ -170,13 +170,13 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh;
 }
-
 .contenido-fondo {
     position: relative;
     z-index: 3;
 }
 
 /* ENCABEZADO */
+
 .encabezado {
     display: flex;
     align-items: center;
@@ -258,6 +258,8 @@ body {
     color: var(--gris-suave);
     font-size: 0.85rem;
 }
+
+/* ---------------- Diseño Inventario -----------------*/
 
 .barra-busqueda{
     display: flex;
