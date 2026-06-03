@@ -295,10 +295,9 @@
     
     <div class="formulario-reporte-movil oculto" id="formulario-reporte-movil">
         <div class="fondo-blanco-movil"></div>
-        <h3 class="formulario-titulo-principal">Generar Nuevo Reporte</h3>
-
         <form class="cuerpo-formulario-movil">
             <div class="grupo-campo-movil">
+                <h3 class="formulario-titulo-principal"> CREAR NUEVO REPORTE </h3>
                 <label class="etiqueta-campo-movil">Nombre de Reporte:</label>
                 <input type="text" placeholder="Reporte de ventas" class="entrada-texto-movil">
             </div>
@@ -320,6 +319,12 @@
                     <input type="text" placeholder="dd/mm/aaaa" class="entrada-fecha-movil">
                 </div>
             </div>
+
+            <div class="detalles-tarjeta">
+            <button type="button" class="editar-movil" id="bton-editar-producto"> Crear </button>
+            <button type="button" class="eliminar-movil" id="bton-eliminar-movil"> Cancelar </button>
+        </div>
+
         </form>
     </div>
 
@@ -327,28 +332,25 @@
 
     <div class="descargar-reporte-movil oculto" id="descargar-reporte-movil">
         <div class="fondo-blanco-movil"></div>
-        <h3 class="formulario-titulo-principal">Descargar Reporte</h3>
 
-        <form class="cuerpo-formulario-movil">
-            <div class="grupo-campo-movil">
+        <form class="cuerpo-descargar-movil">
+
+                <h3 class="formulario-titulo-principal">Descargar Reporte</h3>
                 <label class="etiqueta-campo-movil">Nombre de Reporte:</label>
                 <input type="text" placeholder="Reporte de ventas" class="entrada-texto-movil">
-            </div>
 
-            <div class="contenedor-descarga-movil">
-                <div class="formato-descarga-movil">
+                <div class="contenedor-descarga-movil">
                     <select class="seleccionar-formato">
                     <option value="" disabled selected>Seleccionar Formato</option>
                     <option value="pdf">Formato PDF</option>
                     <option value="word">Formato WORD</option>
                     <option value="excel">Formato EXCEL</option>
                     </select>
-                </div>
-
-                <button type="submit" class="bton-descargar">
+                    <button type="submit" class="bton-descargar">
                     <img src="/Gise/visual/descargar.svg" >
                 </button>
-            </div>
+                </div>
+                <button type="button" class="eliminar-movil-reporte" id="reporte-eliminar-movil"> Cancelar </button>
         </form>
     </div>
 

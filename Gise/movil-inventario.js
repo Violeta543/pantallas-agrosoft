@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- LÓGICA AGREGAR ---
     const btnAbrir = document.getElementById('bton-movilinventario');
     const btnCancelar = document.getElementById('bton-cancelar-inventario');
     const modal = document.getElementById('agregar-inventario-movil');
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- LÓGICA EDITAR ---
+    // --- Editar  ---
     const btnAbrirEditar = document.getElementById('bton-editar-producto');
     const btnCancelarEditar = document.getElementById('bton-cancelar-editar');
     const modalEditar = document.getElementById('editar-inventario-movil');
@@ -33,18 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnAbrirEditar) {
         btnAbrirEditar.addEventListener('click', () => {
-            // 1. Capturamos la info de la tarjeta
+            
             const nombre = document.querySelector('.titulo-tarjeta').textContent.trim();
             const cantidadTexto = document.querySelector('.tipo-tarjeta').textContent;
-            
-            // 2. Limpiamos datos (asumiendo formato "Cantidad: X unidades")
             const cantidad = cantidadTexto.replace('Cantidad: ', '').split(' ')[0];
-            
-            // 3. Rellenamos los inputs
+
             document.getElementById('editar-nombre').value = nombre;
             document.getElementById('editar-cantidad').value = cantidad;
-            
-            // 4. Abrimos el modal
+
             modalEditar.classList.remove('oculto');
         });
     }
@@ -64,36 +59,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// --- LÓGICA ELIMINAR ---
+// --- ELIMINAR ---
     const btnAbrirEliminar = document.getElementById('bton-eliminar-movil');
     const btnCancelarEliminar = document.getElementById('bton-cancelar-eliminar');
     const btnConfirmarEliminar = document.getElementById('bton-eliminar-alerta');
     const modalEliminar = document.getElementById('eliminar-inventario');
 
-    // 1. Abrir modal de eliminar
     if (btnAbrirEliminar) {
         btnAbrirEliminar.addEventListener('click', () => {
-            // Opcional: Puedes capturar el nombre aquí para ponerlo en el h2 del modal
+
             const nombreProducto = document.querySelector('.titulo-tarjeta').textContent.trim();
             document.querySelector('.nombre-alerta').textContent = `"${nombreProducto.toUpperCase()}"`;
             
             modalEliminar.classList.remove('oculto');
         });
     }
-
-    // 2. Cerrar modal de eliminar
     if (btnCancelarEliminar) {
         btnCancelarEliminar.addEventListener('click', () => {
             modalEliminar.classList.add('oculto');
         });
     }
 
-    // 3. Confirmar eliminación
     if (btnConfirmarEliminar) {
         btnConfirmarEliminar.addEventListener('click', () => {
             alert("Producto eliminado correctamente");
             modalEliminar.classList.add('oculto');
-            // Aquí iría tu lógica para borrar la tarjeta del DOM o de la base de datos
-            // Ejemplo: document.getElementById('tarjeta-inventario-movil').remove();
         });
     }

@@ -121,22 +121,41 @@ window.addEventListener('click', (Event) => {
     }
 }); 
 
-// ---------------- Diseño Movil 
+// ---------------- CREAR MOVIL
 
 const botonMas = document.getElementById("bton-movilreporte");
-    const formulario = document.getElementById("formulario-reporte-movil");
-    const tarjeta = document.getElementById("tarjeta-reporte-movil");
+const formulario = document.getElementById("formulario-reporte-movil");
+const tarjeta = document.getElementById("tarjeta-reporte-movil");
+const btnCrear = document.getElementById("bton-editar-producto");
+const btnCancelar = document.getElementById("bton-eliminar-movil");
 
-    if (botonMas && formulario && tarjeta) {
-        botonMas.addEventListener("click", () => {
-            formulario.classList.toggle("oculto"); 
+if (botonMas && formulario && tarjeta) {
+    botonMas.addEventListener("click", () => {
+        formulario.classList.toggle("oculto"); 
+        tarjeta.classList.toggle("oculto"); 
+    });
 
-            tarjeta.classList.toggle("oculto"); 
+    if (btnCrear) {
+        btnCrear.addEventListener("click", () => {
+            formulario.classList.add("oculto"); 
+            tarjeta.classList.remove("oculto");
+            alert("Reporte creado con éxito");
         });
+    }
+
+    if (btnCancelar) {
+        btnCancelar.addEventListener("click", () => {
+            formulario.classList.add("oculto");
+            tarjeta.classList.remove("oculto");
+        });
+    }
 }
+
+//------------------- DESCARGAR MOVIL
 
 const botonAbrirMovil = document.getElementById("bton-abrir-descarga-movil"); 
 const modalDescargarMovil = document.getElementById("descargar-reporte-movil");
+const btnCancelarDescarga = document.getElementById("reporte-eliminar-movil");
 
 if (botonAbrirMovil && modalDescargarMovil) {
     botonAbrirMovil.addEventListener("click", (e) => {
@@ -155,4 +174,9 @@ if (formularioDescargaMovil && modalDescargarMovil) {
     });
 }
 
-//------------------ Filtrar Movil 
+if (btnCancelarDescarga && modalDescargarMovil) {
+    btnCancelarDescarga.addEventListener("click", () => {
+        modalDescargarMovil.classList.add("oculto");
+    });
+}
+
