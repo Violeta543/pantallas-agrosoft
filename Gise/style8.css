@@ -776,7 +776,6 @@ body {
         -webkit-text-stroke: 0.01px rgb(0, 75, 43, 0.7);
     }
     .titulo-movil{
-        content: "REPORTES";
         font-family: 'DM Serif Display', sans-serif;
         font-size: 45px;
         -webkit-text-stroke: 0.8px #004b2a;
@@ -790,6 +789,21 @@ body {
         text-align: center;
         display: block;
         font-weight: lighter;
+    }
+
+    .titulo-pagina {
+        display: inline-block;
+        font-size: 45px;
+        background: linear-gradient(
+            to right,
+            rgba(0, 75, 43, 0.76) 0%,
+            rgba(0, 177, 101, 0.76) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        -webkit-text-stroke: 0.01px rgb(0, 75, 43, 0.7);
     }
 .fondo-blanco{ 
     position: absolute;
