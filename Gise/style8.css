@@ -200,7 +200,7 @@ body {
 .titulo-pagina {
     margin: 0;
     font-size: 2.2rem;
-    letter-spacing: -0.04em;
+    letter-spacing: 2px;
     font-family: "DM Serif", sans-serif;
     color: rgba(50, 98, 33, 1);
 }
@@ -389,7 +389,11 @@ body {
     border-radius: 12px;
     overflow: hidden;
     padding: 0;
-    transition: transform 0.2s;
+    transition: 500ms;
+}
+.cajapadre-reporte:hover{
+    transform: translateY(-10px);
+    transition: 500ms;
 }
 .caja-reporte {
     display: flex;
