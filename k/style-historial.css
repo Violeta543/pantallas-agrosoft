@@ -1,49 +1,61 @@
-/* Barra de búsqueda */
+body, html {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 .barra-busqueda {
     display: flex;
     align-items: center;
-    gap: 5px;
-    padding: 16px 35px;
+    gap: 12px;
+    padding: 8px 20px;
     background-color: white;
     border-radius: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    margin: 20px 35px 20px auto;
-    width: 50%;
+    width: 95%;
+    margin: 20px auto;
+    margin-top: -15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     position: relative;
 }
 
-.barra-busqueda-icono {
-    width: 20px;
-    height: 20px;
+.barra-busqueda-texto {
+    flex: 1; 
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: "DM Sans", sans-serif;
+    background: transparent;
+    padding: 5px;
+}
+
+.barra-busqueda-icono, 
+.barra-busqueda-imagen {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
     object-fit: contain;
 }
 
 .barra-busqueda-filtro {
-    width: 200px;
-    padding: 10px 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    font-size: 0.9rem;
+    border: none;
+    background: none;
     font-family: "DM Sans", sans-serif;
-    background: white;
+    font-size: 16px;
     cursor: pointer;
-    text-align: left;
+    white-space: nowrap;
 }
 
-/* Menú de filtro */
 .filtro-menu {
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 110%;
+    left: 20px;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     padding: 10px;
     display: none;
     flex-direction: column;
-    gap: 5px;
-    z-index: 100;
-    min-width: 200px;
+    z-index: 1000;
+    min-width: 180px;
 }
 
 .filtro-menu.active {
@@ -52,42 +64,25 @@
 
 .filtro-opcion {
     padding: 10px 15px;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 0.9rem;
     font-family: "DM Sans", sans-serif;
-    color: var(--texto-principal);
-    transition: background 0.2s ease;
+    transition: background 0.2s;
 }
 
 .filtro-opcion:hover {
-    background: rgba(50, 98, 33, 0.1);
+    background: rgba(0, 75, 43, 0.1); /* Color verde suave */
 }
 
-.barra-busqueda-texto {
-    font-size: 0.9rem;
-    color: var(--texto-principal);
-    font-weight: 500;
-    width: 80%;
-    margin-left: auto;
-    border: none;
-    outline: none;
-    background: transparent;
-    font-family: "DM Sans", sans-serif;
-}
-
-.barra-busqueda-imagen {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-}
 
 /* Tarjetas de historial */
 .tarjetas-historial {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* Ajusta minmax(320px, 1fr) para que siempre tengan un tamaño mínimo legible */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
     margin: 30px 35px;
+    align-items: start; /* Esto evita que las tarjetas se estiren verticalmente */
 }
 
 .tarjeta-historial {
@@ -210,7 +205,7 @@
 .tarjeta-historial-base {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px; /* Espacio uniforme entre elementos */
     padding-top: 10px;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -224,12 +219,15 @@
     width: 24px;
     height: 24px;
     object-fit: contain;
+    margin: 0;
+    transform: none; /* Eliminamos el translateX */
 }
 
 .tarjeta-historial-hora,
 .tarjeta-historial-fecha {
     font-size: 0.9rem;
     color: var(--gris-suave);
+    flex-grow: 1; /* Esto empuja el siguiente icono hacia la derecha */
 }
 
 .tarjeta-historial-fecha {
@@ -238,29 +236,24 @@
 }
 
 /* Puntos de navegación */
-.puntos-contenedor {
+.desplazar-pagina {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
     position: fixed;
-    bottom: 80px;
-    left: calc(50% + 80px);
-    transform: translateX(-50%);
-    z-index: 10;
+    bottom: 10px;
+    left: 0;
+    z-index: 100;
 }
-
-.punto {
-    font-size: 2.5rem;
-    color: var(--texto-principal);
-    font-weight: bold;
+.desplazar-pagina button {
+    background: none;
+    border: none;
 }
-
-.puntos-imagen-izquierda,
-.puntos-imagen-derecha {
-    width: 30px;
+.desplazar-pagina img {
+    display: block;
     height: 30px;
-    object-fit: contain;
 }
 
 /* Modal de eliminación */
@@ -277,49 +270,59 @@
     z-index: 1000;
 }
 
+/* Contenido adaptado con las propiedades de tu antiguo formulario */
 .modal-eliminar-contenido {
     background-color: white;
     width: 400px;
     height: 500px;
-    border-radius: 12px;
-    padding: 20px;
+    border-radius: 20px; /* Actualizado a 20px como el original */
+    padding: 40px;      /* Actualizado a 40px como el original */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
+/* Icono adaptado */
 .modal-eliminar-imagen {
-    width: 80px;
-    height: 80px;
+    width: 50px;       /* Ajustado a 50px del antiguo .icono-alerta */
+    height: auto;
     object-fit: contain;
     filter: grayscale(100%) sepia(100%) saturate(1000%) hue-rotate(-50deg);
 }
 
+/* Textos adaptados a las jerarquías que tenías */
 .modal-eliminar-texto-1 {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 15px;    /* Ajustado del antiguo h2 */
     font-weight: 700;
     color: var(--texto-principal);
     text-align: center;
+    margin-top: 30px;
 }
 
 .modal-eliminar-texto-2 {
     margin: 0;
-    font-size: 1rem;
-    color: var(--gris-suave);
+    font-size: 25px;    /* Ajustado del antiguo nth-child(3) */
+    color: red;         /* Color de alerta mantenido */
+    font-weight: 600;
     text-align: center;
+    margin-top: 5px;
 }
 
 .modal-eliminar-texto-3 {
     margin: 0;
-    font-size: 1rem;
+    font-size: 15px;    /* Ajustado del antiguo nth-child(4) */
     color: var(--gris-suave);
     text-align: center;
+    margin-top: -20px;
+    margin-bottom: 40px; /* Ajuste para dar espacio a los botones */
 }
 
+/* Botones */
 .modal-eliminar-botones {
     display: flex;
     gap: 15px;
@@ -327,24 +330,27 @@
 }
 
 .modal-eliminar-btn {
-    padding: 12px 30px;
+    padding: 10px 20px; /* Ajustado al padding del antiguo btn-eliminar-accion */
     border: none;
     border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 500ms ease; /* Mantenemos el tiempo de transición que tenías */
 }
 
+/* Estilo botón confirmar (basado en el hover de tu antiguo botón) */
 .modal-eliminar-btn-confirmar {
-    background-color: #D85E5A;
-    color: white;
+    background-color: #f8f8f8;
+    color: var(--texto-principal);
 }
 
 .modal-eliminar-btn-confirmar:hover {
-    background-color: #c04d4a;
+    background-color: #ff4d4d;
+    color: white;
 }
 
+/* Estilo botón cancelar */
 .modal-eliminar-btn-cancelar {
     background-color: #e0e0e0;
     color: var(--texto-principal);
