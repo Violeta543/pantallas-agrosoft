@@ -1,81 +1,99 @@
-// =========================================================
-// LÓGICA PARA INTERFAZ PC (Escritorio)
-// =========================================================
-document.addEventListener("DOMContentLoaded", () => {
-    // Referencias PC
-    const btonfiltrar = document.getElementById('bton-filtrar');
-    const menufiltrar = document.getElementById('menufiltrar');
-    const opcionesFiltro = document.querySelectorAll('.opcion-filtro');
-    const tarjetas = document.querySelectorAll('.cajapadre-inventario');
+document.addEventListener('DOMContentLoaded', () => {
     
-    const modalAgregar = document.getElementById("formulario-inventario");
-    const btnAbrirAgregar = document.getElementById("bton-agregar-inventario");
-    const btnCancelarAgregar = document.getElementById("btonCancelar");
+    // --- LÓGICA AGREGAR ---
+    const btnAbrir = document.getElementById('bton-movilinventario');
+    const btnCancelar = document.getElementById('bton-cancelar-inventario');
+    const modal = document.getElementById('agregar-inventario-movil');
+    const formulario = document.querySelector('.cuerpo-formulario-movil');
 
-    const modalEditar = document.getElementById("formulario-editar-inventario");
-    const btnCancelarEditar = document.getElementById("btonCancelarEditar");
-    const botonesEditarTarjetas = document.querySelectorAll(".btn-editar");
-
-    // Lógica Filtros
-    if (btonfiltrar && menufiltrar) {
-        btonfiltrar.addEventListener('click', (event) => {
-            event.stopPropagation();
-            menufiltrar.style.display = (menufiltrar.style.display === 'flex') ? 'none' : 'flex';
+    if(btnAbrir) {
+        btnAbrir.addEventListener('click', () => modal.classList.remove('oculto'));
+    }
+    
+    if(btnCancelar) {
+        btnCancelar.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('oculto');
         });
     }
 
-    // Lógica Modales PC
-    if (btnAbrirAgregar) btnAbrirAgregar.addEventListener("click", () => modalAgregar.style.display = "flex");
-    if (btnCancelarAgregar) btnCancelarAgregar.addEventListener("click", () => modalAgregar.style.display = "none");
-    
-    botonesEditarTarjetas.forEach(btn => {
-        btn.addEventListener("click", (e) => { e.preventDefault(); modalEditar.style.display = "flex"; });
-    });
-    if (btnCancelarEditar) btnCancelarEditar.addEventListener("click", () => modalEditar.style.display = "none");
+    if(formulario) {
+        formulario.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+            alert("Formulario registrado con éxito");
+            modal.classList.add('oculto');
+        });
+    }
+
+    // --- LÓGICA EDITAR ---
+    const btnAbrirEditar = document.getElementById('bton-editar-producto');
+    const btnCancelarEditar = document.getElementById('bton-cancelar-editar');
+    const modalEditar = document.getElementById('editar-inventario-movil');
+    const btnActualizar = document.getElementById('bton-actualizar-inventario');
+
+    if (btnAbrirEditar) {
+        btnAbrirEditar.addEventListener('click', () => {
+            // 1. Capturamos la info de la tarjeta
+            const nombre = document.querySelector('.titulo-tarjeta').textContent.trim();
+            const cantidadTexto = document.querySelector('.tipo-tarjeta').textContent;
+            
+            // 2. Limpiamos datos (asumiendo formato "Cantidad: X unidades")
+            const cantidad = cantidadTexto.replace('Cantidad: ', '').split(' ')[0];
+            
+            // 3. Rellenamos los inputs
+            document.getElementById('editar-nombre').value = nombre;
+            document.getElementById('editar-cantidad').value = cantidad;
+            
+            // 4. Abrimos el modal
+            modalEditar.classList.remove('oculto');
+        });
+    }
+
+    if (btnCancelarEditar) {
+        btnCancelarEditar.addEventListener('click', () => {
+            modalEditar.classList.add('oculto');
+        });
+    }
+
+    if (btnActualizar) {
+        btnActualizar.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert("¡Datos actualizados exitosamente!");
+            modalEditar.classList.add('oculto');
+        });
+    }
 });
 
-// =========================================================
-// LÓGICA PARA INTERFAZ MÓVIL
-// =========================================================
-document.addEventListener('DOMContentLoaded', () => {
-    const modalAgregar = document.getElementById('agregar-inventario-movil');
-    const modalEditar = document.getElementById('editar-inventario-movil');
+// --- LÓGICA ELIMINAR ---
+    const btnAbrirEliminar = document.getElementById('bton-eliminar-movil');
+    const btnCancelarEliminar = document.getElementById('bton-cancelar-eliminar');
+    const btnConfirmarEliminar = document.getElementById('bton-eliminar-alerta');
     const modalEliminar = document.getElementById('eliminar-inventario');
 
-    document.addEventListener('click', (evento) => {
-        // --- AGREGAR ---
-        if (evento.target.closest('#bton-movilinventario')) {
-            evento.preventDefault();
-            if (modalAgregar) modalAgregar.classList.remove('oculto');
-        }
-        if (evento.target.closest('#bton-cancelar-inventario')) {
-            evento.preventDefault();
-            if (modalAgregar) modalAgregar.classList.add('oculto');
-        }
+    // 1. Abrir modal de eliminar
+    if (btnAbrirEliminar) {
+        btnAbrirEliminar.addEventListener('click', () => {
+            // Opcional: Puedes capturar el nombre aquí para ponerlo en el h2 del modal
+            const nombreProducto = document.querySelector('.titulo-tarjeta').textContent.trim();
+            document.querySelector('.nombre-alerta').textContent = `"${nombreProducto.toUpperCase()}"`;
+            
+            modalEliminar.classList.remove('oculto');
+        });
+    }
 
-        // --- EDITAR ---
-        if (evento.target.closest('#bton-editar-producto')) {
-            evento.preventDefault();
-            if (modalEditar) {
-                modalEditar.classList.remove('oculto');
-                // Precarga datos
-                document.getElementById('editar-nombre').value = "Fungicida Sistémico Premium";
-                // ... resto de campos
-            }
-        }
-        if (evento.target.closest('#bton-cancelar-editar')) {
-            evento.preventDefault();
-            if (modalEditar) modalEditar.classList.add('oculto');
-        }
+    // 2. Cerrar modal de eliminar
+    if (btnCancelarEliminar) {
+        btnCancelarEliminar.addEventListener('click', () => {
+            modalEliminar.classList.add('oculto');
+        });
+    }
 
-        // --- ELIMINAR ---
-        if (evento.target.closest('#bton-eliminar-movil')) {
-            evento.preventDefault();
-            if (modalEliminar) modalEliminar.classList.remove('oculto');
-        }
-        if (evento.target.closest('#bton-cancelar-eliminar')) {
-            evento.preventDefault();
-            if (modalEliminar) modalEliminar.classList.add('oculto');
-        }
-    });
-});
+    // 3. Confirmar eliminación
+    if (btnConfirmarEliminar) {
+        btnConfirmarEliminar.addEventListener('click', () => {
+            alert("Producto eliminado correctamente");
+            modalEliminar.classList.add('oculto');
+            // Aquí iría tu lógica para borrar la tarjeta del DOM o de la base de datos
+            // Ejemplo: document.getElementById('tarjeta-inventario-movil').remove();
+        });
+    }
