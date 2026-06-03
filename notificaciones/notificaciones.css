@@ -734,6 +734,7 @@ body {
         flex-direction: column;
         gap: 15px;
         padding: 20px;
+        width: 100%;
     }
 
     .notificacion-movil {
@@ -746,6 +747,7 @@ body {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-decoration: none;
         color: var(--texto-principal);
+        width: 100%;
     }
 
     .notificacion-titulo {
@@ -758,7 +760,7 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
     }
 
     .notificacion-subtitulo {
@@ -768,7 +770,7 @@ body {
 
     .notificacion-iconos {
         display: flex;
-        gap: 10px;
+        gap: 5px;
     }
 
     .notificacion-iconos img {
@@ -905,7 +907,8 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     height: 40px;
     padding-left: 20px;
     background-color: #D85E5A ;
-font-weight: bold;
+    font-weight: bold;
+    position: relative;
 }
     
 
@@ -916,68 +919,91 @@ font-weight: bold;
     font-weight: bold;
 }
 .notifi-tareas{
-height: 40px;
-background-color: #E0E9FF;
-padding-left: 20px;
-font-weight: bold;
+    height: 40px;
+    background-color: #E0E9FF;
+    padding-left: 20px;
+    font-weight: bold;
+    position: relative;
 }
 .notifi-ventas{
     height: 40px;
     background-color: #F3E180;
     padding-left: 20px;
     font-weight: bold;
+    position: relative;
 }
 .notifi-tratamiento{
     height: 40px;
     background-color: #6FA378;
     padding-left: 20px;
     font-weight: bold;
+    position: relative;
 }
 .notifi-reporte{
     height: 40px;
     background-color: #7B9EE9;
     padding-left: 20px;
     font-weight: bold;
+    position: relative;
 }
 .notifi-inventario{
     height: 40px;
 background-color: rgb(209, 209, 29);
 padding-left: 20px;
 font-weight: bold;
+position: relative;
 }
 .contenido-maiz{
     padding: 20px;
 }
 .image-cultivo{
-    position: relative;
-    left: 180px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
     padding: 2px;
+    width: 30px;
+    height: 30px;
 }
 
 .image-tareas{
-    position: relative;
-    left: 210px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
     padding: 2px;
+    width: 30px;
+    height: 30px;
 }
 .image-ventas{
-    position: relative;
-    left: 180px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
     padding: 2px;
+    width: 30px;
+    height: 30px;
 }
 .image-tratamiento{
-    position: relative;
-    left: 165px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
     padding: 2px;
+    width: 30px;
+    height: 30px;
 }
     .image-reporte{
-    position: relative;
-    left: 200px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
     padding: 2px;
+    width: 30px;
+    height: 30px;
 }
 .image-inventario{
-    position: relative;
-    left: 175px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
     padding: 2px;
+    width: 30px;
+    height: 30px;
 }
 
 .cajita{

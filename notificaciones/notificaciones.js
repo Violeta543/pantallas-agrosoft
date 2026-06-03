@@ -11,6 +11,17 @@ if (btnFiltrar) {
     });
 }
 
+function toggleFiltro() {
+    const menu = document.getElementById("menuFiltrar");
+    if (menu) {
+        if (menu.style.display === "block") {
+            menu.style.display = "none";
+        } else {
+            menu.style.display = "block";
+        }
+    }
+}
+
 function mostrarModalEliminar() {
     const modal = document.getElementById('btnEliminar');
     if (modal) {
