@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notificaciones</title>
+    <link rel="stylesheet" href="notificaciones.css">
+</head>
+<body>
+
+    <!-- BARRA LATERAL -->
+    <aside class="barra-lateral">
+        <div class="logo">
+            <span class="logo-texto">AGROSOFT</span>
+        </div>
+
+        <nav class="menu-lateral">
+            <a href="/k/dashboard.html" class="enlace-menu" data-seccion="dashboard">
+                <img src="/M/imagenes/dash.png" alt="Dashboard" class="icono-menu">
+                <span class="texto-menu">Dashboard</span>
+            </a>
+            <a href="/M/Cultivos.html" class="enlace-menu" data-seccion="cultivos">
+                <img src="/M/imagenes/cultivos.png" alt="Cultivos" class="icono-menu">
+                <span class="texto-menu">Cultivos</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="tareas">
+                <img src="/M/imagenes/tareas.png" alt="Tareas" class="icono-menu">
+                <span class="texto-menu">Tareas</span>
+            </a>
+            <a href="/MP/tratamiento.html" class="enlace-menu" data-seccion="tratamiento">
+                <img src="/M/imagenes/tratamiento.png" alt="Tratamiento" class="icono-menu">
+                <span class="texto-menu">Tratamiento</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="inventario">
+                <img src="/M/imagenes/inventarios.png" alt="Inventario" class="icono-menu">
+                <span class="texto-menu">Inventario</span>
+            </a>
+            <a href="/MP/venta.html" class="enlace-menu" data-seccion="ventas">
+                <img src="/M/imagenes/ventas.png" alt="Ventas" class="icono-menu">
+                <span class="texto-menu">Ventas</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="reportes">
+                <img src="/M/imagenes/reportes.png" alt="Reportes" class="icono-menu">
+                <span class="texto-menu">Reportes</span>
+            </a>
+            <a href="/k/historial.html" class="enlace-menu" data-seccion="historial">
+                <img src="/M/imagenes/historial.png" alt="Historial" class="icono-menu">
+                <span class="texto-menu">Historial</span>
+            </a>
+            <a href="/k/dashboard.html" class="enlace-menu activo" data-seccion="notificaciones">
+                <img src="/M/imagenes/notificaciones.png" alt="Notificaciones" class="icono-menu">
+                <span class="texto-menu">Notificaciones</span>
+            </a>
+            <a href="#" class="enlace-menu" data-seccion="ajustes">
+                <img src="/M/imagenes/ajustes.png" alt="Ajustes" class="icono-menu">
+                <span class="texto-menu">Ajustes</span>
+            </a>
+        </nav>
+
+        <a href="#" class="boton-cerrar" onclick="mostrarModalCerrarSesion(event)">
+            <img src="/M/imagenes/cerrar.png" alt="Cerrar" class="icono-cerrar">
+            <span>Cerrar sesión</span>
+        </a>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contenedor-principal">
+        <!-- ENCABEZADO -->
+        <header class="encabezado">
+            <img src="/k/imagenes/logo.png" alt="Logo" class="Logo-header-icono">
+            <div class="encabezado-texto">
+                <h1 class="titulo-pagina">NOTIFICACIONES</h1>
+                <p class="subtitulo-pagina">estes alerta a los cambios</p>
+            </div>
+            <div class="usuario-contenedor">
+                <img src="/k/imagenes/perfil.png" alt="Perfil" class="usuario-icono">
+                <div class="usuario">
+                    <span class="usuario-nombre">Yonatan Gómez</span>
+                    <span class="usuario-rol">Administrador</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENIDO MÓVIL -->
+        <section class="contenedor-movil-v">
+            <div class="encabezado-texto-v">
+                <h1 class="titulo-movil">NOTIFICACIONES</h1>
+            </div>
+            <section class="contenido-fondo">
+                <!-- CONTENEDOR DE NOTIFICACIONES MÓVIL -->
+                <div class="notificaciones-movil">
+                    <a href="#" class="notificacion-movil">
+                        <span class="notificacion-titulo">se ha creado una nueva tarea</span>
+                        <div class="notificacion-detalles">
+                            <span class="notificacion-subtitulo">cortar cesped</span>
+                            <div class="notificacion-iconos">
+                                <img src="/k/historial/Calendar.png" alt="Calendario">
+                                <img src="/k/historial/basura.png" alt="Eliminar" id="btnEliminarNotificacion" onclick="mostrarModalEliminar()">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </section>
+
+    <section class="notificaciones-contenedor">
+
+
+   <section class="contenido-fondo">
+            <!-- BARRA DE BÚSQUEDA -->
+            <div class="barra-busqueda">
+                <img src="/k/historial/filtro.png" alt="Buscar" class="barra-busqueda-icono" onclick="toggleFiltro()">
+                <button class="barra-busqueda-filtro" onclick="toggleFiltro()">Filtrar...</button>
+                <input type="text" class="barra-busqueda-texto" placeholder="Buscar">
+                <img src="/k/historial/search.png" alt="Imagen" class="barra-busqueda-imagen">
+
+    <ul id="menuFiltrar" class="menu-filtrar">
+        <li>Tareas</li>
+        <li>Cultivos</li>
+        <li>Ventas</li>
+        <li>Tratamiento</li>
+        <li>Reporte</li>
+        <li>Inventario</li>
+        <li>Notificaciones</li>
+        <li>Notificaciones Vistas</li>
+        <li>Notificaciones Pendientes</li>
+    </ul>
+</div>
+                
+                
+                
+
+            </div>
+
+<div class="notificaciones-grip">
+
+<div class="cultivo-notificacion-a">
+<div class="notifi-cultivos">NOTIFICACIÓN DE CULTIVO
+    <img src="/notifficaciones/imagenes-notificaciones/eliminarblanco.svg" class="image-cultivo">
+</div>
+<div class="contenido-maiz">
+<p>se agregó un nuevo cultivo</p>
+<div class="ojito-detalles">
+    <img src="/notifficaciones/imagenes-notificaciones/ojito.svg" alt="">
+    <span>detalles</span>
+    <img src="/notifficaciones/imagenes-notificaciones/calendario.svg" alt="">
+    <span>24 sep 2026</span>
+</div>
+
+
+ </div>
+
+      </div>
+
+
+<div class="cultivo-notificacion-a">
+<div class="notifi-tareas">NOTIFICACIÓN TAREAS
+    <img src="/notifficaciones/imagenes-notificaciones/eliminarss.svg" class="image-tareas">
+</div>
+<div class="contenido-maiz">
+<p>se agrego una nueva tarea "riego"</p>
+<div class="ojito-detalles">
+    <img src="/notifficaciones/imagenes-notificaciones/ojito.svg" alt="">
+    <span>tetalles</span>
+    <img src="/notifficaciones/imagenes-notificaciones/calendario.svg" alt="">
+    <span>24 sep 2026</span>
+</div>
+
+
+ </div>
+
+      </div>
+
+
+<div class="cultivo-notificacion-a">
+<div class="notifi-ventas">NOTIFICACIÓN DE VENTAS
+    <img src="/notifficaciones/imagenes-notificaciones/eliminarss.svg" class="image-ventas">
+</div>
+<div class="contenido-maiz">
+<p>se registro unba venta "maiz"</p>
+<div class="ojito-detalles">
+    <img src="/notifficaciones/imagenes-notificaciones/ojito.svg" alt="">
+    <span>tetalles</span>
+    <img src="/notifficaciones/imagenes-notificaciones/calendario.svg" alt="">
+    <span>24 sep 2026</span>
+ </div>
+   </div>
+     </div>
+
+
+
+<div class="cultivo-notificacion-a">
+<div class="notifi-tratamiento">NOTIFICACIÓN TRATAMIENTO 
+    <img src="/notifficaciones/imagenes-notificaciones/eliminarss.svg" class="image-tratamiento">
+</div>
+<div class="contenido-maiz">
+<p>se registro un tratamiento"maiz"</p>
+<div class="ojito-detalles">
+    <img src="/notifficaciones/imagenes-notificaciones/ojito.svg" alt="">
+    <span>tetalles</span>
+    <img src="/notifficaciones/imagenes-notificaciones/calendario.svg" alt="">
+    <span>24 sep 2026</span>
+ </div>
+   </div>
+     </div>
+
+
+<div class="cultivo-notificacion-a">
+<div class="notifi-reporte">NOTIFICACIÓN REPORTE
+    <img src="/notifficaciones/imagenes-notificaciones/eliminarss.svg" class="image-reporte">
+</div>
+<div class="contenido-maiz">
+<p>se registro un reporte</p>
+<div class="ojito-detalles">
+    <img src="/notifficaciones/imagenes-notificaciones/ojito.svg" alt="">
+    <span>tetalles</span>
+    <img src="/notifficaciones/imagenes-notificaciones/calendario.svg" alt="">
+    <span>24 sep 2026</span>
+ </div>
+   </div>
+     </div>
+
+
+
+     <div class="cultivo-notificacion-a">
+<div class="notifi-inventario">NOTIFICACIÓN INVENTARIO
+    <img src="/notifficaciones/imagenes-notificaciones/eliminarss.svg" class="image-inventario">
+</div>
+<div class="contenido-maiz">
+<p>se registro en inventario</p>
+<div class="ojito-detalles">
+    <img src="/notifficaciones/imagenes-notificaciones/ojito.svg" alt="">
+    <span>tetalles</span>
+    <img src="/notifficaciones/imagenes-notificaciones/calendario.svg" alt="">
+    <span>24 sep 2026</span>
+ </div>
+   </div>
+     </div>
+
+</div>
+
+
+    </section>
+    </main>
+
+    <!-- BARRA DE NAVEGACIÓN MÓVIL -->
+    <nav class="barra-nav-movil">
+        <a href="/ajuste/ajustes1.html" class="nav-movil-item">
+            <img src="/k/movil/configuraciones.png" class="nav-movil-icono" alt="Ajustes">
+            <span>Ajustes</span>
+        </a>
+        
+        <a href="/k/dashboard.html" class="nav-movil-item">
+            <img src="/k/movil/logo.png" class="nav-movil-icono nav-movil-icono1" alt="Inicio">
+            <span>Inicio</span>
+        </a>
+        <a href="/perfil/perfil.html" class="nav-movil-item">
+            <img src="/k/movil/user.png" class="nav-movil-icono" alt="Perfil">
+            <span>Perfil</span>
+        </a>
+    </nav>
+
+
+
+
+    <div id="btnEliminar" class="cajita">
+
+    <div class="dentro-contenido">
+<img src="/notifficaciones/imagenes-notificaciones/circulo.svg" class="circul0-c">
+<img src="/notifficaciones/imagenes-notificaciones/elim-borrar.svg" class="borrar-eliminar">
+
+        <h2></h2>
+
+        <p>¿Eliminar Notificación?</p>
+
+        <h3 class="image-repor-venta">"Reporte Venta"</h3>
+
+        <p>
+            Esta acción no se puede deshacer.
+            Se eliminarán todos los datos asociados.
+        </p>
+
+        <div class="botones-borrar">
+
+            <button id="cancelarEliminar" class="cancelar-estebtn">
+                     <img src="/notifficaciones/imagenes-notificaciones/cancelap.svg" class="puedes-cancelar">
+                Cancelar
+            </button>
+
+            <button id="confirmarEliminar" class="eliminar-estebtn">
+                                <img src="/notifficaciones/imagenes-notificaciones/eliminapp.svg" class="puedes-eliminar">
+
+                Eliminar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+<script src="notificaciones.js"></script>
+</html>
