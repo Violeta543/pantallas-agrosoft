@@ -163,6 +163,8 @@ body, html {
     background: rgba(0, 75, 43, 0.1);
 }
 
+/*------------------- TRAJETAS HISTORIAL ---------------------*/
+
 .tarjetas-historial {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -291,35 +293,44 @@ body, html {
 .tarjeta-historial-base {
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: space-between;
     padding-top: 10px;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;
+}
+
+.grupo-base-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tarjeta-historial-base .tarjeta-historial-icono-base:first-of-type {
+    margin-right: 8px; 
 }
 
 .tarjeta-historial-base .tarjeta-historial-icono-base:last-of-type {
-    margin-right: 2px;
-    transform: translateX(165px);
+    margin-left: auto;
+    margin-right: 10px;
+    transform: none;
 }
 
 .tarjeta-historial-icono-base {
     width: 24px;
     height: 24px;
     object-fit: contain;
-    margin: 0;
-    transform: none; 
+    flex-shrink: 0;
+    transform: none !important;
 }
 
-.tarjeta-historial-hora,
+.tarjeta-historial-ojo,
 .tarjeta-historial-fecha {
     font-size: 0.9rem;
     color: var(--gris-suave);
-    flex-grow: 1; 
+    white-space: nowrap;
+    margin: 0 !important;
 }
 
-.tarjeta-historial-fecha {
-    margin-left: 160px;
-    margin-right: 29px;
-}
 
 /* Puntos de navegación */
 .desplazar-pagina {
