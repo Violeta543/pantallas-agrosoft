@@ -170,13 +170,13 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh;
 }
-
 .contenido-fondo {
     position: relative;
     z-index: 3;
 }
 
 /* ENCABEZADO */
+
 .encabezado {
     display: flex;
     align-items: center;
@@ -199,7 +199,7 @@ body {
 .titulo-pagina {
     margin: 0;
     font-size: 2.2rem;
-    letter-spacing: -0.04em;
+    letter-spacing: 1.5px;
     font-family: "DM Serif", sans-serif;
     color: rgba(50, 98, 33, 1);
 }
@@ -264,6 +264,8 @@ body {
     border-radius: 12px;
     display: inline-block;
 }
+
+/* ---------------- Diseño Inventario -----------------*/
 
 .barra-busqueda{
     display: flex;
@@ -338,7 +340,7 @@ body {
     padding: 10px 16px;
     border-radius: 12px;
     font-family: 'DM Sans', sans-serif;
-    font-size: 18px;
+    font-size: 15px;
     text-align: center;
     transition: all 0.2s ease;
     width: 100%;
@@ -395,6 +397,11 @@ body {
     flex-direction: column;
     min-height: 180px;
     max-width: 450px;
+    transition: 500ms;
+}
+.cajapadre-inventario:hover{
+    transform: translateY(-10px);
+    transition: 500ms;
 }
 .cajapadre-inventario.vacia{
     background: #ffffff;
@@ -410,7 +417,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
-    font-family: 'DM Sans', serif;
+    font-family: 'DM Serif', sans-serif;
 }
 .cuerpo-tarjeta{
     padding: 20px;
@@ -536,7 +543,7 @@ body {
     background-color: #f8f8f8;
     color: #d9534f;
     border: transparent;
-    padding: 10px 25px;
+    padding: 10px 20px;
     border-radius: 8px;
 }
 .btn-cancelar:hover{
@@ -551,11 +558,28 @@ body {
     padding: 40px;
     border-radius: 20px;
     text-align: center;
-    width: 350px;
+    width: 360px;
+}
+.contenido-formulario-eliminar h2{
+    font-size: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.contenido-formulario-eliminar p:nth-child(3){
+    font-size: 25px;
+    color: red;
+    font-weight: none;
+    margin-top: 5px;
+}
+.contenido-formulario-eliminar p:nth-child(4){
+    font-size: 15px;
+    font-weight: none;
+    margin-top: -20px;
+    margin-bottom: 60px;
 }
 .icono-alerta{
-    width: 60px;
-    margin-bottom: 20px;
+    width: 50px;
+    margin-top: 10px;
 }
 .btn-eliminar-accion{
     background-color: #f8f8f8;
@@ -570,15 +594,12 @@ body {
     color: rgb(250, 250, 250);
 }
 
-
-
-/* --------------- Pie de pagina -------------- */
-
 #formulario-inventario,
 #formulario-editar-inventario {
     display: none;
 }
 
+/* --------------- Pie de pagina -------------- */
 
 .desplazar-pagina {
     display: flex;
@@ -586,21 +607,19 @@ body {
     align-items: center;
     gap: 20px;
     width: 100%;
-    
-    position: absolute; 
-    bottom: -360px;
+    position: fixed;
+    bottom: 10px;
     left: 0;
+    z-index: 100;
 }
 .desplazar-pagina button {
     background: none;
     border: none;
-    cursor: pointer;
 }
 .desplazar-pagina img {
     display: block;
-    height: 32px;
+    height: 30px;
 }
-
 
 /* Cerrar Sesión PC */
 
@@ -719,29 +738,35 @@ body {
     }
     #descargar-reporte {
     display: none !important;
+    
 }
+
+.oculto {
+    display: none !important;
+}
+
     .titulo-movil{
-        font-family: 'DM Serif', sans-serif;
-        font-size: 45px;
-        -webkit-text-stroke: 0.8px #004b2a;
-        background-image: linear-gradient(to right, #004B2B, #00B165);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        letter-spacing: 3px;
-        margin-top: 40px;
-        margin-bottom: 10px;
-        text-align: center;
-        display: block;
-        font-weight: lighter;
+    font-family: 'DM Serif', sans-serif;
+    font-size: 45px;
+    -webkit-text-stroke: 0.8px #004b1f;
+    background-image: linear-gradient(to right, #004B2B, #00B165);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 3px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: block;
+    font-weight: lighter;
     }
     .fondo-blanco{ 
         position: absolute;
         align-items: center;
         background: rgba(255, 255, 255, 0.5);
         width: 85%;
-        height: 600px;
-        margin-top: 10px;
+        height: 580px;
+        margin-top: 20px;
         margin-left: auto;
         margin-right: auto;
         border-radius: 28px;
@@ -761,7 +786,7 @@ body {
     .busqueda-movil{
         display: flex;
         align-items: center;
-        width: 98%;
+        width: 90%;
         max-width: 360px;
         background-color: white;
         border-radius: 50px;
@@ -785,8 +810,7 @@ body {
         outline: none;
         background: transparent;
         font-size: 16px;
-        color: #0e0e0e;
-        font-family: sans-serif;
+        font-family: "DM Sans", sans-serif;
     }
     .lupa-movil{
         width: 25px;
@@ -799,7 +823,7 @@ body {
         border: 1.5px solid #004B2B;
         border-radius: 20px;
         padding: 15px 15px;
-        width: 80%;
+        width: 75%;
         max-width: 300px;
         height: auto;
         margin: 10px auto;
@@ -808,7 +832,7 @@ body {
     .titulo-tarjeta{
         margin: 0 0 8px 0;
         font-size: 14px;
-        margin-top: -10px;
+        margin-top: -2px;
     }
     .descripcion-tarjeta {
         margin: 0 0 8px 0;
@@ -818,51 +842,42 @@ body {
         margin: 0 0 8px 0;
         font-size: 12px;
     }
-    .periodo-tarjeta {
-        margin: 0 0 8px 0;
-        font-size: 12px;
-    }
-    .descargar-tarjeta{
-        display: flex;
-        background: none;
-        border: none;
-        margin-top: -10px;
-    }
     .detalles-tarjeta {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
-        gap: 30px;
-        margin-top: 15px;
     }
-    .bton-editar-movil{
+    .editar-movil{
     background-color: #f2f2f2; 
-    width: 25%;
+    width: 45%;
     padding: 5px 0;
+    margin-top: 10px;
+    margin-bottom: -15px;
     border-radius: 10px;
     border: none;
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     transition: 500ms;
     }
-    .bton-editar-movil:hover{
+    .editar-movil:hover{
     background-color: #3b7457; 
     color: white;
     transition: 500ms;
     }
-    .bton-eliminar-movil {
+    .eliminar-movil{
     background-color: #f2f2f2;
     color: #ff3b30;
-    width: 25%;
+    width: 45%;
     padding: 5px 0;
+    margin-top: 10px;
+    margin-bottom: -15px;
     border-radius: 10px;
     border: none;
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     transition: 500ms;
     }
-    .bton-eliminar-movil:hover{
+    .eliminar-movil:hover{
     background-color: #ff0000; 
     color: white;
     transition: 500ms;
@@ -870,33 +885,35 @@ body {
 
     /* ------ Formulario Movil --------*/
 
-    .agregar-inventario-movil {
+    .agregarIN-movil {
     position: fixed;
     display: flex;
     flex-direction: column;
     top: 0px;
     left: 0px;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background: rgba(255, 255, 255, 0.49);
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
-.cuerpo-formulario-movil {
-    background-color: white;
-    width: 90%;
-    max-width: 360px;
-    padding: 35px 22px 15px 22px;
-    border-radius: 24px;
-    border: 1.5px solid #004B2B;
-}
 .formulario-titulo-principal {
     font-family: 'DM Sans', sans-serif;
     font-size: 20px;
-    margin-bottom: -40px;
     text-align: center;
     z-index: 1000;
+    margin-top: -15px; 
+}
+.cuerpo-formulario-movil {
+    background-color: white;
+    width: 80%;
+    max-width: 360px;
+    margin-top: -30px;
+    margin-bottom: 30PX;
+    padding: 35px 22px 15px 22px;
+    border-radius: 24px;
+    border: 1.5px solid #004B2B;
 }
 .grupo-campo-movil {
     display: flex;
@@ -904,6 +921,7 @@ body {
     width: 100%;
     margin-bottom: 5px;
     margin-top: 10px;
+    outline: none;
 }
 .etiqueta-campo-movil {
     font-family: 'DM Sans', sans-serif;
@@ -1007,87 +1025,6 @@ body {
     background-size: 15px;
     box-sizing: border-box;
 }
-.bton-editar-movil {
-    width: 48%;
-    padding: 12px 0;
-    border-radius: 14px;
-    font-size: 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 500;
-    border: none;
-    text-align: center;
-    background-color: #f2f2f2;
-    transition: 1000ms;
-}
-.bton-eliminar-movil {
-    width: 48%;
-    padding: 12px 0;
-    border-radius: 14px;
-    font-size: 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 500;
-    border: none;
-    text-align: center;
-    background-color: #f2f2f2;
-    color: #ff3b30;
-}
-
-
-
-    /*------------ Descargar Movil ---------------*/
-
-    .descargar-reporte-movil{
-    position: fixed;
-    margin-left: 60px;
-    margin-top: -170px;
-    width: 100%;
-    max-width: 370px;
-    background-color: white ;
-    border-radius: 15px;
-    padding: 24px 20px;
-    border: 1.5px solid  #1b7343;
-    font-family: 'DM sans', sans-serif;
-    z-index: 1000;
-}
-.descargar-reporte-movil .contenedor-descarga-movil {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: 15px;
-    width: 100%;
-}
-.descargar-reporte-movil .formato-descarga-movil {
-    flex: 1;
-}
-
-.descargar-reporte-movil .seleccionar-formato {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #e0e0e0;
-    background-color: #f0f0f0;
-    font-size: 14px;
-    outline: none;
-}
-.descargar-reporte-movil .seleccionar-formato option:hover,
-.descargar-reporte-movil .seleccionar-formato option:focus,
-.descargar-reporte-movil .seleccionar-formato option:checked {
-    background-color: #1b7343;
-    color: white;
-}
-.descargar-reporte-movil .bton-descargar {
-    background: none;
-    border: none;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.descargar-reporte-movil .bton-descargar img {
-    width: 32px;
-    height: 32px;
-}
 
     /* ------ Eliminar  Movil --------*/
 
@@ -1097,7 +1034,7 @@ body {
     flex-direction: column;
     top: 0px;
     left: 0px;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background: rgba(255, 255, 255, 0.69);
     justify-content: center;
@@ -1109,7 +1046,7 @@ body {
 }
 .eliminar-alerta {
     background-color: white;
-    width: 90%;
+    width: 80%;
     max-width: 360px;
     padding: 30px 24px;
     border-radius: 24px;
@@ -1118,7 +1055,7 @@ body {
     align-items: center;
     text-align: center;
     box-sizing: border-box;
-    border: 1.5px solid  #1b7343;
+    margin-top: -50px;
 }
 .contenedor-alerta {
     width: 80px;

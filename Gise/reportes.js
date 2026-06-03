@@ -50,8 +50,9 @@ opcionesFiltro.forEach(boton => {
         tarjetasReporte.forEach(tarjeta => {
             const categoriaTarjeta = tarjeta.getAttribute('data-categoria');
 
-
-            if (categoriaTarjeta === categoriaSeleccionada) {
+            if (categoriaSeleccionada === 'todos') {
+                tarjeta.style.display = "flex"; 
+            } else if (categoriaTarjeta === categoriaSeleccionada) {
                 tarjeta.style.display = "flex";
             } else {
                 tarjeta.style.display = "none";
@@ -67,15 +68,15 @@ opcionesFiltro.forEach(boton => {
 
 // -------------- Descargar Reporte --------------
 
-const btonIconoDescargar = document.querySelector('.icono-descargar'); 
+const btonIconoDescargar = document.querySelectorAll('.icono-descargar'); 
 const btonCancelarDescargar = document.getElementById('btonCancelarDescarga');
 const modalDescarga = document.getElementById('descargar-reporte'); 
 
-if (btonIconoDescargar) {
-    btonIconoDescargar.addEventListener('click', () => {
-        modalDescarga.style.display = 'flex'; 
+btonIconoDescargar.forEach(boton => {
+    boton.addEventListener('click', () => {
+        modalDescarga.style.display = 'flex';
     });
-}
+});
 
 btonCancelarDescargar.addEventListener('click', () =>{
     modalDescarga.style.display = 'none'; 
@@ -91,16 +92,16 @@ window.addEventListener('click', (event) => {
 });
 
 // -------------- Eliminar Reporte --------------
-const btonIconoEliminar = document.querySelector('.boton-eliminar');
+const btonIconoEliminar = document.querySelectorAll('.boton-eliminar');
 const btonCancelarEliminar = document.getElementById('bton-cancelar-eliminar');
 const btonConfirmarEliminar = document.getElementById('bton-eliminar-alerta'); 
 const modalEliminar = document.getElementById('eliminar-reporte'); 
 
-if (btonIconoEliminar) {
-    btonIconoEliminar.addEventListener('click', () =>{
-        modalEliminar.style.display = "flex"; 
+btonIconoEliminar.forEach(boton => {
+    boton.addEventListener('click', () => {
+        modalEliminar.style.display = 'flex';
     });
-}
+});
 
 if (btonCancelarEliminar) {
     btonCancelarEliminar.addEventListener('click', () => {
@@ -121,22 +122,41 @@ window.addEventListener('click', (Event) => {
     }
 }); 
 
-// ---------------- Diseño Movil 
+// ---------------- CREAR MOVIL
 
 const botonMas = document.getElementById("bton-movilreporte");
-    const formulario = document.getElementById("formulario-reporte-movil");
-    const tarjeta = document.getElementById("tarjeta-reporte-movil");
+const formulario = document.getElementById("formulario-reporte-movil");
+const tarjeta = document.getElementById("tarjeta-reporte-movil");
+const btnCrear = document.getElementById("bton-editar-producto");
+const btnCancelar = document.getElementById("bton-eliminar-movil");
 
-    if (botonMas && formulario && tarjeta) {
-        botonMas.addEventListener("click", () => {
-            formulario.classList.toggle("oculto"); 
+if (botonMas && formulario && tarjeta) {
+    botonMas.addEventListener("click", () => {
+        formulario.classList.toggle("oculto"); 
+        tarjeta.classList.toggle("oculto"); 
+    });
 
-            tarjeta.classList.toggle("oculto"); 
+    if (btnCrear) {
+        btnCrear.addEventListener("click", () => {
+            formulario.classList.add("oculto"); 
+            tarjeta.classList.remove("oculto");
+            alert("Reporte creado con éxito");
         });
+    }
+
+    if (btnCancelar) {
+        btnCancelar.addEventListener("click", () => {
+            formulario.classList.add("oculto");
+            tarjeta.classList.remove("oculto");
+        });
+    }
 }
+
+//------------------- DESCARGAR MOVIL
 
 const botonAbrirMovil = document.getElementById("bton-abrir-descarga-movil"); 
 const modalDescargarMovil = document.getElementById("descargar-reporte-movil");
+const btnCancelarDescarga = document.getElementById("reporte-eliminar-movil");
 
 if (botonAbrirMovil && modalDescargarMovil) {
     botonAbrirMovil.addEventListener("click", (e) => {
@@ -155,4 +175,9 @@ if (formularioDescargaMovil && modalDescargarMovil) {
     });
 }
 
-//------------------ Filtrar Movil 
+if (btnCancelarDescarga && modalDescargarMovil) {
+    btnCancelarDescarga.addEventListener("click", () => {
+        modalDescargarMovil.classList.add("oculto");
+    });
+}
+

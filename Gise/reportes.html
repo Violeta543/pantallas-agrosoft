@@ -88,8 +88,8 @@
         </section>
 
         <section class="contenido-fondo">
-            
-        <!---------------- Diseño Reporte -------->
+
+        <!---------------- Diseño Busquedad -------->
         
         <section class="contenido-fondo">
     <div class="barra-busqueda">
@@ -98,11 +98,11 @@
             <div class="contenedor-filtro">
             <button class="boton-filtrar" id="bton-filtrar"> Filtrar <span class="flecha-filtrar"><img src="/Gise/visual/flecha-abajo.svg" alt=""></span></button>
                 <div class="menu-desplegable" id="menufiltrar">
+                <button type="button" class="opcion-filtro activa">Todos</button>
                 <button type="button" class="opcion-filtro">Tareas</button>
                 <button type="button" class="opcion-filtro">Cultivos</button>
                 <button type="button" class="opcion-filtro">Ventas</button>
                 <button type="button" class="opcion-filtro">Tratamiento</button>
-                <button type="button" class="opcion-filtro activa">Reporte</button>
                 <button type="button" class="opcion-filtro">Inventario</button>
                 <button type="button" class="opcion-filtro">Notificaciones</button>
             </div>
@@ -115,16 +115,17 @@
         </button> 
     </div>
 
+        <!---------------- Diseño Reporte -------->
 
-    <div class="caja-reportes">
-        <div class="cajapadre-reporte" data-categoria="cultivos">
+    <div class="contenedor-reportes">
+        <div class="cajapadre-reporte" data-categoria="ventas">
             <div class="caja-reporte">
                 <span class="titulo-reporte"><strong> Nombre:</strong> Reporte de ventas</span>
                 <button class="icono-descargar"> <img src="/Gise/visual/descargar.svg" alt="Descargar"> </button>
             </div>
             <div class="cuerpo-tarjeta">
-                <p><strong>Descripción:</strong></p> <br><br>
-                <p><strong>Tipo:</strong>Ventas</p> <br>
+                <p><strong>Descripción:</strong></p>
+                <p><strong>Tipo:</strong>Ventas</p>
                 <p><strong>Periodo:</strong>1 sep 2026 - 8 sep 2026</p>
             </div>
             <div class="pie-reporte"> 
@@ -134,7 +135,63 @@
             </div>
         </div>
 
+        <div class="cajapadre-reporte" data-categoria="cultivos">
+            <div class="caja-reporte">
+                <span class="titulo-reporte"><strong> Nombre:</strong> Reporte de cultivos </span>
+                <button class="icono-descargar"> <img src="/Gise/visual/descargar.svg" alt="Descargar"> </button>
+            </div>
+            <div class="cuerpo-tarjeta">
+                <p><strong>Descripción:</strong></p>
+                <p><strong>Tipo:</strong> cultivos</p>
+                <p><strong>Periodo:</strong> 1 sep 2026 - 8 sep 2026</p>
+            </div>
+            <div class="pie-reporte"> 
+                <span> <img class="fecha-reporte" src="/Gise/visual/calendario.svg"> 9 sep 2026</span>
+                <span> <img class="hora-reporte" src="/Gise/visual/relog.svg"> 10:00 a.m.</span>
+                <button class="boton-eliminar"> <img src="/Gise/visual/basura.svg"></button>
+            </div>
+        </div>
 
+        <div class="cajapadre-reporte" data-categoria="tratamientos">
+            <div class="caja-reporte">
+                <span class="titulo-reporte"><strong> Nombre:</strong> Reporte de inventario </span>
+                <button class="icono-descargar"> <img src="/Gise/visual/descargar.svg" alt="Descargar"> </button>
+            </div>
+            <div class="cuerpo-tarjeta">
+                <p><strong>Descripción:</strong></p>
+                <p><strong>Tipo:</strong>  inventario </p>
+                <p><strong>Periodo:</strong>1 sep 2026 - 8 sep 2026</p>
+            </div>
+            <div class="pie-reporte"> 
+                <span> <img class="fecha-reporte" src="/Gise/visual/calendario.svg"> 9 sep 2026</span>
+                <span> <img class="hora-reporte" src="/Gise/visual/relog.svg"> 10:00 a.m.</span>
+                <button class="boton-eliminar"> <img src="/Gise/visual/basura.svg"></button>
+            </div>
+        </div>
+
+        <div class="cajapadre-reporte" data-categoria="inventario">
+            <div class="caja-reporte">
+                <span class="titulo-reporte"><strong> Nombre:</strong> Reporte de inventario </span>
+                <button class="icono-descargar"> <img src="/Gise/visual/descargar.svg" alt="Descargar"> </button>
+            </div>
+            <div class="cuerpo-tarjeta">
+                <p><strong>Descripción:</strong></p> 
+                <p><strong>Tipo:</strong> inventario</p>
+                <p><strong>Periodo:</strong>1 sep 2026 - 8 sep 2026</p>
+            </div>
+            <div class="pie-reporte"> 
+                <span> <img class="fecha-reporte" src="/Gise/visual/calendario.svg"> 9 sep 2026</span>
+                <span> <img class="hora-reporte" src="/Gise/visual/relog.svg"> 10:00 a.m.</span>
+                <button class="boton-eliminar"> <img src="/Gise/visual/basura.svg"></button>
+            </div>
+        </div>
+
+    </div>
+
+
+    
+
+<!----------------- Desplazar pagina  ------------------->
 
     </div> 
     <div class="desplazar-pagina">
@@ -181,8 +238,8 @@
                 </div>
 
                 <div class="botones">
-                    <button type="submit" class="bton-guardar"> Guardar </button>
-                    <button type="button" id="btonCancelar" class="btn-cancelar">✕ Cancelar</button>
+                    <button type="submit" class="bton-guardar"> Generar </button>
+                    <button type="button" id="btonCancelar" class="btn-cancelar"> Cancelar</button>
                 </div>
             </form>
         </div>
@@ -208,7 +265,7 @@
 
                 <div class="botones">
                     <button type="submit" class="bton-guardar"> Descargar </button>
-                    <button type="button" id="btonCancelarDescarga" class="btoncancelardescarga"> Cancelar </button>
+                    <button type="button" id="btonCancelarDescarga" class="btn-cancelar"> Cancelar </button>
                 </div>
             </form>
         </div>
@@ -219,21 +276,22 @@
     <div id="eliminar-reporte" class="cajapadre-formulario">
         <div class="contenido-formulario-alerta">
             <div class="contenedor-alerta">
-                <img class="icono-basura-alerta" src="/Gise/visual/Icono alerta.svg" alt="icono-alerta">
-            </div>
+                <img class="icono-alerta" src="/Gise/visual/Icono alerta.svg" alt="icono-alerta">
 
             <p class="pregunta-eliminar"> ¿Eliminar Reporte? </p>
             <h2 class="nombre-alerta"> "Reporte Venta" </h2>
             <p class="advertencia-eliminar"> Esta acción no se puede deshacer. Se eliminarán todos los datos asociados a este reporte. </p>
 
+            </div>
+
             <div class="boton-alerta">
-                <button type="button" id="bton-cancelar-eliminar" class="bton-cancelar-alerta"> X Cancelar </button>
-                <button type="button" id="bton-eliminar-alerta" class=" bton-confirmar"> Eliminar </button>
+                <button type="button" id="bton-cancelar-eliminar" class="btn-cancelar"> X Cancelar </button>
+                <button type="button" id="bton-eliminar-alerta" class=" btn-eliminar-accion"> Eliminar </button>
             </div>
         </div>
     </div>
 
-    <!-- MODAL DE CIERRE DE SESIÓN -->
+    <!-------------------- MODAL DE CIERRE DE SESIÓN ---------------->
     <div id="modal-cerrar-sesion" class="modal-cerrar-sesion">
         <div class="modal-contenido">
             <p class="modal-texto-1">¿Deseas cerrar sesion?</p>
@@ -303,10 +361,9 @@
     
     <div class="formulario-reporte-movil oculto" id="formulario-reporte-movil">
         <div class="fondo-blanco-movil"></div>
-        <h3 class="formulario-titulo-principal">Generar Nuevo Reporte</h3>
-
         <form class="cuerpo-formulario-movil">
             <div class="grupo-campo-movil">
+                <h3 class="formulario-titulo-principal"> CREAR NUEVO REPORTE </h3>
                 <label class="etiqueta-campo-movil">Nombre de Reporte:</label>
                 <input type="text" placeholder="Reporte de ventas" class="entrada-texto-movil">
             </div>
@@ -328,6 +385,12 @@
                     <input type="text" placeholder="dd/mm/aaaa" class="entrada-fecha-movil">
                 </div>
             </div>
+
+            <div class="detalles-tarjeta">
+            <button type="button" class="editar-movil" id="bton-editar-producto"> Crear </button>
+            <button type="button" class="eliminar-movil" id="bton-eliminar-movil"> Cancelar </button>
+        </div>
+
         </form>
     </div>
 
@@ -335,28 +398,25 @@
 
     <div class="descargar-reporte-movil oculto" id="descargar-reporte-movil">
         <div class="fondo-blanco-movil"></div>
-        <h3 class="formulario-titulo-principal">Descargar Reporte</h3>
 
-        <form class="cuerpo-formulario-movil">
-            <div class="grupo-campo-movil">
+        <form class="cuerpo-descargar-movil">
+
+                <h3 class="formulario-titulo-principal">Descargar Reporte</h3>
                 <label class="etiqueta-campo-movil">Nombre de Reporte:</label>
                 <input type="text" placeholder="Reporte de ventas" class="entrada-texto-movil">
-            </div>
 
-            <div class="contenedor-descarga-movil">
-                <div class="formato-descarga-movil">
+                <div class="contenedor-descarga-movil">
                     <select class="seleccionar-formato">
                     <option value="" disabled selected>Seleccionar Formato</option>
                     <option value="pdf">Formato PDF</option>
                     <option value="word">Formato WORD</option>
                     <option value="excel">Formato EXCEL</option>
                     </select>
-                </div>
-
-                <button type="submit" class="bton-descargar">
+                    <button type="submit" class="bton-descargar">
                     <img src="/Gise/visual/descargar.svg" >
                 </button>
-            </div>
+                </div>
+                <button type="button" class="eliminar-movil-reporte" id="reporte-eliminar-movil"> Cancelar </button>
         </form>
     </div>
 
