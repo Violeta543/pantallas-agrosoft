@@ -172,7 +172,7 @@ body {
 }
 .contenido-fondo {
     position: relative;
-    z-index: 3;
+    z-index: 10;
 }
 /* ENCABEZADO */
 .encabezado {
