@@ -234,7 +234,7 @@
 
 .tarjeta-historial-fecha {
     margin-left: 160px;
-    margin-right: 30px;
+    margin-right: 29px;
 }
 
 /* Puntos de navegación */
@@ -358,21 +358,21 @@
 @media (max-width: 768px) {
     .tarjetas-historial {
         grid-template-columns: 1fr;
-        margin: 20px;
+        margin: 3px;
     }
 
     .tarjeta-historial {
-        padding: 40px 20px 20px 20px;
+        padding: 40px 30px 20px 20px;
     }
 
     .tarjeta-historial-base {
         justify-content: space-between;
-        gap: 8px;
+        gap: -3px;
     }
     
     .tarjeta-historial-base .tarjeta-historial-icono-base:last-of-type {
         margin-right: 5px;
-        transform: translateX(30px);
+        transform: translateX(14px);
     }
     
     .tarjeta-historial-fecha {
